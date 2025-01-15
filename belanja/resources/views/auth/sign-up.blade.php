@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-</head>
+</head>~
 <body>
     <div class="container-fluid p-0">
         <div class="row m-0">
