@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
-
+define('HOST', 'localhost');   // syntax error, unexpected identifier "define", expecting "," or ";"
+define('USER', 'root');
 // Determine if the application is in maintenance mode...
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;

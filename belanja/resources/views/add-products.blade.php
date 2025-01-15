@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
+  
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:32 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +27,15 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
     <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/quill.snow.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/calendar.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/datatables.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/date-picker.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/fullcalender.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/intltelinput.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/tagify.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/dropzone.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -43,10 +45,10 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   </head>
-  <body onload="startTime()">
+  <body> 
     <!-- loader starts-->
     <div class="loader-wrapper">
-      <div class="loader">
+      <div class="loader">    
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -66,16 +68,16 @@
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
-              <svg class="sidebar-toggle">
+              <svg class="sidebar-toggle"> 
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
               </svg>
             </div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
             <div class="left-menu-header">
-              <ul class="header-left">
+              <ul class="header-left"> 
                 <li>
-                  <div class="form-group w-100">
+                  <div class="form-group w-100"> 
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
                         <svg class="search-bg svg-color me-2">
@@ -113,7 +115,7 @@
                     <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0"> 
                       <div class="activity-dot-primary"></div>
                     </div>
                   </div>
@@ -121,7 +123,7 @@
                     <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0"> 
                       <div class="activity-dot-secondary"></div>
                     </div>
                   </div>
@@ -270,16 +272,16 @@
                   <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                   <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                   <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="{{ route('login') }}"><i data-feather="log-out"> </i><span>Log Out</span></a></li>
+                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
                 </ul>
               </li>
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">
+            <div class="ProfileCard u-cf">                        
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
-            <div class="ProfileCard-realName">{{}}</div>
+            <div class="ProfileCard-realName">{{name}}</div>
             </div>
             </div>
           </script>
@@ -294,7 +296,7 @@
           <div>
             <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <svg class="sidebar-toggle">
+                <svg class="sidebar-toggle"> 
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
@@ -308,7 +310,7 @@
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
                   <li class="pin-title sidebar-main-title">
-                    <div>
+                    <div> 
                       <h6>Pinned</h6>
                     </div>
                   </li>
@@ -921,591 +923,630 @@
           <div class="container-fluid">
             <div class="page-title">
               <div class="row">
-                <div class="col-sm-6 p-0">
-                  <h3>Default Dashboard </h3>
+                <div class="col-sm-6 ps-0">
+                  <h3>Add-product</h3>
                 </div>
-                <div class="col-sm-6 p-0">
+                <div class="col-sm-6 pe-0">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">
+                    <li class="breadcrumb-item"><a href="index.html">                                       
                         <svg class="stroke-icon">
                           <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                         </svg></a></li>
-                    <li class="breadcrumb-item">Dashboard</li>
-                    <li class="breadcrumb-item active">Default      </li>
+                    <li class="breadcrumb-item">ECommerce</li>
+                    <li class="breadcrumb-item active">Add-product</li>
                   </ol>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Container-fluid starts-->
-          <div class="container-fluid default-dashboard">
-            <div class="row">
-              <div class="col-xl-4 col-lg-4 col-md-7 box-col-4">
-                <div class="card welcome-card">
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <div class="flex-grow-1">
-                        <h1>Hello,Anna Miller.</h1>
-                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn" href="list-products.html">Go Premium</a>
-                      </div>
-                      <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
-                      <div>
-                        <div class="clockbox">
-                          <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
-                            <g id="face">
-                              <circle class="circle" cx="300" cy="300" r="253.9"></circle>
-                              <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"></path>
-                              <circle class="mid-circle" cx="300" cy="300" r="16.2"></circle>
-                            </g>
-                            <g id="hour">
-                              <path class="hour-hand" d="M300.5 298V142"></path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
-                            </g>
-                            <g id="minute">
-                              <path class="minute-hand" d="M300.5 298V67">   </path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
-                            </g>
-                            <g id="second">
-                              <path class="second-hand" d="M300.5 350V55"></path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9">   </circle>
-                            </g>
-                          </svg>
-                          <div class="badge f-10 p-0" id="txt"></div>
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+              <div class="row"> 
+                <div class="col-12"> 
+                  <div class="card"> 
+                    <div class="card-header">
+                      <h4>Product Form</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-xxl-3 col-xl-4 box-col-4e sidebar-left-wrapper">
+                          <ul class="sidebar-left-icons nav nav-pills" id="add-product-pills-tab" role="tablist">
+                            <li class="nav-item"> <a class="nav-link active" id="detail-product-tab" data-bs-toggle="pill" href="#detail-product" role="tab" aria-controls="detail-product" aria-selected="false">
+                                <div class="nav-rounded">
+                                  <div class="product-icons">
+                                    <svg class="stroke-icon">
+                                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#product-detail"></use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="product-tab-content">
+                                  <h6>Add Product Details</h6>
+                                  <p>Add Product name & details</p>
+                                </div></a></li>
+                            <li class="nav-item"> <a class="nav-link" id="gallery-product-tab" data-bs-toggle="pill" href="#gallery-product" role="tab" aria-controls="gallery-product" aria-selected="false">
+                                <div class="nav-rounded">
+                                  <div class="product-icons">
+                                    <svg class="stroke-icon">
+                                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#product-gallery"></use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="product-tab-content">
+                                  <h6>Product gallery</h6>
+                                  <p>thumbnail & Add Product Gallery</p>
+                                </div></a></li>
+                            <li class="nav-item"> <a class="nav-link" id="category-product-tab" data-bs-toggle="pill" href="#category-product" role="tab" aria-controls="category-product" aria-selected="false">
+                                <div class="nav-rounded">
+                                  <div class="product-icons">
+                                    <svg class="stroke-icon">
+                                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#product-category"></use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="product-tab-content">
+                                  <h6>Product Categories</h6>
+                                  <p>Add Product category, Status and Tags</p>
+                                </div></a></li>
+                            <li class="nav-item"><a class="nav-link" id="pricings-tab" data-bs-toggle="pill" href="#pricings" role="tab" aria-controls="pricings" aria-selected="false">
+                                <div class="nav-rounded">
+                                  <div class="product-icons">
+                                    <svg class="stroke-icon">
+                                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#pricing"> </use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="product-tab-content">
+                                  <h6>Selling prices</h6>
+                                  <p>Add Product basic price & Discount</p>
+                                </div></a></li>
+                            <li class="nav-item"><a class="nav-link" id="advance-product-tab" data-bs-toggle="pill" href="#advance-product" role="tab" aria-controls="advance-product" aria-selected="false">
+                                <div class="nav-rounded">
+                                  <div class="product-icons">
+                                    <svg class="stroke-icon">
+                                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#advance"> </use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="product-tab-content">
+                                  <h6>Advance</h6>
+                                  <p>Add Meta details & Inventory details</p>
+                                </div></a></li>
+                          </ul>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-2 col-xl-25 col-md-5 col-sm-6 box-col-3">
-                <div class="card earning-card">
-                  <div class="card-header">
-                    <div class="header-top">
-                      <h5>Total Earnings</h5>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div id="Earnings-chart"></div>
-                    <div class="d-flex p-3 pt-0">
-                      <h2 class="me-2">$ 12,463</h2><span class="bg-light-danger">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#down-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-danger">+ 20.08%</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-2 col-md-5 col-sm-6 expenses-card">
-                <div class="card earning-card">
-                  <div class="card-header">
-                    <div class="header-top">
-                      <h5>Total Expenses</h5>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="expenses-chart" id="Expenses-chart"></div>
-                    <div class="d-flex p-3 pt-0">
-                      <h2 class="me-2">$ 14,852</h2><span class="bg-light-success">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#up-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-success">+ 60.09%</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-xl-40 col-md-7 box-col-5e">
-                <div class="card selling-product">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Top Selling Product</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive custom-scrollbar">
-                      <table class="table display" style="width:100%">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/1.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Sneaker Shoes</span>
-                                    <h5>#A5647KB</h5></a></div>
+                        <div class="col-xxl-9 col-xl-8 box-col-8 position-relative">
+                          <div class="tab-content" id="add-product-pills-tabContent">
+                            <div class="tab-pane fade show active" id="detail-product" role="tabpanel" aria-labelledby="detail-product-tab">
+                              <div class="sidebar-body">
+                                <form class="row g-2">
+                                  <label class="form-label col-12 m-0" for="productTitle1">Product Title <span class="txt-danger"> *</span></label>
+                                  <div class="col-12 custom-input">
+                                    <input class="form-control is-invalid" id="productTitle1" type="text" required="">
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">A product name is required and recommended to be unique.</div>
+                                  </div>
+                                  <div class="col-12"> 
+                                    <div class="toolbar-box">
+                                      <div id="toolbar2"><span class="ql-formats">
+                                          <select class="ql-size"></select></span><span class="ql-formats">
+                                          <button class="ql-bold">Bold </button>
+                                          <button class="ql-italic">Italic </button>
+                                          <button class="ql-underline">underline</button>
+                                          <button class="ql-strike">Strike </button></span><span class="ql-formats">
+                                          <button class="ql-list" value="ordered">List </button>
+                                          <button class="ql-list" value="bullet"> </button>
+                                          <button class="ql-indent" value="-1"> </button>
+                                          <button class="ql-indent" value="+1"></button></span><span class="ql-formats">
+                                          <button class="ql-link"></button>
+                                          <button class="ql-image"></button>
+                                          <button class="ql-video"></button></span></div>
+                                      <div id="editor2"></div>
+                                    </div>
+                                    <p class="f-light">Improve product visibility by adding a compelling description.</p>
+                                  </div>
+                                </form>
+                                <div class="product-buttons">
+                                  <div class="btn">
+                                    <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                      <svg>
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow">  </use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX001</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/1.png" alt=""></td>
-                            <td> <span>-51%</span>
-                              <h5>$99.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/2.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Sweat Shirt</span>
-                                    <h5>#NB86H2E</h5></a></div>
+                            </div>
+                            <div class="tab-pane fade" id="gallery-product" role="tabpanel" aria-labelledby="gallery-product-tab">
+                              <div class="sidebar-body">
+                                <div class="product-upload">
+                                  <p>Product Image </p>
+                                  <form class="dropzone dropzone-light" id="multiFileUploadA" action="https://admin.pixelstrap.net/upload.php">
+                                    <div class="dz-message needsclick">
+                                      <svg>
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#file-upload"></use>
+                                      </svg>
+                                      <h6>Drag your image here, or <a class="txt-primary" href="#!">browser</a></h6><span class="note needsclick">SVG,PNG,JPG or GIF</span>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="product-upload">
+                                  <p>Product Gallery</p>
+                                  <form class="dropzone dropzone-light" id="multiFileUploadB" action="https://admin.pixelstrap.net/upload.php">
+                                    <div class="dz-message needsclick">
+                                      <svg>
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#file-upload1"></use>
+                                      </svg>
+                                      <h6>Drag files here</h6><span class="note needsclick">Add Product Gallery Images</span>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="product-buttons">
+                                  <div class="btn">
+                                    <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                      <svg>
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                      </svg>Previous
+                                    </div>
+                                  </div>
+                                  <div class="btn">
+                                    <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                      <svg>
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow">     </use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX002</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/2.png" alt=""></td>
-                            <td> <span>-78%</span>
-                              <h5>$66.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/3.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Nike Travel Bag</span>
-                                    <h5>#UB654GH</h5></a></div>
+                            </div>
+                            <div class="tab-pane fade" id="category-product" role="tabpanel" aria-labelledby="category-product-tab">
+                              <div class="sidebar-body">
+                                <form>
+                                  <div class="row g-lg-4 g-3">
+                                    <div class="col-12">
+                                      <div class="row g-3">
+                                        <div class="col-sm-6">
+                                          <div class="row g-2"> 
+                                            <div class="col-12">
+                                              <label class="form-label m-0" for="validationDefault04">Add Category</label>
+                                            </div>
+                                            <div class="col-12">
+                                              <select class="form-select" id="validationDefault04" required="">
+                                                <option selected="" value="">Toys & games</option>
+                                                <option>Sportswear </option>
+                                                <option>Jewellery </option>
+                                                <option>Furniture and Decor</option>
+                                                <option>Health, Personal Care, and Beauty</option>
+                                                <option>Auto and Parts </option>
+                                                <option>Baby Care Products</option>
+                                              </select>
+                                              <p class="f-light">A product can be added to a category</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <div class="row g-2 product-tag">
+                                            <div class="col-12">
+                                              <label class="form-label d-block m-0">Add Tag</label>
+                                            </div>
+                                            <div class="col-12">
+                                              <input name="basic-tags" value="watches, sports, clothes, bottles">
+                                              <p class="f-light">Products can be tagged</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-12">
+                                          <div class="category-buton"><a class="btn button-primary" href="#!" data-bs-toggle="modal" data-bs-target="#category-pill-modal"><i class="me-2 fa fa-plus"> </i>Create New Category </a></div>
+                                          <div class="modal fade" id="category-pill-modal" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h3 class="modal-title fs-5">Create new category</h3>
+                                                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body custom-input"> 
+                                                  <div class="create-category">
+                                                    <div>
+                                                      <label class="form-label" for="categoryName">Category Name <span class="txt-danger"> *</span></label>
+                                                      <input class="form-control m-0" id="categoryName" type="text" required="">
+                                                      <div class="toolbar-box">
+                                                        <div id="toolbar3"><span class="ql-formats">
+                                                            <select class="ql-size"></select></span><span class="ql-formats">
+                                                            <button class="ql-bold">Bold </button>
+                                                            <button class="ql-italic">Italic </button>
+                                                            <button class="ql-underline">underline</button>
+                                                            <button class="ql-strike">Strike </button></span><span class="ql-formats">
+                                                            <button class="ql-list" value="ordered">List </button>
+                                                            <button class="ql-list" value="bullet"> </button>
+                                                            <button class="ql-indent" value="-1"> </button>
+                                                            <button class="ql-indent" value="+1"></button></span><span class="ql-formats">
+                                                            <button class="ql-link"></button>
+                                                            <button class="ql-image"></button>
+                                                            <button class="ql-video"></button></span></div>
+                                                        <div id="editor3"></div>
+                                                      </div>
+                                                    </div>
+                                                    <p class="f-light">Improve product visibility by adding a compelling description.</p>
+                                                  </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancel</button>
+                                                  <button class="btn btn-primary" type="button">Add</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-12"> 
+                                      <div class="row g-3">
+                                        <div class="col-sm-6">
+                                          <div class="row">
+                                            <div class="col-12">
+                                              <label class="form-label" for="publishStatus">Publish Status</label>
+                                              <select class="form-select" id="publishStatus" required="">
+                                                <option selected="" value="">Publish</option>
+                                                <option>Drafts</option>
+                                                <option>Unpublish</option>
+                                              </select>
+                                              <p class="f-light">Choose the status</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <div class="row">
+                                            <div class="col-12">
+                                              <label class="form-label" for="datetime-local1">Publish Date & Time</label>
+                                              <div class="input-group flatpicker-calender product-date">
+                                                <input class="form-control" id="datetime-local1" type="date">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="product-buttons">
+                                    <div class="btn">
+                                      <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                        <svg>
+                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                        </svg>Previous
+                                      </div>
+                                    </div>
+                                    <div class="btn">
+                                      <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                        <svg>
+                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
                               </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX003</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/3.png" alt=""></td>
-                            <td> <span>-04%</span>
-                              <h5>$116.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/4.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Monster Cap</span>
-                                    <h5>#BAS4567</h5></a></div>
+                            </div>
+                            <div class="tab-pane fade" id="pricings" role="tabpanel" aria-labelledby="pricings-tab">
+                              <div class="sidebar-body">
+                                <form class="price-wrapper">
+                                  <div class="row g-3 custom-input">
+                                    <div class="col-sm-6"> 
+                                      <label class="form-label" for="initialCost">Initial cost <span class="txt-danger">*</span></label>
+                                      <input class="form-control" id="initialCost" type="number">
+                                    </div>
+                                    <div class="col-sm-6"> 
+                                      <label class="form-label" for="sellingPrice">Selling price <span class="txt-danger">*</span></label>
+                                      <input class="form-control" id="sellingPrice" type="number">
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <label class="form-label">Choose your currency</label>
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected="">Dollar $</option>
+                                        <option value="1">Euro €</option>
+                                        <option value="2">Rupees ₹</option>
+                                        <option value="3">British pounds £</option>
+                                        <option value="4">Russian Ruble ₽</option>
+                                        <option value="5">Japanese Yen ¥</option>
+                                        <option value="6">Singapore Dollar S$</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-sm-6"> 
+                                      <label class="form-label" for="productStock1">Product stocks<span class="txt-danger">*</span></label>
+                                      <input class="form-control" id="productStock1" type="number">
+                                    </div>
+                                    <div class="col-12">
+                                      <label class="form-label">Types of product discount<i class="icon-help-alt ms-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Choose the kind of discount that will be used on that particular item."></i></label>
+                                      <ul class="radio-wrapper"> 
+                                        <li> 
+                                          <input class="form-check-input" id="radio-icon" type="radio" name="radio5" value="option5">
+                                          <label class="form-check-label" for="radio-icon"><span>Fixed Price</span></label>
+                                        </li>
+                                        <li> 
+                                          <input class="form-check-input" id="radio-icon4" type="radio" name="radio5" value="option5" checked="">
+                                          <label class="form-check-label" for="radio-icon4"><span>BOGO(Buy one, Get one)</span></label>
+                                        </li>
+                                        <li> 
+                                          <input class="form-check-input" id="radio-icon5" type="radio" name="radio5" value="option5">
+                                          <label class="form-check-label" for="radio-icon5"><span>Seasonal or holiday discount</span></label>
+                                        </li>
+                                        <li> 
+                                          <input class="form-check-input" id="radio-icon6" type="radio" name="radio5" value="option5">
+                                          <label class="form-check-label" for="radio-icon6"><span>Percentage-based discount(%)</span></label>
+                                        </li>
+                                        <li> 
+                                          <input class="form-check-input" id="radio-icon7" type="radio" name="radio5" value="option5">
+                                          <label class="form-check-label" for="radio-icon7"><span>Volume or bulk discount</span></label>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <div class="product-buttons">
+                                    <div class="btn">
+                                      <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                        <svg>
+                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                        </svg>Previous
+                                      </div>
+                                    </div>
+                                    <div class="btn">
+                                      <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                        <svg>
+                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow">   </use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
                               </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX004</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/4.png" alt=""></td>
-                            <td> <span>-60%</span>
-                              <h5>$99.00</h5>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-7 col-lg-7 box-col-7">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Recent Order </h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body pt-0 recent">
-                    <div class="table-responsive custom-scrollbar">
-                      <table class="table display" id="recent-order" style="width:100%">
-                        <thead>
-                          <tr>
-                            <th>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label"></label>
+                            </div>
+                            <div class="tab-pane fade" id="advance-product" role="tabpanel" aria-labelledby="advance-product-tab">
+                              <div class="sidebar-body advance-options">
+                                <ul class="nav nav-tabs border-tab mb-0" id="advance-option-tab" role="tablist">
+                                  <li class="nav-item"><a class="nav-link active" id="manifest-option-tab" data-bs-toggle="tab" href="#manifest-option" role="tab" aria-controls="manifest-option" aria-selected="true">Inventory</a></li>
+                                  <li class="nav-item"><a class="nav-link" id="additional-option-tab" data-bs-toggle="tab" href="#additional-option" role="tab" aria-controls="additional-option" aria-selected="false">Additional Options</a></li>
+                                  <li class="nav-item"><a class="nav-link" id="dropping-option-tab" data-bs-toggle="tab" href="#dropping-option" role="tab" aria-controls="dropping-option" aria-selected="false">Shipping</a></li>
+                                </ul>
+                                <div class="tab-content" id="advance-option-tabContent">
+                                  <div class="tab-pane fade show active" id="manifest-option" role="tabpanel" aria-labelledby="manifest-option-tab">
+                                    <div class="meta-body"> 
+                                      <form id="advance-tab">
+                                        <div class="row g-3 custom-input">
+                                          <div class="col-sm-6">
+                                            <label class="form-label">Stock Availability</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                              <option selected="">In stock</option>
+                                              <option value="1">Out of stock</option>
+                                              <option value="2">Pre-order</option>
+                                            </select>
+                                          </div>
+                                          <div class="col-sm-6">
+                                            <label class="form-label">Low Stock</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                              <option selected="">Low Stock (5 or less)</option>
+                                              <option value="1">Low Stock (10 or less)</option>
+                                              <option value="2">Low Stock (20 or less)</option>
+                                              <option value="2">Low Stock (25 or less)</option>
+                                              <option value="2">Low Stock (30 or less)</option>
+                                            </select>
+                                          </div>
+                                          <div class="col-lg-3 col-sm-6">
+                                            <label class="form-label" for="exampleFormControlInput1">SKU <span class="txt-danger">*</span></label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="text">
+                                          </div>
+                                          <div class="col-lg-3 col-sm-6">
+                                            <label class="form-label" for="exampleFormControlInputa">Stock Quantity <span class="txt-danger">*</span></label>
+                                            <input class="form-control" id="exampleFormControlInputa" type="number" value="7" min="0">
+                                          </div>
+                                          <div class="col-lg-3 col-sm-6"> 
+                                            <label class="form-label" for="exampleFormControlInputb">Restock Date <span class="txt-danger">*</span></label>
+                                            <input class="form-control" id="exampleFormControlInputb" type="number">
+                                          </div>
+                                          <div class="col-lg-3 col-sm-6"> 
+                                            <label class="form-label" for="exampleFormControlInputc">Pre-Order <span class="txt-danger">*</span></label>
+                                            <input class="form-control" id="exampleFormControlInputc" type="number">
+                                          </div>
+                                          <div class="col-12"> 
+                                            <label class="form-label">Allow Backorders</label>
+                                            <div class="form-check">
+                                              <input class="form-check-input" id="gridCheck" type="checkbox">
+                                              <label class="form-check-label m-0" for="gridCheck">This is a digital Product</label>
+                                              <p class="f-light">Decide if the product is a digital or physical item. Shipping may be necessary for real-world items.</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-buttons">
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                              </svg>Previous
+                                            </div>
+                                          </div>
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow"></use>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="additional-option" role="tabpanel" aria-labelledby="additional-option-tab">
+                                    <div class="meta-body">
+                                      <form>
+                                        <div class="row g-3"> 
+                                          <div class="col-12"> 
+                                            <div class="row g-3">
+                                              <div class="col-sm-6">
+                                                <div class="row custom-input">
+                                                  <div class="col-12">
+                                                    <label class="form-label" for="tagTitle">Additional Tag Title</label>
+                                                  </div>
+                                                  <div class="col-12">
+                                                    <input class="form-control" id="tagTitle" type="text">
+                                                    <p class="f-light">Add a new tag title. Keywords should be simple and accurate.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-sm-6">
+                                                <div class="row product-tag">
+                                                  <label class="form-label col-12">Specific Tags</label>
+                                                  <div class="col-12"> 
+                                                    <input id="specificTag" name="basic-tags1" value="watches, sports, clothes, bottles">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-12">
+                                                <div class="row">
+                                                  <div class="col-12">
+                                                    <label class="form-label col-12">Additional Description</label>
+                                                    <div class="toolbar-box">
+                                                      <div id="toolbar4"><span class="ql-formats">
+                                                          <select class="ql-size"></select></span><span class="ql-formats">
+                                                          <button class="ql-bold">Bold </button>
+                                                          <button class="ql-italic">Italic </button>
+                                                          <button class="ql-underline">underline</button>
+                                                          <button class="ql-strike">Strike </button></span><span class="ql-formats">
+                                                          <button class="ql-list" value="ordered">List </button>
+                                                          <button class="ql-list" value="bullet"> </button>
+                                                          <button class="ql-indent" value="-1"> </button>
+                                                          <button class="ql-indent" value="+1"></button></span><span class="ql-formats">
+                                                          <button class="ql-link"></button>
+                                                          <button class="ql-image"></button>
+                                                          <button class="ql-video"></button></span></div>
+                                                      <div id="editor4"></div>
+                                                    </div>
+                                                    <p class="f-light">Enhance your SEO ranking with an added tag description for the product.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-buttons">
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                              </svg>Previous
+                                            </div>
+                                          </div>
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow"></use>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="dropping-option" role="tabpanel" aria-labelledby="dropping-option-tab">
+                                    <div class="meta-body">
+                                      <form>
+                                        <div class="row g-3 custom-input">
+                                          <div class="col-12">
+                                            <div class="row gx-xl-3 gx-md-2 gy-md-0 g-2">
+                                              <div class="col-12">
+                                                <label class="form-label" for="exampleFormControlInput1">Where can I pick up my order?</label>
+                                              </div>
+                                              <div class="col-md-4 col-sm-6">
+                                                <input class="form-control" id="inputZip" type="number" placeholder="Zip code (10001)">
+                                              </div>
+                                              <div class="col-md-4 col-sm-6">
+                                                <input class="form-control" id="inputCity" type="text" placeholder="City">
+                                              </div>
+                                              <div class="col-md-4">
+                                                <select class="form-select" id="inputState">
+                                                  <option selected="">State</option>
+                                                  <option>Gujarat</option>
+                                                  <option>Punjab</option>
+                                                  <option>Himachal pradesh</option>
+                                                  <option>Goa </option>
+                                                  <option>Sikkim </option>
+                                                  <option>Telangana</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="row">
+                                              <div class="col-12">
+                                                <label class="form-label" for="exampleFormControlInput1">Weight (kg)</label><i class="icon-help-alt ms-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="set proper weight for product items."></i>
+                                              </div>
+                                              <div class="col-12">
+                                                <input class="form-control" id="inputCitya" type="number">
+                                                <p class="f-light">Decide if the product is a digital or physical item. Shipping may be necessary for real-world items.</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="row gx-xl-3 gx-md-2 gy-md-0 g-2">
+                                              <div class="col-12">
+                                                <label class="form-label" for="exampleFormControlInput1">Dimensions </label><i class="icon-help-alt ms-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="set proper length/width and height for product items."></i>
+                                              </div>
+                                              <div class="col-md-4 col-sm-6"> 
+                                                <input class="form-control" id="inputCityb" type="number" placeholder="Length[l]">
+                                              </div>
+                                              <div class="col-md-4 col-sm-6"> 
+                                                <input class="form-control" id="inputCityc" type="number" placeholder="Width[w]">
+                                              </div>
+                                              <div class="col-md-4"> 
+                                                <input class="form-control" id="inputCityd" type="number" placeholder="Height[h]">
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="row"> 
+                                              <div class="col-12">
+                                                <label class="form-label" for="exampleFormControlInput1">Shipping Class</label>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <select class="form-select" id="inputState1">
+                                                  <option selected="">Basic Shipping</option>
+                                                  <option>Expedited Shipping</option>
+                                                  <option>International Shipping</option>
+                                                  <option>Free Shipping</option>
+                                                  <option>Same-Day or Next-Day Shipping</option>
+                                                  <option>Flat Rate Shipping</option>
+                                                  <option>Local Pickup </option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-buttons">
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#back-arrow"></use>
+                                              </svg>Previous 
+                                            </div>
+                                          </div>
+                                          <div class="btn">
+                                            <div class="d-flex align-items-center gap-sm-2 gap-1">Submit
+                                              <svg>
+                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#front-arrow"></use>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </th>
-                            <th>No.</th>
-                            <th>Customer Name</th>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>City</th>
-                            <th>Status</th>
-                            <th>Amount</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label"></label>
-                              </div>
-                            </td>
-                            <td>1</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/1.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Rocky Shoes </h6></a></div>
-                              </div>
-                            </td>
-                            <td>#8934</td>
-                            <td>01/12/2024</td>
-                            <td>Armenia</td>
-                            <td>
-                              <button class="btn btn-primary">Paid</button>
-                            </td>
-                            <td>$238.80</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label"></label>
-                              </div>
-                            </td>
-                            <td>2</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/2.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Nasuha Makusta</h6></a></div>
-                              </div>
-                            </td>
-                            <td>#6529</td>
-                            <td>12/10/2024</td>
-                            <td>Bhutan</td>
-                            <td>
-                              <button class="btn btn-secondary">Pending</button>
-                            </td>
-                            <td>$654.95</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label"></label>
-                              </div>
-                            </td>
-                            <td>3</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/3.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Induan Kastorika</h6></a></div>
-                              </div>
-                            </td>
-                            <td>#3659</td>
-                            <td>09/04/2024</td>
-                            <td>Ghana</td>
-                            <td>
-                              <button class="btn btn-success">Done</button>
-                            </td>
-                            <td>$864.35</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label"></label>
-                              </div>
-                            </td>
-                            <td>4</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/4.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Pogba Nehuntas</h6></a></div>
-                              </div>
-                            </td>
-                            <td>#2158</td>
-                            <td>10/05/2024</td>
-                            <td>Kenya</td>
-                            <td>
-                              <button class="btn btn-danger">Cancel </button>
-                            </td>
-                            <td>$951.37</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-5 col-lg-5 box-col-5">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Our Growth</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="growth-chart"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-8 col-lg-8 col-md-7">
-                <div class="card transaction-history">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Product Valuation</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body pb-0">
-                    <div class="current-sale-container order-container">
-                      <div class="overview-wrapper" id="orderoverview"></div>
-                      <div class="back-bar-container">
-                        <div id="order-bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-5">
-                <div class="card transaction-history">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Transaction History</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive custom-scrollbar">
-                      <table class="table display" style="width:100%">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#send"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Receipt from external Wallet</span>
-                                    <h5>Mar 21,2024, 4:45pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Completed</td>
-                            <td>+ $248.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-secondary history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#work"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Process refund to</span>
-                                    <h5>Feb 20,2024, 2:10pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Pending</td>
-                            <td>+ $548.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-success history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#graph"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Sending to Citizen</span>
-                                    <h5>Jun 17,2024, 12:45pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Verified</td>
-                            <td>+ $953.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-danger history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#payment-bookmark"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Payment From #12345</span>
-                                    <h5>Oct 30,2024, 1:31pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Rejected</td>
-                            <td>+ $349.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="card notifications-tabs">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Notifications</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex header-tab">
-                      <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">3</span></a></li>
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Following</a></li>
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Archive</a></li>
-                      </ul>
-                      <h6>Mark all as read</h6>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent">
-                      <div class="tab-pane fade show active" id="bottom-home" role="tabpanel" aria-labelledby="bottom-tabContent">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a>
-                            <button class="btn btn-secondary mt-1 mb-1">Decline</button>
-                            <button class="btn btn-primary mt-1 mb-1">Accept</button>
+                            </div>
                           </div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
                         </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-secondary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
-                        </div>
-                        <div class="figma-icon">
-                          <svg class="me-2">
-                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#file"></use>
-                          </svg>
-                          <div class="flex-shrink-0">
-                            <h6>Tet_Dark_Mode_L103.fig</h6><span>2.4 MB</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent2">
-                      <div class="tab-pane fade show" id="bottom-contact" role="tabpanel" aria-labelledby="bottom-tabContent2">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Wilson Requested to Follow</h5><span>1w Ago</span></a></div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/2.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Nasuha Makusta Requested to Follow</h5><span>20 min Ago</span></a></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent3">
-                      <div class="tab-pane fade show" id="bottom-inbox" role="tabpanel" aria-labelledby="bottom-tabContent3">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Wilson Requested to Follow</h5><span>1w Ago</span></a></div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/2.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Nasuha Makusta Requested to Follow</h5><span>20 min Ago</span></a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="card user-country">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>User By Country</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <h2 class="me-2">216.459</h2><span class="bg-light-success">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#up-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-success">+ 5.09%</h6>
-                    </div><span>Increase than last month</span>
-                    <div class="jvector-map-height" id="world-map2"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4">
-                <div class="card schedule">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Schedule</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="timeline-calendar custom-scrollbar">
-                      <div class="custom-calendar" id="calendar-container">
-                        <div class="time-line" id="calendar"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Container-fluid Ends-->
           </div>
-          <!-- Container-fluid Ends-->
         </div>
         <!-- footer start-->
         <footer class="footer">
@@ -1541,37 +1582,21 @@
     <!-- Plugins JS start-->
     <script src="../assets/js/sidebar-menu.js"></script>
     <script src="../assets/js/sidebar-pin.js"></script>
-    <script src="../assets/js/clock.js"></script>
-    <script src="../assets/js/calendar/fullcalendar.min.js"></script>
-    <script src="../assets/js/calendar/fullcalendar-custom.js"></script>
-    <script src="../assets/js/calendar/fullcalender.js"></script>
-    <script src="../assets/js/calendar/custom-calendar.js"></script>
-    <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
-    <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
-    <script src="../assets/js/chart/apex-chart/moment.min.js"></script>
-    <script src="../assets/js/notify/bootstrap-notify.min.js"></script>
-    <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
-    <script src="../assets/js/dashboard/default.js"></script>
-    <script src="../assets/js/notify/index.js"></script>
-    <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/datatable/datatables/datatable.custom.js"></script>
-    <script src="../assets/js/datatable/datatables/datatable.custom1.js"></script>
-    <script src="../assets/js/datepicker/date-picker/datepicker.js"></script>
-    <script src="../assets/js/datepicker/date-picker/datepicker.en.js"></script>
-    <script src="../assets/js/datepicker/date-picker/datepicker.custom.js"></script>
-    <script src="../assets/js/typeahead/handlebars.js"></script>
-    <script src="../assets/js/typeahead/typeahead.bundle.js"></script>
-    <script src="../assets/js/typeahead/typeahead.custom.js"></script>
-    <script src="../assets/js/typeahead-search/handlebars.js"></script>
-    <script src="../assets/js/typeahead-search/typeahead-custom.js"></script>
-    <script src="../assets/js/vector-map/map-vector.js"></script>
+    <script src="../assets/js/slick/slick.min.js"></script>
+    <script src="../assets/js/slick/slick.js"></script>
+    <script src="../assets/js/header-slick.js"></script>
+    <script src="../assets/js/flat-pickr/flatpickr.js"></script>
+    <script src="../assets/js/flat-pickr/custom-flatpickr.js"></script>
+    <script src="../assets/js/dropzone/dropzone.js"></script>
+    <script src="../assets/js/dropzone/dropzone-script.js"></script>
+    <script src="../assets/js/select2/tagify.js"></script>
+    <script src="../assets/js/select2/tagify.polyfills.min.js"></script>
+    <script src="../assets/js/select2/intltelinput.min.js"></script>
+    <script src="../assets/js/add-product/select4-custom.js"></script>
+    <script src="../assets/js/editors/quill.js"></script>
+    <script src="../assets/js/custom-add-product.js"></script>
+    <script src="../assets/js/height-equal.js"></script>
+    <script src="../assets/js/tooltip-init.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
@@ -1579,5 +1604,5 @@
     <!-- Plugin used-->
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:34 GMT -->
 </html>
