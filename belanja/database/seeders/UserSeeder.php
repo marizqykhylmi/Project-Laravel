@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 
 
 class UserSeeder extends Seeder
@@ -16,11 +17,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
         User::create([
-            'name' => 'Admin User', // Benar: 'name' adalah string
-            'email' => 'admin@example.com', // Benar: 'email' adalah string
-            'password' => Hash::make('password'), // Benar: 'password' adalah string
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password), // Encrypt the password
         ]);
 
     }

@@ -63,11 +63,11 @@
     <!-- login page start-->
     <div class="container-fluid p-0">
       <div class="row m-0">
-        <div class="col-12 p-0">    
+        <div class="col-12 p-0">
           <div class="login-card login-dark">
             <div>
               <div><a class="logo" href="{{ route('login') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt="looginpage"></a></div>
-              <div class="login-main"> 
+              <div class="login-main">
                 <form class="theme-form" method="POST" action="{{ route('login.submit') }}">
                   @csrf
                   <h3>Sign in to account</h3>
