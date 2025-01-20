@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('list-products') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:40 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +19,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
@@ -31,13 +29,12 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
     <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/calendar.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/datatables.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/date-picker.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/fullcalender.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/js-datatables/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/owlcarousel.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -47,7 +44,7 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   </head>
-  <body onload="startTime()"> 
+  <body> 
     <!-- loader starts-->
     <div class="loader-wrapper">
       <div class="loader">    
@@ -68,7 +65,7 @@
       <div class="page-header">
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
               <svg class="sidebar-toggle"> 
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
@@ -81,10 +78,10 @@
                 <li>
                   <div class="form-group w-100"> 
                     <div class="Typeahead Typeahead--twitterUsers">
-                      <div class="u-posRelative d-flex">
-                        <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
-                        <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
-                      </div>
+                        <div class="u-posRelative d-flex">
+                            <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
+                            <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
+                          </div>
                     </div>
                   </div>
                 </li>
@@ -105,89 +102,38 @@
               </li>
               <li class="onhover-dropdown">
                 <div class="notification-box">
-                  <i class="fa fa-bell animated-icon"></i>
-                  <span class="badge rounded-pill badge-primary">3</span>
-              
-              <style>
-                .animated-icon {
-                  animation: bell-shake 1.5s infinite;
-                }
-              
-                @keyframes bell-shake {
-                  0%, 100% {
-                    transform: rotate(0);
-                  }
-                  25% {
-                    transform: rotate(-15deg);
-                  }
-                  50% {
-                    transform: rotate(15deg);
-                  }
-                  75% {
-                    transform: rotate(-15deg);
-                  }
-                }
-
-                /* Tombol switch theme */
-                .theme-toggle-btn {
-                  background-color: transparent;
-                  border: none;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  padding: 10px;
-                  cursor: pointer;
-                  border-radius: 50%;
-                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-                  transition: all 0.3s ease;
-                }
-
-                .theme-toggle-btn:hover {
-                  background-color: rgba(0, 0, 0, 0.1);
-                }
-
-                .theme-icon {
-                  width: 20px;
-                  height: 20px;
-                  fill: #333; 
-                  transition: all 0.3s ease;
-                }
-
-                /* Dark mode toggle */
-                body.dark-mode .theme-toggle-btn .theme-icon {
-                  transform: rotate(180deg);
-                  fill: #fff;
-                }
-              </style>
-              
-                <div class="onhover-show-div notification-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
-                  <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                        <h5>
-                           Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0"> 
-                      <div class="activity-dot-primary"></div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                        <h5>
-                           Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0"> 
-                      <div class="activity-dot-secondary"></div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                        <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
-                  </div>
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Bell"></use>
+                  </svg><span class="badge rounded-pill badge-primary">3</span>
                 </div>
+                <div class="onhover-show-div notification-dropdown">
+                    <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
+                    <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
+                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                          <h5>
+                             Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
+                      <div class="flex-shrink-0"> 
+                        <div class="activity-dot-primary"></div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
+                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                          <h5>
+                             Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
+                      <div class="flex-shrink-0"> 
+                        <div class="activity-dot-secondary"></div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
+                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                          <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
+                    </div>
+                  </div>
               </li>
               <li class="onhover-dropdown">
-                <div class="icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                <svg>
+                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-star"></use>
+                </svg>
                 <div class="onhover-show-div bookmark-flip">
                   <div class="flip-card">
                     <div class="flip-card-inner">
@@ -232,20 +178,17 @@
               </li>
               <li>
                 <div class="mode">
-                  <button id="theme-toggle" class="theme-toggle-btn">
-                    <svg class="theme-icon" width="24" height="24">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
-                    </svg>
-                  </button>
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
+                  </svg>
+                </div>
               </li>
               <li class="onhover-dropdown">
                 <div class="message">
-                  <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6c757d" width="24" height="24">
-                    <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z"/>
-                  </svg>
-                  
-                  <span class="badge rounded-pill badge-secondary">4</span>
-                </div>                                
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-message"></use>
+                  </svg><span class="badge rounded-pill badge-secondary">4</span>
+                </div>
                 <div class="onhover-show-div message-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Message</h6>
                   <ul>
@@ -285,7 +228,9 @@
               </li>
               <li class="cart-nav onhover-dropdown">
                 <div class="cart-box">
-                  <i class="fas fa-shopping-cart"></i>
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Buy"></use>
+                  </svg>
                 </div>
                 <div class="cart-dropdown onhover-show-div">
                   <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
@@ -309,7 +254,7 @@
                     <li class="total">
                       <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
                     </li>
-                    <li><a class="view-cart" href="cart.html">View Cart</a><a class="view-checkout f-right" href="checkout.html">Checkout</a></li>
+                    <li><a class="view-cart" href="{{ route ('cart') }}">View Cart</a><a class="view-checkout f-right" href="{{ route ('checkout') }}">Checkout</a></li>
                   </ul>
                 </div>
               </li>
@@ -320,11 +265,11 @@
                   </div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="user-profile.html"><i data-feather="user"></i><span>Account </span></a></li>
+                  <li><a href="{{ route ('user-profile') }}"><i data-feather="user"></i><span>Account </span></a></li>
                   <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                   <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                   <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="{{route ('login')}}"><i data-feather="log-in"> </i><span>Logout</span></a></li>
+                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -346,18 +291,20 @@
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="fill-svg">
           <div>
-            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
+            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <i class="fas fa-toggle-on"></i>
+                <svg class="sidebar-toggle"> 
+                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
+                </svg>
               </div>
             </div>
-            <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+            <div class="logo-icon-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
               <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
-                  <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
-                    <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
+                  <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                    <div class="mobile-back text-end"><span>Back</span><i class=""" ps-2" aria-hidden="true"></i></div>
                   </li>
                   <li class="pin-title sidebar-main-title">
                     <div> 
@@ -366,48 +313,52 @@
                   </li>
                   <li class="sidebar-main-title">
                     <div>
-                      <h6 class="lan-1">General</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span class="lan-3">Dashboard</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
-                      <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li>
-                      <li><a href="dashboard-03.html">project</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <h6 class="lan-1">General</h6>
+                      </div>
+                    </li>
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <svg class="stroke-icon">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
+                        </svg>
+                        <svg class="fill-icon">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
+                        </svg><span>Dashboard</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
+                        <li><a href="{{ route ('about-us') }}">About Us</a></li>
+                        
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <svg class="stroke-icon">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-layout"></use>
+                        </svg>
+                        <svg class="fill-icon">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
+                        </svg><span>Highlight</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="{{ route ('gallery') }}">Gallery</a></li>
+                      <li><a href="{{ route ('product') }}">Product</a></li>
+                      <li><a href="{{ route ('program') }}">Program</a></li>
+                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
+                      <li><a href="{{ route ('slider') }}">Slider</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                      </svg><span class="lan-6">Widgets</span></a>
+                      </svg><span>Post</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a href="general-widget.html">General</a></li>
-                      <li><a href="chart-widget.html">Chart</a></li>
+                      <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
+<li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
+<li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
                     </ul>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-layout"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span class="lan-7">Page layout</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="box-layout.html">Boxed</a></li>
-                      <li><a href="layout-rtl.html">RTL</a></li>
-                      <li><a href="layout-dark.html">Dark Layout</a></li>
-                      <li><a href="hide-on-scroll.html">Hide Nav Scroll</a></li>
-                    </ul>
-                  </li>
+                      </ul>
+                    </li>
                     </ul>
                   </li>
                   </li>
@@ -415,14 +366,14 @@
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-ecommerce"></use>
                       </svg><span>Ecommerce</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a href="add-products.html">Add Product</a></li>
-                      <li><a href="product.html">Product</a></li>
+                      <li><a href="{{ route ('add-products') }}">Add Product</a></li>
+                      <li><a href="{{ route ('product') }}">Product</a></li>
                       <li><a href="product-page.html">Product page</a></li>
-                      <li><a href="list-products.html">Product list</a></li>
+                      <li><a href="{{ route ('list-products') }}">Product list</a></li>
                       <li><a href="payment-details.html">Payment Details</a></li>
                       <li><a href="order-history.html">Order History</a></li>
                       <li><a class="submenu-title" href="#">Invoices
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
+                          <h5 class="sub-arrow"><i class=""></i></h5></a>
                         <ul class="submenu-content opensubmegamenu">
                           <li><a href="invoice-1.html">Invoice-1</a></li>
                           <li><a href="invoice-2.html">Invoice-2</a></li>
@@ -432,14 +383,14 @@
                           <li><a href="invoice-template.html">Invoice-6</a></li>
                         </ul>
                       </li>
-                      <li><a href="cart.html">Cart</a></li>
+                      <li><a href="{{ route ('cart') }}">Cart</a></li>
                       <li><a href="list-wish.html">Wishlist</a></li>
-                      <li><a href="checkout.html">Checkout</a></li>
+                      <li><a href="{{ route ('checkout') }}">Checkout</a></li>
                       <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                   </li>
                       <li><a class="submenu-title" href="#">Form layout
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
+                          <h5 class="sub-arrow"><i class=""></i></h5></a>
                         <ul class="submenu-content opensubmegamenu">
                           <li><a href="form-wizard.html">Form Wizard 1</a></li>
                           <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
@@ -478,7 +429,7 @@
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-internationalization"></use>
                       </svg>
                       
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/index.html" target="_blank">
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-starter-kit"></use>
                       </svg>
@@ -615,7 +566,7 @@
                   <div class="card-body">
                     <div class="list-product-header">
                       <div> 
-                        <div class="light-box"><a data-bs-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct"><i class="filter-icon show" data-feather="filter"></i><i class="icon-close filter-close hide"></i></a></div><a class="btn btn-primary" href="add-products.html"><i class="fa fa-plus"></i>Add Product</a>
+                        <div class="light-box"><a data-bs-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct"><i class="filter-icon show" data-feather="filter"></i><i class="icon-close filter-close hide"></i></a></div><a class="btn btn-primary" href="{{ route ('add-products') }}"><i class="fa fa-plus"></i>Add Product</a>
                       </div>
                       <div class="collapse" id="collapseProduct">
                         <div class="card card-body list-product-body">
@@ -716,7 +667,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -755,7 +706,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -796,7 +747,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -835,7 +786,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -874,7 +825,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -913,7 +864,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -952,7 +903,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -991,7 +942,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1032,7 +983,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1071,7 +1022,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1110,7 +1061,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1149,7 +1100,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1188,7 +1139,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1227,7 +1178,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1266,7 +1217,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1305,7 +1256,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1344,7 +1295,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1383,7 +1334,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1422,7 +1373,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1461,7 +1412,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1500,7 +1451,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1539,7 +1490,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1578,7 +1529,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1617,7 +1568,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1656,7 +1607,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1695,7 +1646,7 @@
                               <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i><i class="fa fa-star f-light"></i></div>
                             </td>
                             <td> 
-                              <div class="product-action"><a href="add-products.html"> 
+                              <div class="product-action"><a href="{{ route ('add-products') }}"> 
                                   <svg>    
                                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
@@ -1764,5 +1715,5 @@
     <!-- Plugin used-->
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/list-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:43 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('list-products') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:43 GMT -->
 </html>

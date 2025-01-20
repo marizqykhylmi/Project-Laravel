@@ -45612,6 +45612,54 @@ html[dir=rtl] body.dark-only .page-wrapper .page-body-wrapper .page-body .card:n
   .box-layout .general-widget .total-sales .revenue-card {
     display: none;
   }
+
+  .sponsorslider .marquee {
+    --gap: 1rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+  
+  .sponsorslider .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: %;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  .sponsorslider .marquee__content {
+    animation: scroll 20s linear infinite;
+  }
+  .sponsorslider .marquee:hover .marquee__content {
+    animation-play-state: paused;
+  }
+  
+  .sponsorslider img {
+    height: 150px;
+    object-fit:cover:
+    width:100%
+  }
+  
+  @keyframes scroll-abs {
+    from {
+      transform: translateX(calc(100% + var(--gap)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 }
 
 /**=====================

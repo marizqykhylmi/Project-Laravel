@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +19,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
@@ -163,7 +161,7 @@
                 <div class="onhover-show-div notification-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
+                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
                     <div class="flex-shrink-0"> 
@@ -171,7 +169,7 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
+                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
                     <div class="flex-shrink-0"> 
@@ -179,7 +177,7 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
+                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
                   </div>
                 </div>
@@ -309,7 +307,7 @@
                     <li class="total">
                       <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
                     </li>
-                    <li><a class="view-cart" href="cart.html">View Cart</a><a class="view-checkout f-right" href="checkout.html">Checkout</a></li>
+                    <li><a class="view-cart" href="{{ route ('cart') }}">View Cart</a><a class="view-checkout f-right" href="{{ route ('checkout') }}">Checkout</a></li>
                   </ul>
                 </div>
               </li>
@@ -359,11 +357,6 @@
                   <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
-                  <li class="pin-title sidebar-main-title">
-                    <div> 
-                      <h6>Pinned</h6>
-                    </div>
-                  </li>
                   <li class="sidebar-main-title">
                     <div>
                       <h6 class="lan-1">General</h6>
@@ -375,23 +368,11 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span class="lan-3">Dashboard</span></a>
+                      </svg><span>Dashboard</span></a>
                     <ul class="sidebar-submenu">
                       <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
-                      <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li>
-                      <li><a href="dashboard-03.html">project</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                      </svg><span class="lan-6">Widgets</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="general-widget.html">General</a></li>
-                      <li><a href="chart-widget.html">Chart</a></li>
+                      <li><a href="{{ route ('about-us') }}">About Us</a></li>
+                      
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
@@ -400,16 +381,32 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span class="lan-7">Page layout</span></a>
+                      </svg><span>Highlight</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a href="box-layout.html">Boxed</a></li>
-                      <li><a href="layout-rtl.html">RTL</a></li>
-                      <li><a href="layout-dark.html">Dark Layout</a></li>
-                      <li><a href="hide-on-scroll.html">Hide Nav Scroll</a></li>
+                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
+                      <li><a href="{{ route ('product') }}">Product</a></li>
+                      <li><a href="{{ route ('program') }}">Program</a></li>
+                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
+                      <li><a href="{{ route ('slider') }}">Slider</a></li>
+
                     </ul>
                   </li>
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
+                    </svg>
+                    <svg class="fill-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
+                    </svg><span>Post</span></a>
+                  <ul class="sidebar-submenu">
+                    <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
+                    <li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
+                    <li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
+                  </ul>
+                </li>
                     </ul>
                   </li>
+                  
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="landing-page.html">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-landing-page"></use>
@@ -431,7 +428,7 @@
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-internationalization"></use>
                       </svg><span>Translate</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/index.html" target="_blank">
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-starter-kit"></use>
                       </svg>
@@ -641,7 +638,8 @@
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('index') }}">
                       <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
-                      </a></li>
+                      </a>
+                    </li>
                     <li class="breadcrumb-item">Dashboard</li>
                     <li class="breadcrumb-item active">Default</li>
                   </ol>
@@ -658,7 +656,7 @@
                     <div class="d-flex"> 
                       <div class="flex-grow-1"> 
                         <h1>Hello,Anna Miller.</h1>
-                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn" href="list-products.html">Go Premium</a>
+                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn" href="{{ route ('list-products') }}">Go Premium</a>
                       </div>
                       <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
                       <div>  
@@ -753,7 +751,7 @@
                           <tr>
                             <td>
                               <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/1.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Sneaker Shoes</span>
+                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Sneaker Shoes</span>
                                     <h5>#A5647KB</h5></a></div>
                               </div>
                             </td>
@@ -768,7 +766,7 @@
                           <tr>
                             <td>
                               <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/2.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Sweat Shirt</span>
+                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Sweat Shirt</span>
                                     <h5>#NB86H2E</h5></a></div>
                               </div>
                             </td>
@@ -783,7 +781,7 @@
                           <tr>
                             <td>
                               <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/3.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Nike Travel Bag</span>
+                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Nike Travel Bag</span>
                                     <h5>#UB654GH</h5></a></div>
                               </div>
                             </td>
@@ -798,7 +796,7 @@
                           <tr>
                             <td>
                               <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/4.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="list-products.html"><span>Monster Cap</span>
+                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Monster Cap</span>
                                     <h5>#BAS4567</h5></a></div>
                               </div>
                             </td>
@@ -1101,9 +1099,16 @@
                             <div class="activity-dot-secondary"></div>
                           </div>
                         </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
+                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
                           <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
+                              <h5>
+                                 Jenny Watson <strong> Completed </strong> Create new component</h5><span>10.15pm</span></a>
+                                 <button class="btn btn-secondary mt-1 mb-1">Decline</button>
+                                 <button class="btn btn-primary mt-1 mb-1">Accept</button>
+                                </div>
+                          <div class="flex-shrink-0"> 
+                            <div class="activity-dot-secondary"></div>
+                          </div>
                         </div>
                         <div class="figma-icon"> 
                           <svg class="me-2">
@@ -1292,5 +1297,5 @@
     <!-- Plugin used-->
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
 </html>

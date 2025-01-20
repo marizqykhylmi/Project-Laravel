@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
+
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('program') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:25 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,8 +31,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/select2.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/dropzone.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -42,10 +40,10 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   </head>
-  <body> 
+  <body>
     <!-- loader starts-->
     <div class="loader-wrapper">
-      <div class="loader">    
+      <div class="loader">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -63,18 +61,18 @@
       <div class="page-header">
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href={{ route('index') }}><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
-              <svg class="sidebar-toggle"> 
+              <svg class="sidebar-toggle">
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
               </svg>
             </div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
             <div class="left-menu-header">
-              <ul class="header-left"> 
+              <ul class="header-left">
                 <li>
-                  <div class="form-group w-100"> 
+                  <div class="form-group w-100">
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
                         <svg class="search-bg svg-color me-2">
@@ -112,7 +110,7 @@
                     <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-primary"></div>
                     </div>
                   </div>
@@ -120,7 +118,7 @@
                     <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-secondary"></div>
                     </div>
                   </div>
@@ -254,7 +252,7 @@
                     <li class="total">
                       <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
                     </li>
-                    <li><a class="view-cart" href="cart.html">View Cart</a><a class="view-checkout f-right" href="checkout.html">Checkout</a></li>
+                    <li><a class="view-cart" href="{{ route ('cart') }}">View Cart</a><a class="view-checkout f-right" href="checkout.html">Checkout</a></li>
                   </ul>
                 </div>
               </li>
@@ -275,10 +273,10 @@
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard u-cf">
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
-            <div class="ProfileCard-realName">{{name}}</div>
+            <div class="ProfileCard-realName"></div>
             </div>
             </div>
           </script>
@@ -291,23 +289,23 @@
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="fill-svg">
           <div>
-            <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
+            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <svg class="sidebar-toggle"> 
+                <svg class="sidebar-toggle">
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
             </div>
-            <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+            <div class="logo-icon-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
               <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
-                  <li class="back-btn"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                  <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
                   <li class="pin-title sidebar-main-title">
-                    <div> 
+                    <div>
                       <h6>Pinned</h6>
                     </div>
                   </li>
@@ -322,23 +320,11 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span class="lan-3">Dashboard          </span></a>
+                      </svg><span>Dashboard</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a class="lan-4" href="index.html">Default</a></li>
-                      <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li>
-                      <li><a href="dashboard-03.html">Project</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                      </svg><span class="lan-6">Widgets</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="general-widget.html">General</a></li>
-                      <li><a href="chart-widget.html">Chart</a></li>
+                      <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
+                      <li><a href="{{ route ('about-us') }}">About Us</a></li>
+                      
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
@@ -347,355 +333,32 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span class="lan-7">Page layout</span></a>
+                      </svg><span>Highlight</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a href="box-layout.html">Boxed</a></li>
-                      <li><a href="layout-rtl.html">RTL</a></li>
-                      <li><a href="layout-dark.html">Dark Layout</a></li>
-                      <li><a href="hide-on-scroll.html">Hide Nav Scroll</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6 class="lan-8">Applications</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack">    </i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-project"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-project"></use>
-                      </svg><span>Project           </span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="projects.html">Project List</a></li>
-                      <li><a href="projectcreate.html">Create new</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="file-manager.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-file"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-file"></use>
-                      </svg><span>File manager</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack">        </i><a class="sidebar-link sidebar-title link-nav" href="kanban.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-board"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-board"></use>
-                      </svg><span>kanban Board</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-ecommerce"></use>
-                      </svg><span>Ecommerce</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="add-products.html">Add Product</a></li>
-                      <li><a href="product.html">Product</a></li>
-                      <li><a href="product-page.html">Product page</a></li>
-                      <li><a href="list-products.html">Product list</a></li>
-                      <li><a href="payment-details.html">Payment Details</a></li>
-                      <li><a href="order-history.html">Order History</a></li>
-                      <li><a class="submenu-title" href="#">Invoices
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="invoice-1.html">Invoice-1</a></li>
-                          <li><a href="invoice-2.html">Invoice-2</a></li>
-                          <li><a href="invoice-3.html">Invoice-3</a></li>
-                          <li><a href="invoice-4.html">Invoice-4</a></li>
-                          <li><a href="invoice-5.html">Invoice-5</a></li>
-                          <li><a href="invoice-template.html">Invoice-6</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="cart.html">Cart</a></li>
-                      <li><a href="list-wish.html">Wishlist</a></li>
-                      <li><a href="checkout.html">Checkout</a></li>
-                      <li><a href="pricing.html">Pricing</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="letter-box.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-email"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-email"></use>
-                      </svg><span>Letter Box</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-chat"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-chat"></use>
-                      </svg><span>Chat</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="private-chat.html">Private Chat</a></li>
-                      <li><a href="group-chat.html">Group Chat</a></li>
+                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
+                      <li><a href="{{ route ('product') }}">Product</a></li>
+                      <li><a href="{{ route ('program') }}">Program</a></li>
+                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
+                      <li><a href="{{ route ('slider') }}">Slider</a></li>
+
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-user"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-user"></use>
-                      </svg><span>Users</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="user-profile.html">Users Profile</a></li>
-                      <li><a href="edit-profile.html">Users Edit</a></li>
-                      <li><a href="user-cards.html">Users Cards</a></li>
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
+                    </svg>
+                    <svg class="fill-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
+                    </svg><span>Post</span></a>
+                  <ul class="sidebar-submenu">
+                    <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
+                    <li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
+                    <li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
+                  </ul>
+                </li>
                     </ul>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="bookmark.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-bookmark"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-bookmark"> </use>
-                      </svg><span>Bookmarks</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="contacts.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-contact"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-contact"> </use>
-                      </svg><span>Contacts</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="task.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-task"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-task"> </use>
-                      </svg><span>Tasks</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="calendar-basic.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-calendar"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-calender"></use>
-                      </svg><span>Calendar</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="social-app.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-social"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-social"> </use>
-                      </svg><span>Social App</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="to-do.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-to-do"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-to-do"> </use>
-                      </svg><span>To-Do</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="search.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-search"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"> </use>
-                      </svg><span>Search Result</span></a></li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6>Forms & Table</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-form"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-form"> </use>
-                      </svg><span>Forms</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="submenu-title" href="#">Form Controls
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="form-validation.html">Form Validation</a></li>
-                          <li><a href="base-input.html">Base Inputs</a></li>
-                          <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
-                          <li><a href="input-group.html">Input Groups</a></li>
-                          <li> <a href="input-mask.html">Input Mask</a></li>
-                          <li><a href="megaoptions.html">Mega Options</a></li>
-                        </ul>
-                      </li>
-                      <li><a class="submenu-title" href="#">Form Widgets
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="datepicker.html">Datepicker</a></li>
-                          <li><a href="touchspin.html">Touchspin</a></li>
-                          <li><a href="select2.html">Select2</a></li>
-                          <li><a href="switch.html">Switch</a></li>
-                          <li><a href="typeahead.html">Typeahead</a></li>
-                          <li><a href="clipboard.html">Clipboard</a></li>
-                        </ul>
-                      </li>
-                      <li><a class="submenu-title" href="#">Form layout
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="form-wizard.html">Form Wizard 1</a></li>
-                          <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
-                          <li><a href="two-factor.html">Two Factor</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-table"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-table"></use>
-                      </svg><span>Tables</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="submenu-title" href="#">Bootstrap Tables
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="bootstrap-basic-table.html">Basic Tables</a></li>
-                          <li><a href="table-components.html">Table components</a></li>
-                        </ul>
-                      </li>
-                      <li><a class="submenu-title" href="#">Data Tables
-                          <h5 class="sub-arrow"><i class="fa fa-angle-right"></i></h5></a>
-                        <ul class="submenu-content opensubmegamenu">
-                          <li><a href="datatable-basic-init.html">Basic Init</a></li>
-                          <li> <a href="datatable-advance.html">Advance Init </a></li>
-                          <li><a href="datatable-API.html">API</a></li>
-                          <li><a href="datatable-data-source.html">Data Sources</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="datatable-ext-autofill.html">Ex. Data Tables</a></li>
-                      <li><a href="jsgrid-table.html">Js Grid Table        </a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6>Components</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-ui-kits"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-ui-kits"></use>
-                      </svg><span>Ui Kits</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="avatars.html">Avatars</a></li>
-                      <li><a href="helper-classes.html">helper classes</a></li>
-                      <li><a href="grid.html">Grid</a></li>
-                      <li><a href="tag-pills.html">Tag & pills</a></li>
-                      <li><a href="progress-bar.html">Progress</a></li>
-                      <li><a href="modal.html">Modal</a></li>
-                      <li><a href="alert.html">Alert</a></li>
-                      <li><a href="popover.html">Popover</a></li>
-                      <li><a href="tooltip.html">Tooltip</a></li>
-                      <li><a href="dropdown.html">Dropdown</a></li>
-                      <li><a href="according.html">Accordion</a></li>
-                      <li><a href="tab-bootstrap.html">Tabs</a></li>
-                      <li><a href="list.html">Lists</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-bonus-kit"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-bonus-kit"></use>
-                      </svg><span>Bonus Ui</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="scrollable.html">Scrollable</a></li>
-                      <li><a href="tree.html">Tree view</a></li>
-                      <li><a href="toasts.html">Toasts</a></li>
-                      <li><a href="rating.html">Rating</a></li>
-                      <li><a href="dropzone.html">dropzone</a></li>
-                      <li><a href="tour.html">Tour</a></li>
-                      <li><a href="sweet-alert2.html">SweetAlert2</a></li>
-                      <li><a href="modal-animated.html">Animated Modal</a></li>
-                      <li><a href="owl-carousel.html">Owl Carousel</a></li>
-                      <li><a href="ribbons.html">Ribbons</a></li>
-                      <li><a href="pagination.html">Pagination</a></li>
-                      <li><a href="breadcrumb.html">Breadcrumb</a></li>
-                      <li><a href="range-slider.html">Range Slider</a></li>
-                      <li><a href="image-cropper.html">Image cropper</a></li>
-                      <li><a href="basic-card.html">Basic Card</a></li>
-                      <li><a href="creative-card.html">Creative Card</a></li>
-                      <li><a href="dragable-card.html">Draggable Card</a></li>
-                      <li><a href="timeline-v-1.html">Timeline </a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-animation"></use>
-                      </svg><span>Animation</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="animate.html">Animate</a></li>
-                      <li><a href="scroll-reval.html">Scroll Reveal</a></li>
-                      <li><a href="AOS.html">AOS animation</a></li>
-                      <li><a href="tilt.html">Tilt Animation</a></li>
-                      <li><a href="wow.html">Wow Animation</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-icons"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-icons"></use>
-                      </svg><span>Icons</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="flag-icon.html">Flag icon</a></li>
-                      <li><a href="font-awesome.html">Fontawesome Icon</a></li>
-                      <li><a href="ico-icon.html">Ico Icon</a></li>
-                      <li><a href="themify-icon.html">Themify Icon</a></li>
-                      <li><a href="feather-icon.html">Feather icon</a></li>
-                      <li><a href="whether-icon.html">Whether Icon</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-button"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-button"></use>
-                      </svg><span>Buttons</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="buttons.html">Default Style</a></li>
-                      <li><a href="button-group.html">Button Group</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-charts"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-charts"></use>
-                      </svg><span>Charts</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="chart-apex.html">Apex Chart</a></li>
-                      <li><a href="chart-google.html">Google Chart</a></li>
-                      <li><a href="chart-sparkline.html">Sparkline chart</a></li>
-                      <li><a href="chart-flot.html">Flot Chart</a></li>
-                      <li><a href="chart-knob.html">Knob Chart</a></li>
-                      <li><a href="chart-morris.html">Morris Chart</a></li>
-                      <li><a href="chartjs.html">Chatjs Chart</a></li>
-                      <li><a href="chartist.html">Chartist Chart</a></li>
-                      <li><a href="chart-peity.html">Peity Chart</a></li>
-                      <li><a href="echarts.html">Echarts</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6>Pages</h6>
-                    </div>
-                  </li>
+                  
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="landing-page.html">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-landing-page"></use>
@@ -717,7 +380,7 @@
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-internationalization"></use>
                       </svg><span>Translate</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/index.html" target="_blank">
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-starter-kit"></use>
                       </svg>
@@ -921,92 +584,135 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-sm-6 ps-0">
-                  <h3>Add Post</h3>
+                  <h3>Blog Details</h3>
                 </div>
                 <div class="col-sm-6 pe-0">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">                                       
+                    <li class="breadcrumb-item"><a href="index.html">
                         <svg class="stroke-icon">
                           <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                         </svg></a></li>
                     <li class="breadcrumb-item">Blog</li>
-                    <li class="breadcrumb-item active">Add Post</li>
+                    <li class="breadcrumb-item active">Blog Details</li>
                   </ol>
                 </div>
               </div>
             </div>
           </div>
           <!-- Container-fluid starts-->
-          <div class="container-fluid">
+          <div class="container-fluid blog-page">
             <div class="row">
-              <div class="col-sm-12">
+              <div class="col-xxl-6 box-col-40 xl-40">
                 <div class="card">
-                  <div class="card-header pb-0">
-                    <h4>Post Edit</h4>
+                  <div class="blog-box blog-shadow"><img class="img-fluid" src="../assets/images/blog/blog.jpg" alt="">
+                    <div class="blog-details">
+                      <p>25 July 2024</p>
+                      <h4>People just don't do it anymore. We have to change that. Sometimes the simplest things are the most profound.</h4>
+                      <ul class="blog-social">
+                        <li><i class="icofont icofont-user"></i>Mark Jecno</li>
+                        <li><i class="icofont icofont-thumbs-up"></i>02 Hits</li>
+                        <li><i class="icofont icofont-ui-chat"></i>598 Comments</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="card-body add-post">
-                    <form class="row needs-validation" novalidate="">
-                      <div class="col-sm-12">
-                        <div class="mb-3">
-                          <label for="validationCustom01">Description:</label>
-                          <input class="form-control" id="validationCustom01" type="text" placeholder="Post Description" required="">
-                          <div class="valid-feedback">Looks good!</div>
-                        </div>
-                        <div class="mb-3">
-                            <label>Type:</label>
-                            <div class="m-checkbox-inline">
-                              <label for="edo-ani">
-                                <input class="checkbox_animated" id="edo-ani" type="checkbox" name="chk-ani" >Text
-                              </label>
-                              <label for="edo-ani1">
-                                <input class="checkbox_animated" id="edo-ani1" type="checkbox" name="chk-ani" >Image
-                              </label>
-                              <label for="edo-ani2">
-                                <input class="checkbox_animated" id="edo-ani2" type="checkbox" name="chk-ani" checked="">Audio
-                              </label>
-                              <label for="edo-ani3">
-                                <input class="checkbox_animated" id="edo-ani3" type="checkbox" name="chk-ani" >Video
-                              </label>
-                            </div>
-                          </div>
-                        <div class="mb-3">
-                          <div class="col-form-label">Category:
-                            <select class="js-example-placeholder-multiple col-sm-12" multiple="multiple">
-                              <option value="AL">Gallery</option>
-                              <option value="WY">Program</option>
-                              <option value="AL">Sponsor</option>
-                              <option value="WY">Produk</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                              <div class="col-12">
-                                <label class="form-label" for="datetime-local1">Publish Date & Time</label>
-                                <div class="input-group flatpicker-calender product-date">
-                                  <input class="form-control" id="datetime-local1" type="date">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        <div class="email-wrapper">
-                          <div class="theme-form">
-                            <div class="mb-3">
-                              <label>Content:</label>
-                              <textarea id="text-box" name="text-box" cols="10" rows="2"></textarea>
-                            </div>
-                          </div>
+                </div>
+              </div>
+              <div class="col-xxl-6 box-col-60 xl-60">
+                <div class="card">
+                  <div class="blog-box blog-list row">
+                    <div class="col-sm-5"><img class="img-fluid sm-100-w" src="../assets/images/blog/blog-2.jpg" alt=""></div>
+                    <div class="col-sm-7">
+                      <div class="blog-details">
+                        <div class="blog-date"><span>02</span> January 2024</div>
+                        <h4>Encounter every day.</h4>
+                        <div class="blog-bottom-content">
+                          <ul class="blog-social">
+                            <li>by: Admin</li>
+                            <li>0 Hits</li>
+                          </ul>
+                          <hr>
+                          <p class="mt-0">A huge part of it is the incomparable beauty you can encounter every day.</p>
                         </div>
                       </div>
-                    </form>
-                    <form class="dropzone" id="singleFileUpload" action="https://admin.pixelstrap.net/upload.php">
-                        <div class="m-0 dz-message needsclick"><i data-feather="cloud"></i>
-                          <h4 class="mb-0">Drop files here or click to upload.</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="blog-box blog-list row">
+                    <div class="col-sm-5"><img class="img-fluid sm-100-w" src="../assets/images/blog/blog-3.jpg" alt=""></div>
+                    <div class="col-sm-7">
+                      <div class="blog-details">
+                        <div class="blog-date"><span>03</span> January 2024</div>
+                        <h4>Black color is important.</h4>
+                        <div class="blog-bottom-content">
+                          <ul class="blog-social">
+                            <li>by: Admin</li>
+                            <li>02 Hits</li>
+                          </ul>
+                          <hr>
+                          <p class="mt-0">The simplest things are the most profound. People just don't do it anymore.</p>
                         </div>
-                      </form>
-                    <div class="btn-showcase text-end">
-                      <button class="btn btn-primary" type="submit">Post</button>
-                      <input class="btn btn-light" type="reset" value="Discard">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3 box-col-3">
+                <div class="card">
+                  <div class="blog-box blog-grid text-center"><img class="img-fluid top-radius-blog" src="../assets/images/blog/blog-5.jpg" alt="">
+                    <div class="blog-details-main">
+                      <ul class="blog-social">
+                        <li>20 April 2024</li>
+                        <li>by: Admin</li>
+                        <li>0 Hits</li>
+                      </ul>
+                      <hr>
+                      <h4 class="blog-bottom-details">A huge part of it is the incomparable beauty you can encounter every day.People just anymore profound.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3 box-col-3">
+                <div class="card">
+                  <div class="blog-box blog-grid text-center"><img class="img-fluid top-radius-blog" src="../assets/images/blog/blog-6.jpg" alt="">
+                    <div class="blog-details-main">
+                      <ul class="blog-social">
+                        <li>9 April 2024</li>
+                        <li>by: Admin</li>
+                        <li>0 Hits</li>
+                      </ul>
+                      <hr>
+                      <h4 class="blog-bottom-details">People just don't do it anymore. We have to change that. Sometimes the simplest things are the most profound.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3 box-col-3">
+                <div class="card">
+                  <div class="blog-box blog-grid text-center"><img class="img-fluid top-radius-blog" src="../assets/images/blog/blog-5.jpg" alt="">
+                    <div class="blog-details-main">
+                      <ul class="blog-social">
+                        <li>15 April 2024</li>
+                        <li>by: Admin</li>
+                        <li>0 Hits</li>
+                      </ul>
+                      <hr>
+                      <h4 class="blog-bottom-details">A huge part of it is the incomparable beauty you can encounter every day.People just anymore profound.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3 box-col-3">
+                <div class="card">
+                  <div class="blog-box blog-grid text-center"><img class="img-fluid top-radius-blog" src="../assets/images/blog/blog-6.jpg" alt="">
+                    <div class="blog-details-main">
+                      <ul class="blog-social">
+                        <li>11 April 2024</li>
+                        <li>by: Admin</li>
+                        <li>0 Hits</li>
+                      </ul>
+                      <hr>
+                      <h4 class="blog-bottom-details">People just don't do it anymore. We have to change that. Sometimes the simplest things are the most profound.</h4>
                     </div>
                   </div>
                 </div>
@@ -1049,17 +755,9 @@
     <!-- Plugins JS start-->
     <script src="../assets/js/sidebar-menu.js"></script>
     <script src="../assets/js/sidebar-pin.js"></script>
-    <script src="../assets/js/editor/ckeditor/ckeditor.js"></script>
-    <script src="../assets/js/editor/ckeditor/adapters/jquery.js"></script>
     <script src="../assets/js/slick/slick.min.js"></script>
     <script src="../assets/js/slick/slick.js"></script>
     <script src="../assets/js/header-slick.js"></script>
-    <script src="../assets/js/dropzone/dropzone.js"></script>
-    <script src="../assets/js/dropzone/dropzone-script.js"></script>
-    <script src="../assets/js/select2/select2.full.min.js"></script>
-    <script src="../assets/js/select2/select2-custom.js"></script>
-    <script src="../assets/js/email-app.js"></script>
-    <script src="../assets/js/form-validation-custom.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
@@ -1067,5 +765,5 @@
     <!-- Plugin used-->
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('checkout') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:26 GMT -->
 </html>

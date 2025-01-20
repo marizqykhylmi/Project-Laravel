@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/gallery-with-description.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:25 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('checkout') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:11 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,10 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-    
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -33,7 +33,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/photoswipe.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -78,7 +77,9 @@
                   <div class="form-group w-100"> 
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
-                        <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
+                        <svg class="search-bg svg-color me-2">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"></use>
+                        </svg>
                         <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
                       </div>
                     </div>
@@ -108,7 +109,7 @@
                 <div class="onhover-show-div notification-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
                     <div class="flex-shrink-0"> 
@@ -116,7 +117,7 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
                     <div class="flex-shrink-0"> 
@@ -124,15 +125,15 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
+                    <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                         <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
                   </div>
                 </div>
               </li>
               <li class="onhover-dropdown">
-                <div class="icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                <svg>
+                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-star"></use>
+                </svg>
                 <div class="onhover-show-div bookmark-flip">
                   <div class="flip-card">
                     <div class="flip-card-inner">
@@ -177,19 +178,19 @@
               </li>
               <li>
                 <div class="mode">
-                  <button id="theme-toggle" class="theme-toggle-btn">
-                  </button>
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
+                  </svg>
+                </div>
               </li>
               <li class="onhover-dropdown">
                 <div class="message">
-                  <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6c757d" width="24" height="24">
-                    <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z"/>
-                  </svg>
-                  
-                  <span class="badge rounded-pill badge-secondary">4</span>
-                </div>                                
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-message"></use>
+                  </svg><span class="badge rounded-pill badge-secondary">4</span>
+                </div>
                 <div class="onhover-show-div message-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Message</h6>
+                  <h6 class="f-18 mb-0 dropdown-title">Message                               </h6>
                   <ul>
                     <li>
                       <div class="d-flex align-items-start">
@@ -227,7 +228,9 @@
               </li>
               <li class="cart-nav onhover-dropdown">
                 <div class="cart-box">
-                  <i class="fas fa-shopping-cart"></i>
+                  <svg>
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Buy"></use>
+                  </svg>
                 </div>
                 <div class="cart-dropdown onhover-show-div">
                   <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
@@ -266,7 +269,7 @@
                   <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                   <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                   <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="{{route ('login')}}"><i data-feather="log-in"> </i><span>Logout</span></a></li>
+                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -303,6 +306,10 @@
                   <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
+                  <li class="pin-title sidebar-main-title">
+                    <div> 
+                      <h6>Pinned</h6>
+                    </div>
                   </li>
                   <li class="sidebar-main-title">
                     <div>
@@ -352,10 +359,7 @@
                 </li>
                     </ul>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">                     
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      </svg><span>Editors</span></a>
+                    </ul>
                   </li>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
@@ -363,20 +367,21 @@
           </div>
         </div>
         <!-- Page Sidebar Ends-->
-        <div class="page-body">
+        <div class="page-body checkout">
           <div class="container-fluid">
             <div class="page-title">
               <div class="row">
                 <div class="col-sm-6 ps-0">
-                  <h3>Gallery Grid</h3>
+                  <h3>Checkout</h3>
                 </div>
                 <div class="col-sm-6 pe-0">
                   <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">
-                          <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
-                          </a></li>
-                    <li class="breadcrumb-item">Gallery</li>
-                    <li class="breadcrumb-item"><a href="{{ route('add-post-gallery') }}">Add Gallery</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route ('index') }}">                                       
+                        <svg class="stroke-icon">
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
+                        </svg></a></li>
+                    <li class="breadcrumb-item">Ecommerce</li>
+                    <li class="breadcrumb-item active">Checkout</li>
                   </ol>
                 </div>
               </div>
@@ -384,69 +389,299 @@
           </div>
           <!-- Container-fluid starts-->
           <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <h4>IMAGE GALLERY </h4>
-                  </div>
-                  <div class="my-gallery card-body row gallery-with-description" itemscope="">
-                    @foreach($posts as $post)
-                    <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
-                      <a href="#" itemprop="contentUrl">
-                        <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
-                        <div class="caption">
-                          <h4>{{ $post->title }}</h4>
-                          <p>{{ $post->description }}</p>
-                          <p><small>Published on: {{ $post->publish_date }}</small></p>
+            <div class="card">
+              <div class="card-header pb-0">
+                <h4>Billing Details</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-xl-6 col-sm-12">
+                    <form>
+                      <div class="row">
+                        <div class="mb-3 col-sm-6">
+                          <label for="inputEmail4">First Name</label>
+                          <input class="form-control" id="inputEmail4" type="email">
                         </div>
-                      </a>
-                    </figure>
-                    @endforeach
-                  </div>
-                  
-                  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                    <!--
-                    Background of PhotoSwipe.
-                    It's a separate element, as animating opacity is faster than rgba().
-                    -->
-                    <div class="pswp__bg"></div>
-                    <!-- Slides wrapper with overflow:hidden.-->
-                    <div class="pswp__scroll-wrap">
-                      <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.-->
-                      <!-- don't modify these 3 pswp__item elements, data is added later on.-->
-                      <div class="pswp__container">
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
+                        <div class="mb-3 col-sm-6">
+                          <label for="inputPassword4">Last Name</label>
+                          <input class="form-control" id="inputPassword4" type="password">
+                        </div>
                       </div>
-                      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.-->
-                      <div class="pswp__ui pswp__ui--hidden">
-                        <div class="pswp__top-bar">
-                          <!-- Controls are self-explanatory. Order can be changed.-->
-                          <div class="pswp__counter"></div>
-                          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                          <button class="pswp__button pswp__button--share" title="Share"></button>
-                          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR-->
-                          <!-- element will get class pswp__preloader--active when preloader is running-->
-                          <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                              <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                              </div>
+                      <div class="row">
+                        <div class="mb-3 col-sm-6">
+                          <label for="inputEmail5">Phone</label>
+                          <input class="form-control" id="inputEmail5" type="email">
+                        </div>
+                        <div class="mb-3 col-sm-6">
+                          <label for="inputPassword7">Email Address</label>
+                          <input class="form-control" id="inputPassword7" type="password">
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputState">Country</label>
+                        <select class="form-control" id="inputState">
+                          <option selected="">Choose...</option>
+                          <option>Afghanistan</option>
+                          <option>Albania</option>
+                          <option>Algeria</option>
+                          <option>Angola</option>
+                          <option>Antigua and Barbuda</option>
+                          <option>Argentina</option>
+                          <option>Armenia</option>
+                          <option>Australia</option>
+                          <option>Austria</option>
+                          <option>Azerbaijan</option>
+                          <option>Bahamas</option>
+                          <option>Bahrain</option>
+                          <option>Bangladesh</option>
+                          <option>Barbados</option>
+                          <option>Belgium</option>
+                          <option>Belize</option>
+                          <option>Benin</option>
+                          <option>Bhutan</option>
+                          <option>Bolivia</option>
+                          <option>Bosnia and Herzegovina</option>
+                          <option>Botswana</option>
+                          <option>Brazil</option>
+                          <option>Brunei</option>
+                          <option>Bulgaria</option>
+                          <option>Burkina Faso</option>
+                          <option>Burundi</option>
+                          <option>Cambodia</option>
+                          <option>Cameroon</option>
+                          <option>Canada</option>
+                          <option>Central African Republic</option>
+                          <option>Chad</option>
+                          <option>Chile</option>
+                          <option>China</option>
+                          <option>Colombia</option>
+                          <option>Comoros</option>
+                          <option>Congo (Brazzaville)</option>
+                          <option>Congo (Kinshasa)</option>
+                          <option>Costa Rica</option>
+                          <option>Côte d'Ivoire</option>
+                          <option>Croatia</option>
+                          <option>Cuba</option>
+                          <option>Cyprus</option>
+                          <option>Czech Republic</option>
+                          <option>Denmark</option>
+                          <option>Djibouti</option>
+                          <option>Dominica</option>
+                          <option>Dominican Republic</option>
+                          <option>Ecuador</option>
+                          <option>Egypt</option>
+                          <option>El Salvador</option>
+                          <option>Equatorial Guinea</option>
+                          <option>Eritrea</option>
+                          <option>Estonia</option>
+                          <option>Ethiopia</option>
+                          <option>Fiji</option>
+                          <option>Finland</option>
+                          <option>France</option>
+                          <option>Gabon</option>
+                          <option>Gambia</option>
+                          <option>Georgia</option>
+                          <option>Germany</option>
+                          <option>Ghana</option>
+                          <option>Greece</option>
+                          <option>Grenada</option>
+                          <option>Guatemala</option>
+                          <option>Guinea</option>
+                          <option>Guinea-Bissau</option>
+                          <option>Guyana</option>
+                          <option>Haiti</option>
+                          <option>Honduras</option>
+                          <option>Hungary</option>
+                          <option>Iceland</option>
+                          <option>India</option>
+                          <option>Indonesia</option>
+                          <option>Iran</option>
+                          <option>Iraq</option>
+                          <option>Ireland</option>
+                          <option>Israel</option>
+                          <option>Italy</option>
+                          <option>Jamaica</option>
+                          <option>Japan</option>
+                          <option>Jordan</option>
+                          <option>Kazakhstan</option>
+                          <option>Kenya</option>
+                          <option>Kiribati</option>
+                          <option>Kosovo</option>
+                          <option>Kuwait</option>
+                          <option>Kyrgyzstan</option>
+                          <option>Laos</option>
+                          <option>Latvia</option>
+                          <option>Lebanon</option>
+                          <option>Lesotho</option>
+                          <option>Liberia</option>
+                          <option>Libya</option>
+                          <option>Lithuania</option>
+                          <option>Luxembourg</option>
+                          <option>Macedonia (FYROM)</option>
+                          <option>Madagascar</option>
+                          <option>Malawi</option>
+                          <option>Malaysia</option>
+                          <option>Maldives</option>
+                          <option>Mali</option>
+                          <option>Malta</option>
+                          <option>Marshall Islands</option>
+                          <option>Mauritania</option>
+                          <option>Mauritius</option>
+                          <option>Mexico</option>
+                          <option>Micronesia</option>
+                          <option>Moldova</option>
+                          <option>Monaco</option>
+                          <option>Mongolia</option>
+                          <option>Montenegro</option>
+                          <option>Morocco</option>
+                          <option>Mozambique</option>
+                          <option>Myanmar (Burma)</option>
+                          <option>Namibia</option>
+                          <option>Nauru</option>
+                          <option>Nepal</option>
+                          <option>Netherlands</option>
+                          <option>New Zealand</option>
+                          <option>Nicaragua</option>
+                          <option>Niger</option>
+                          <option>Nigeria</option>
+                          <option>Norway</option>
+                          <option>Oman</option>
+                          <option>Pakistan</option>
+                          <option>Palau</option>
+                          <option>Panama</option>
+                          <option>Papua New Guinea</option>
+                          <option>Paraguay</option>
+                          <option>Peru</option>
+                          <option>Philippines</option>
+                          <option>Poland</option>
+                          <option>Portugal</option>
+                          <option>Qatar</option>
+                          <option>Romania</option>
+                          <option>Russia</option>
+                          <option>Rwanda</option>
+                          <option>Saint Kitts and Nevis</option>
+                          <option>Saint Lucia</option>
+                          <option>Saint Vincent and the Grenadines</option>
+                          <option>Samoa</option>
+                          <option>San Marino</option>
+                          <option>Sao Tome and Principe</option>
+                          <option>Saudi Arabia</option>
+                          <option>Senegal</option>
+                          <option>Serbia</option>
+                          <option>Seychelles</option>
+                          <option>Sierra Leone</option>
+                          <option>Singapore</option>
+                          <option>Sint Maarten (Dutch part)</option>
+                          <option>Slovakia</option>
+                          <option>Slovenia</option>
+                          <option>Solomon Islands</option>
+                          <option>Somalia</option>
+                          <option>South Africa</option>
+                          <option>South Korea</option>
+                          <option>South Sudan</option>
+                          <option>Spain</option>
+                          <option>Sri Lanka</option>
+                          <option>Sudan</option>
+                          <option>Suriname</option>
+                          <option>Swaziland</option>
+                          <option>Sweden</option>
+                          <option>Switzerland</option>
+                          <option>Syria</option>
+                          <option>Tajikistan</option>
+                          <option>Tanzania</option>
+                          <option>Thailand</option>
+                          <option>Timor-Leste (East Timor)</option>
+                          <option>Togo</option>
+                          <option>Tonga</option>
+                          <option>Trinidad and Tobago</option>
+                          <option>Tunisia</option>
+                          <option>Turkey</option>
+                          <option>Turkmenistan</option>
+                          <option>Tuvalu</option>
+                          <option>Uganda</option>
+                          <option>Ukraine</option>
+                          <option>United Arab Emirates</option>
+                          <option>United Kingdom</option>
+                          <option>United States</option>
+                          <option>Uruguay</option>
+                          <option>Uzbekistan</option>
+                          <option>Vanuatu</option>
+                          <option>Vatican City</option>
+                          <option>Venezuela</option>
+                          <option>Vietnam</option>
+                          <option>Yemen</option>
+                          <option>Zambia</option>
+                          <option>Zimbabwe</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputAddress5">Address</label>
+                        <input class="form-control" id="inputAddress5" type="text">
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputCity">Town/City</label>
+                        <input class="form-control" id="inputCity" type="text">
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputAddress2">State/Country</label>
+                        <input class="form-control" id="inputAddress2" type="text">
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputAddress6">Postal Code</label>
+                        <input class="form-control" id="inputAddress6" type="text">
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input class="form-check-input" id="gridCheck" type="checkbox">
+                          <label class="form-check-label" for="gridCheck">Check me out</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-xl-6 col-sm-12">
+                    <div class="checkout-details">
+                      <div class="order-box">
+                        <div class="title-box">
+                          <div class="checkbox-title">
+                            <h4>Product </h4><span>Total</span>
+                          </div>
+                        </div>
+                        <ul class="qty">
+                          <li>Pink Slim Shirt × 1 <span>$25.10</span></li>
+                          <li>SLim Fit Jeans × 1 <span>$555.00</span></li>
+                        </ul>
+                        <ul class="sub-total">
+                          <li>Subtotal <span class="count">$380.10</span></li>
+                          <li class="shipping-class">Shipping
+                            <div class="shopping-checkout-option">
+                              <label class="d-block" for="chk-ani">
+                                <input class="checkbox_animated" id="chk-ani" type="checkbox" checked="">Option 1
+                              </label>
+                              <label class="d-block" for="chk-ani1">
+                                <input class="checkbox_animated" id="chk-ani1" type="checkbox">Option 2
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                        <ul class="sub-total total">
+                          <li>Total <span class="count">$620.00</span></li>
+                        </ul>
+                        <div class="animate-chk">
+                          <div class="row">
+                            <div class="col">
+                              <label class="d-block" for="edo-ani">
+                                <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" checked="" data-original-title="" title="">Check Payments
+                              </label>
+                              <label class="d-block" for="edo-ani1">
+                                <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" data-original-title="" title="">Cash On Delivery
+                              </label>
+                              <label class="d-block" for="edo-ani2">
+                                <input class="radio_animated" id="edo-ani2" type="radio" name="rdo-ani" checked="" data-original-title="" title="">PayPal<img class="img-paypal" src="../assets/images/checkout/paypal.png" alt="">
+                              </label>
                             </div>
                           </div>
                         </div>
-                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                          <div class="pswp__share-tooltip"></div>
-                        </div>
-                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                        <div class="pswp__caption">
-                          <div class="pswp__caption__center"></div>
-                        </div>
+                        <div class="order-place"><a class="btn btn-primary" href="#">Place Order  </a></div>
                       </div>
                     </div>
                   </div>
@@ -493,9 +728,6 @@
     <script src="../assets/js/slick/slick.min.js"></script>
     <script src="../assets/js/slick/slick.js"></script>
     <script src="../assets/js/header-slick.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe.min.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe-ui-default.min.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
@@ -503,5 +735,5 @@
     <!-- Plugin used-->
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/gallery-with-description.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:25 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('checkout') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:12 GMT -->
 </html>

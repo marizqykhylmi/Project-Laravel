@@ -43,39 +43,49 @@
         <div class="col-12 p-0">    
           <div class="login-card login-dark">
             <div>
-              <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt="looginpage"></a></div>
+              <div><a class="logo" href="{{ route ('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt="looginpage"></a></div>
               <div class="login-main"> 
-                <form class="theme-form">
+                <form class="theme-form" method="POST" action="{{ route ('register.submit')}}">
+                  @csrf
                   <h4>Create your account</h4>
                   <p>Enter your personal details to create account</p>
                   <div class="form-group">
                     <label class="col-form-label pt-0">Your Name</label>
                     <div class="row g-2">
                       <div class="col-6">
-                        <input class="form-control" type="text" required="" placeholder="First name">
+                        <input class="form-control" type="text" name="name" required="" placeholder="First name" value="{{ old('name') }}">
                       </div>
                       <div class="col-6">
-                        <input class="form-control" type="text" required="" placeholder="Last name">
+                        <input class="form-control" type="text" required="" placeholder="Last name" value="{{ old('lastname') }}">
                       </div>
                     </div>
+                    @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label class="col-form-label">Email Address</label>
-                    <input class="form-control" type="email" required="" placeholder="Test@gmail.com">
+                    <input class="form-control" type="email" name="email" required="" placeholder="Test@gmail.com" value="{{ old('email') }}">
+                    @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label class="col-form-label">Password</label>
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                      <input class="form-control" type="password" name="password" required="" placeholder="*********">
                       <div class="show-hide"><span class="show"></span></div>
                     </div>
+                    @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="form-group mb-0">
                     <div class="custom-checkbox p-0">
                       <input id="checkbox1" type="checkbox">
                       <label class="text-muted" for="checkbox1">Agree with<a class="ms-2" href="#">Privacy Policy</a></label>
                     </div>
-                    <button class="btn btn-primary btn-block w-100" type="submit" href="{{ route('index') }}">Create Account</button>
+                    <button class="btn btn-primary btn-block w-100" type="submit">Create Account</button>
                   </div>
                   <h6 class="text-muted mt-4 or">Or signup with</h6>
                   <div class="social mt-4">

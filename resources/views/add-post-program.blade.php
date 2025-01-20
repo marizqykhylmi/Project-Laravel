@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/gallery-with-description.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:25 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,10 +16,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -33,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/select2.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/dropzone.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -42,6 +45,7 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+
   </head>
   <body> 
     <!-- loader starts-->
@@ -64,7 +68,7 @@
       <div class="page-header">
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
               <svg class="sidebar-toggle"> 
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
@@ -101,10 +105,61 @@
               </li>
               <li class="onhover-dropdown">
                 <div class="notification-box">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Bell"></use>
-                  </svg><span class="badge rounded-pill badge-primary">3</span>
-                </div>
+                  <i class="fa fa-bell animated-icon"></i>
+                  <span class="badge rounded-pill badge-primary">3</span>
+              
+              <style>
+                .animated-icon {
+                  animation: bell-shake 1.5s infinite;
+                }
+              
+                @keyframes bell-shake {
+                  0%, 100% {
+                    transform: rotate(0);
+                  }
+                  25% {
+                    transform: rotate(-15deg);
+                  }
+                  50% {
+                    transform: rotate(15deg);
+                  }
+                  75% {
+                    transform: rotate(-15deg);
+                  }
+                }
+
+                /* Tombol switch theme */
+                .theme-toggle-btn {
+                  background-color: transparent;
+                  border: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 10px;
+                  cursor: pointer;
+                  border-radius: 50%;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                  transition: all 0.3s ease;
+                }
+
+                .theme-toggle-btn:hover {
+                  background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                .theme-icon {
+                  width: 20px;
+                  height: 20px;
+                  fill: #333; 
+                  transition: all 0.3s ease;
+                }
+
+                /* Dark mode toggle */
+                body.dark-mode .theme-toggle-btn .theme-icon {
+                  transform: rotate(180deg);
+                  fill: #fff;
+                }
+              </style>
+              
                 <div class="onhover-show-div notification-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
@@ -178,6 +233,9 @@
               <li>
                 <div class="mode">
                   <button id="theme-toggle" class="theme-toggle-btn">
+                    <svg class="theme-icon" width="24" height="24">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
+                    </svg>
                   </button>
               </li>
               <li class="onhover-dropdown">
@@ -303,6 +361,10 @@
                   <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
+                  <li class="pin-title sidebar-main-title">
+                    <div> 
+                      <h6>Pinned</h6>
+                    </div>
                   </li>
                   <li class="sidebar-main-title">
                     <div>
@@ -330,11 +392,11 @@
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
                       </svg><span>Highlight</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
-                      <li><a href="{{ route ('product') }}">Product</a></li>
-                      <li><a href="{{ route ('program') }}">Program</a></li>
-                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
-                      <li><a href="{{ route ('slider') }}">Slider</a></li>
+                        <li><a href="{{ route ('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ route ('product') }}">Product</a></li>
+                        <li><a href="{{ route ('program') }}">Program</a></li>
+                        <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
+                        <li><a href="{{ route ('slider') }}">Slider</a></li>
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
@@ -352,11 +414,83 @@
                 </li>
                     </ul>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">                     
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      </svg><span>Editors</span></a>
+                  <li class="sidebar-main-title">
                   </li>
+                    <div class="mega-menu-container menu-content">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col mega-box">
+                            <div class="link-section">
+                              <div class="submenu-title">
+                                <h5>Error Page</h5>
+                              </div>
+                              <ul class="submenu-content opensubmegamenu">
+                                <li><a href="error-400.html">Error 400</a></li>
+                                <li><a href="error-401.html">Error 401</a></li>
+                                <li><a href="error-403.html">Error 403</a></li>
+                                <li><a href="error-404.html">Error 404</a></li>
+                                <li><a href="error-500.html">Error 500</a></li>
+                                <li><a href="error-503.html">Error 503</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col mega-box">
+                            <div class="link-section">
+                              <div class="submenu-title">
+                                <h5> Authentication</h5>
+                              </div>
+                              <ul class="submenu-content opensubmegamenu">
+                                <li><a href="login.html" target="_blank">Login Simple</a></li>
+                                <li><a href="login_one.html" target="_blank">Login bg image</a></li>
+                                <li><a href="login_two.html" target="_blank">Login image two                      </a></li>
+                                <li><a href="login-bs-validation.html" target="_blank">Login validation</a></li>
+                                <li><a href="login-bs-tt-validation.html" target="_blank">Login tooltip</a></li>
+                                <li><a href="login-sa-validation.html" target="_blank">Login sweetalert</a></li>
+                                <li><a href="sign-up.html" target="_blank">Register Simple</a></li>
+                                <li><a href="sign-up-one.html" target="_blank">Register Image                              </a></li>
+                                <li><a href="sign-up-two.html" target="_blank">Register two</a></li>
+                                <li><a href="sign-up-wizard.html" target="_blank">Register wizard</a></li>
+                                <li><a href="unlock.html">Unlock User</a></li>
+                                <li><a href="forget-password.html">Forget Password</a></li>
+                                <li><a href="reset-password.html">Reset Password</a></li>
+                                <li><a href="maintenance.html">Maintenance</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col mega-box">
+                            <div class="link-section">
+                              <div class="submenu-title">
+                                <h5>Coming Soon</h5>
+                              </div>
+                              <ul class="submenu-content opensubmegamenu">
+                                <li><a href="comingsoon.html">Coming Simple</a></li>
+                                <li><a href="comingsoon-bg-video.html">Coming with Bg video</a></li>
+                                <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col mega-box">
+                            <div class="link-section">
+                              <div class="submenu-title">
+                                <h5>Email templates</h5>
+                              </div>
+                              <ul class="submenu-content opensubmegamenu">
+                                <li><a href="basic-template.html">Basic Email</a></li>
+                                <li><a href="email-header.html">Basic Header</a></li>
+                                <li><a href="template-email.html">Ecomerce Template</a></li>
+                                <li><a href="template-email-2.html">Email Template 2</a></li>
+                                <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
+                                <li><a href="email-order-success.html">Order Success</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </a>
+                </li>
+                </ul>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
             </nav>
@@ -368,15 +502,15 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-sm-6 ps-0">
-                  <h3>Gallery Grid</h3>
+                  <h3>Post Program</h3>
                 </div>
-                <div class="col-sm-6 pe-0">
+                <div class="col-sm-6 p-0">
                   <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">
-                          <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
-                          </a></li>
-                    <li class="breadcrumb-item">Gallery</li>
-                    <li class="breadcrumb-item"><a href="{{ route('add-post-gallery') }}">Add Gallery</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">
+                      <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
+                      </a></li>
+                    <li class="breadcrumb-item">Blog</li>
+                    <li class="breadcrumb-item active">Add Post</li>
                   </ol>
                 </div>
               </div>
@@ -388,72 +522,82 @@
               <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header pb-0">
-                    <h4>IMAGE GALLERY </h4>
+                    <h4>Post Edit</h4>
                   </div>
-                  <div class="my-gallery card-body row gallery-with-description" itemscope="">
-                    @foreach($posts as $post)
-                    <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
-                      <a href="#" itemprop="contentUrl">
-                        <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
-                        <div class="caption">
-                          <h4>{{ $post->title }}</h4>
-                          <p>{{ $post->description }}</p>
-                          <p><small>Published on: {{ $post->publish_date }}</small></p>
+                  <div class="card-body add-post">
+                    <form class="row needs-validation" novalidate="" id="formPost">
+                      <div class="col-sm-12">
+                        <div class="mb-3">
+                          <div class="mb-3">
+                          </div>
+                          <label for="title">Title:</label>
+                          <input class="form-control" id="title" type="text" placeholder="Post Title" required="">
+                          <div class="invalid-feedback">Please fill in the title.</div>
                         </div>
-                      </a>
-                    </figure>
-                    @endforeach
-                  </div>
-                  
-                  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                    <!--
-                    Background of PhotoSwipe.
-                    It's a separate element, as animating opacity is faster than rgba().
-                    -->
-                    <div class="pswp__bg"></div>
-                    <!-- Slides wrapper with overflow:hidden.-->
-                    <div class="pswp__scroll-wrap">
-                      <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.-->
-                      <!-- don't modify these 3 pswp__item elements, data is added later on.-->
-                      <div class="pswp__container">
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
                       </div>
-                      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.-->
-                      <div class="pswp__ui pswp__ui--hidden">
-                        <div class="pswp__top-bar">
-                          <!-- Controls are self-explanatory. Order can be changed.-->
-                          <div class="pswp__counter"></div>
-                          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                          <button class="pswp__button pswp__button--share" title="Share"></button>
-                          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR-->
-                          <!-- element will get class pswp__preloader--active when preloader is running-->
-                          <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                              <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                              </div>
-                            </div>
+                      <div class="col-sm-12">
+                        <div class="mb-3">
+                          <label for="description">Description:</label>
+                          <input class="form-control" id="description" type="text" placeholder="Post Description" required="">
+                          <div class="invalid-feedback">Please fill in the description.</div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                          {{-- <label>Type:</label> --}}
+                          <div class="m-checkbox-inline">
+                            {{-- <label for="edo-ani">
+                              <input class="checkbox_animated" id="edo-ani" type="checkbox" name="chk-ani" required="">Text
+                            </label>
+                            <label for="edo-ani1">
+                              <input class="checkbox_animated" id="edo-ani1" type="checkbox" name="chk-ani" required="">Image
+                            </label>
+                            <label for="edo-ani2">
+                              <input class="checkbox_animated" id="edo-ani2" type="checkbox" name="chk-ani" required="">Audio
+                            </label>
+                            <label for="edo-ani3">
+                              <input class="checkbox_animated" id="edo-ani3" type="checkbox" name="chk-ani" required="">Video
+                            </label> --}}
+                          </div>
+                          <div class="invalid-feedback">Please choose one type.</div>
+                        </div>
+                      {{-- <div class="mb-3">
+                        <div class="col-12">
+                          <label class="form-label" for="datetime-local1">Publish Date & Time</label>
+                          <div class="input-group flatpicker-calender product-date">
+                            <input class="form-control" id="datetime-local1" type="datetime-local" required="">
+                          </div>
+                          <div class="invalid-feedback">Please choose a date and time.</div>
+                        </div>
+                      </div> --}}
+                      <div class="email-wrapper">
+                        <div class="theme-form">
+                          <div class="mb-3">
+                            <label>Content:</label>
+                            <textarea id="text-box" name="text-box" cols="10" rows="2" required=""></textarea>
+                            <div class="invalid-feedback">Please fill in the content.</div>
                           </div>
                         </div>
-                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                          <div class="pswp__share-tooltip"></div>
-                        </div>
-                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                        <div class="pswp__caption">
-                          <div class="pswp__caption__center"></div>
-                        </div>
                       </div>
+                    </form>
+                    <form class="dropzone" id="singleFileUpload" action="https://admin.pixelstrap.net/upload.php">
+                        <div class="m-0 dz-message needsclick"><i data-feather="cloud"></i>
+                          <h4 class="mb-0">Drop files here or click to upload.</h4>
+                        </div>
+                      </form>
+                    <div class="btn-showcase text-end">
+                      <button class="btn btn-primary" type="submit">Post</button>
+                      <input class="btn btn-light" type="reset" onclick="clearForm()" value="Discard">
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <script>
+            function clearForm() {
+              document.getElementById("formPost").reset();
+            }
+          </script>        
           <!-- Container-fluid Ends-->
         </div>
         <!-- footer start-->
@@ -490,18 +634,24 @@
     <!-- Plugins JS start-->
     <script src="../assets/js/sidebar-menu.js"></script>
     <script src="../assets/js/sidebar-pin.js"></script>
+    <script src="../assets/js/editor/ckeditor/ckeditor.js"></script>
+    <script src="../assets/js/editor/ckeditor/adapters/jquery.js"></script>
     <script src="../assets/js/slick/slick.min.js"></script>
     <script src="../assets/js/slick/slick.js"></script>
     <script src="../assets/js/header-slick.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe.min.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe-ui-default.min.js"></script>
-    <script src="../assets/js/photoswipe/photoswipe.js"></script>
+    <script src="../assets/js/dropzone/dropzone.js"></script>
+    <script src="../assets/js/dropzone/dropzone-script.js"></script>
+    <script src="../assets/js/select2/select2.full.min.js"></script>
+    <script src="../assets/js/select2/select2-custom.js"></script>
+    <script src="../assets/js/email-app.js"></script>
+    <script src="../assets/js/form-validation-custom.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <!-- Plugin used-->
+    
   </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/gallery-with-description.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:25 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
 </html>
