@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,10 +45,10 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   </head>
-  <body onload="startTime()"> 
+  <body onload="startTime()">
     <!-- loader starts-->
     <div class="loader-wrapper">
-      <div class="loader">    
+      <div class="loader">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -68,16 +68,16 @@
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
-              <svg class="sidebar-toggle"> 
+              <svg class="sidebar-toggle">
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
               </svg>
             </div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
             <div class="left-menu-header">
-              <ul class="header-left"> 
+              <ul class="header-left">
                 <li>
-                  <div class="form-group w-100"> 
+                  <div class="form-group w-100">
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
                         <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
@@ -105,12 +105,12 @@
                 <div class="notification-box">
                   <i class="fa fa-bell animated-icon"></i>
                   <span class="badge rounded-pill badge-primary">3</span>
-              
+
               <style>
                 .animated-icon {
                   animation: bell-shake 1.5s infinite;
                 }
-              
+
                 @keyframes bell-shake {
                   0%, 100% {
                     transform: rotate(0);
@@ -147,7 +147,7 @@
                 .theme-icon {
                   width: 20px;
                   height: 20px;
-                  fill: #333; 
+                  fill: #333;
                   transition: all 0.3s ease;
                 }
 
@@ -157,14 +157,14 @@
                   fill: #fff;
                 }
               </style>
-              
+
                 <div class="onhover-show-div notification-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
                     <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-primary"></div>
                     </div>
                   </div>
@@ -172,7 +172,7 @@
                     <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-secondary"></div>
                     </div>
                   </div>
@@ -241,9 +241,9 @@
                   <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6c757d" width="24" height="24">
                     <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z"/>
                   </svg>
-                  
+
                   <span class="badge rounded-pill badge-secondary">4</span>
-                </div>                                
+                </div>
                 <div class="onhover-show-div message-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Message</h6>
                   <ul>
@@ -328,7 +328,7 @@
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard u-cf">
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
             <div class="ProfileCard-realName"></div>
@@ -372,7 +372,7 @@
                     <ul class="sidebar-submenu">
                       <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
                       <li><a href="{{ route ('about-us') }}">About Us</a></li>
-                      
+
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
@@ -399,14 +399,14 @@
                       <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
                     </svg><span>Post</span></a>
                   <ul class="sidebar-submenu">
-                    <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
-                    <li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
-                    <li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
+                    <li><a href="{{ route('post.create') }}">Add Post Gallery</a></li>
+                    <li><a href="{{ route('sponsor.create') }}">Add Post Sponsor</a></li>
+                    <li><a href="{{ route('program.create') }}">Add Post Program</a></li>
                   </ul>
                 </li>
                     </ul>
                   </li>
-                  
+
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="landing-page.html">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-landing-page"></use>
@@ -628,7 +628,7 @@
         </div>
         <!-- Page Sidebar Ends-->
         <div class="page-body">
-          <div class="container-fluid">        
+          <div class="container-fluid">
             <div class="page-title">
               <div class="row">
                 <div class="col-sm-6 p-0">
@@ -637,7 +637,7 @@
                 <div class="col-sm-6 p-0">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('index') }}">
-                      <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
+                      <span class="material-icons" style="font-size: 24px; color: black;">home</span>
                       </a>
                     </li>
                     <li class="breadcrumb-item">Dashboard</li>
@@ -650,16 +650,16 @@
           <!-- Container-fluid starts-->
           <div class="container-fluid default-dashboard">
             <div class="row">
-              <div class="col-xl-4 col-lg-4 col-md-7 box-col-4"> 
+              <div class="col-xl-4 col-lg-4 col-md-7 box-col-4">
                 <div class="card welcome-card">
                   <div class="card-body">
-                    <div class="d-flex"> 
-                      <div class="flex-grow-1"> 
+                    <div class="d-flex">
+                      <div class="flex-grow-1">
                         <h1>Hello,Anna Miller.</h1>
                         <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn" href="{{ route ('list-products') }}">Go Premium</a>
                       </div>
                       <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
-                      <div>  
+                      <div>
                         <div class="clockbox">
                           <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
                             <g id="face">
@@ -689,7 +689,7 @@
               </div>
               <div class="col-xl-2 col-xl-25 col-md-5 col-sm-6 box-col-3">
                 <div class="card earning-card">
-                  <div class="card-header"> 
+                  <div class="card-header">
                     <div class="header-top">
                       <h5>Total Earnings</h5>
                       <div class="dropdown icon-dropdown">
@@ -712,7 +712,7 @@
               </div>
               <div class="col-xl-2 col-md-5 col-sm-6 expenses-card">
                 <div class="card earning-card">
-                  <div class="card-header"> 
+                  <div class="card-header">
                     <div class="header-top">
                       <h5>Total Expenses</h5>
                       <div class="dropdown icon-dropdown">
@@ -744,7 +744,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-body"> 
+                  <div class="card-body">
                     <div class="table-responsive custom-scrollbar">
                       <table class="table display" style="width:100%">
                         <tbody>
@@ -864,7 +864,7 @@
                             <td>#8934</td>
                             <td>01/12/2024</td>
                             <td>Armenia</td>
-                            <td> 
+                            <td>
                               <button class="btn btn-primary">Paid</button>
                             </td>
                             <td>$238.80</td>
@@ -887,7 +887,7 @@
                             <td>#6529</td>
                             <td>12/10/2024</td>
                             <td>Bhutan</td>
-                            <td> 
+                            <td>
                               <button class="btn btn-secondary">Pending</button>
                             </td>
                             <td>$654.95</td>
@@ -910,7 +910,7 @@
                             <td>#3659</td>
                             <td>09/04/2024</td>
                             <td>Ghana</td>
-                            <td> 
+                            <td>
                               <button class="btn btn-success">Done</button>
                             </td>
                             <td>$864.35</td>
@@ -933,7 +933,7 @@
                             <td>#2158</td>
                             <td>10/05/2024</td>
                             <td>Kenya</td>
-                            <td> 
+                            <td>
                               <button class="btn btn-danger">Cancel </button>
                             </td>
                             <td>$951.37</td>
@@ -974,7 +974,7 @@
                   <div class="card-body pb-0">
                     <div class="current-sale-container order-container">
                       <div class="overview-wrapper" id="orderoverview"></div>
-                      <div class="back-bar-container"> 
+                      <div class="back-bar-container">
                         <div id="order-bar"></div>
                       </div>
                     </div>
@@ -992,7 +992,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-body"> 
+                  <div class="card-body">
                     <div class="table-responsive custom-scrollbar">
                       <table class="table display" style="width:100%">
                         <tbody>
@@ -1066,7 +1066,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-body"> 
+                  <div class="card-body">
                     <div class="d-flex header-tab">
                       <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
                         <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">3</span></a></li>
@@ -1084,7 +1084,7 @@
                             <button class="btn btn-secondary mt-1 mb-1">Decline</button>
                             <button class="btn btn-primary mt-1 mb-1">Accept</button>
                           </div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-primary"></div>
                           </div>
                         </div>
@@ -1095,7 +1095,7 @@
                                  <button class="btn btn-secondary mt-1 mb-1">Decline</button>
                                  <button class="btn btn-primary mt-1 mb-1">Accept</button>
                                 </div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-secondary"></div>
                           </div>
                         </div>
@@ -1106,11 +1106,11 @@
                                  <button class="btn btn-secondary mt-1 mb-1">Decline</button>
                                  <button class="btn btn-primary mt-1 mb-1">Accept</button>
                                 </div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-secondary"></div>
                           </div>
                         </div>
-                        <div class="figma-icon"> 
+                        <div class="figma-icon">
                           <svg class="me-2">
                             <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#file"></use>
                           </svg>
@@ -1123,7 +1123,7 @@
                           <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                               <h5>
                                  Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-primary"></div>
                           </div>
                         </div>
@@ -1135,7 +1135,7 @@
                         <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
                           <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                               <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-primary"></div>
                           </div>
                         </div>
@@ -1152,7 +1152,7 @@
                           <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                               <h5>
                                  Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-primary"></div>
                           </div>
                         </div>
@@ -1164,7 +1164,7 @@
                         <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
                           <div class="flex-grow-1 ms-2"><a href="user-profile.html">
                               <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0"> 
+                          <div class="flex-shrink-0">
                             <div class="activity-dot-primary"></div>
                           </div>
                         </div>
@@ -1190,7 +1190,7 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="d-flex"> 
+                    <div class="d-flex">
                       <h2 class="me-2">216.459</h2><span class="bg-light-success">
                         <svg>
                           <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#up-arrow"> </use>

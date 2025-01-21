@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,6 +20,9 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
@@ -47,10 +50,10 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
 
   </head>
-  <body> 
+  <body>
     <!-- loader starts-->
     <div class="loader-wrapper">
-      <div class="loader">    
+      <div class="loader">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -70,16 +73,16 @@
           <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
-              <svg class="sidebar-toggle"> 
+              <svg class="sidebar-toggle">
                 <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
               </svg>
             </div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
             <div class="left-menu-header">
-              <ul class="header-left"> 
+              <ul class="header-left">
                 <li>
-                  <div class="form-group w-100"> 
+                  <div class="form-group w-100">
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
                         <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
@@ -107,12 +110,12 @@
                 <div class="notification-box">
                   <i class="fa fa-bell animated-icon"></i>
                   <span class="badge rounded-pill badge-primary">3</span>
-              
+
               <style>
                 .animated-icon {
                   animation: bell-shake 1.5s infinite;
                 }
-              
+
                 @keyframes bell-shake {
                   0%, 100% {
                     transform: rotate(0);
@@ -149,7 +152,7 @@
                 .theme-icon {
                   width: 20px;
                   height: 20px;
-                  fill: #333; 
+                  fill: #333;
                   transition: all 0.3s ease;
                 }
 
@@ -159,14 +162,14 @@
                   fill: #fff;
                 }
               </style>
-              
+
                 <div class="onhover-show-div notification-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                   <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
                     <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-primary"></div>
                     </div>
                   </div>
@@ -174,7 +177,7 @@
                     <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
                         <h5>
                            Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0"> 
+                    <div class="flex-shrink-0">
                       <div class="activity-dot-secondary"></div>
                     </div>
                   </div>
@@ -243,9 +246,9 @@
                   <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6c757d" width="24" height="24">
                     <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z"/>
                   </svg>
-                  
+
                   <span class="badge rounded-pill badge-secondary">4</span>
-                </div>                                
+                </div>
                 <div class="onhover-show-div message-dropdown">
                   <h6 class="f-18 mb-0 dropdown-title">Message</h6>
                   <ul>
@@ -330,7 +333,7 @@
             </ul>
           </div>
           <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard u-cf">
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
             <div class="ProfileCard-realName"></div>
@@ -348,7 +351,7 @@
           <div>
             <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <svg class="sidebar-toggle"> 
+                <svg class="sidebar-toggle">
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
@@ -362,7 +365,7 @@
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
                   <li class="pin-title sidebar-main-title">
-                    <div> 
+                    <div>
                       <h6>Pinned</h6>
                     </div>
                   </li>
@@ -381,7 +384,7 @@
                     <ul class="sidebar-submenu">
                       <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
                       <li><a href="{{ route ('about-us') }}">About Us</a></li>
-                      
+
                     </ul>
                   </li>
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
@@ -408,8 +411,8 @@
                     </svg><span>Post</span></a>
                   <ul class="sidebar-submenu">
                     <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
-<li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
-<li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
+                    <li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
+                    <li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
                   </ul>
                 </li>
                     </ul>
@@ -507,7 +510,7 @@
                 <div class="col-sm-6 p-0">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('index') }}">
-                      <span class="material-icons" style="font-size: 24px; color: black;">home</span>                     
+                      <span class="material-icons" style="font-size: 24px; color: black;">home</span>
                       </a></li>
                     <li class="breadcrumb-item">Blog</li>
                     <li class="breadcrumb-item active">Add Post</li>
@@ -519,85 +522,51 @@
           <!-- Container-fluid starts-->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-sm-12">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <h4>Post Edit</h4>
-                  </div>
-                  <div class="card-body add-post">
-                    <form class="row needs-validation" novalidate="" id="formPost">
-                      <div class="col-sm-12">
-                        <div class="mb-3">
-                          <div class="mb-3">
-                          </div>
-                          <label for="title">Title:</label>
-                          <input class="form-control" id="title" type="text" placeholder="Post Title" required="">
-                          <div class="invalid-feedback">Please fill in the title.</div>
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header pb-0">
+                            <h4>Post Edit</h4>
                         </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="mb-3">
-                          <label for="description">Description:</label>
-                          <input class="form-control" id="description" type="text" placeholder="Post Description" required="">
-                          <div class="invalid-feedback">Please fill in the description.</div>
+                        <div class="card-body add-post">
+                            <form class="row needs-validation" novalidate="" id="formPost" action="{{ route('program.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="title">Title:</label>
+                                        <input class="form-control" id="title" name="title" type="text" placeholder="Post Title" required="">
+                                        <div class="invalid-feedback">Please fill in the title.</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="description">Description:</label>
+                                        <input class="form-control" id="description" name="description" type="text" placeholder="Post Description" required="">
+                                        <div class="invalid-feedback">Please fill in the description.</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="image">Image:</label>
+                                        <input type="file" class="form-control" id="image" name="image" required="">
+                                        <div class="invalid-feedback">Please upload an image.</div>
+                                    </div>
+                                </div>
+                                <div class="btn-showcase text-end">
+                                    <button class="btn btn-primary" type="submit">Post</button>
+                                    <input class="btn btn-light" type="reset" onclick="clearForm()" value="Discard">
+                                </div>
+                            </form>
                         </div>
-                      </div>
-                      <div class="mb-3">
-                          {{-- <label>Type:</label> --}}
-                          <div class="m-checkbox-inline">
-                            {{-- <label for="edo-ani">
-                              <input class="checkbox_animated" id="edo-ani" type="checkbox" name="chk-ani" required="">Text
-                            </label>
-                            <label for="edo-ani1">
-                              <input class="checkbox_animated" id="edo-ani1" type="checkbox" name="chk-ani" required="">Image
-                            </label>
-                            <label for="edo-ani2">
-                              <input class="checkbox_animated" id="edo-ani2" type="checkbox" name="chk-ani" required="">Audio
-                            </label>
-                            <label for="edo-ani3">
-                              <input class="checkbox_animated" id="edo-ani3" type="checkbox" name="chk-ani" required="">Video
-                            </label> --}}
-                          </div>
-                          <div class="invalid-feedback">Please choose one type.</div>
-                        </div>
-                      {{-- <div class="mb-3">
-                        <div class="col-12">
-                          <label class="form-label" for="datetime-local1">Publish Date & Time</label>
-                          <div class="input-group flatpicker-calender product-date">
-                            <input class="form-control" id="datetime-local1" type="datetime-local" required="">
-                          </div>
-                          <div class="invalid-feedback">Please choose a date and time.</div>
-                        </div>
-                      </div> --}}
-                      <div class="email-wrapper">
-                        <div class="theme-form">
-                          <div class="mb-3">
-                            <label>Content:</label>
-                            <textarea id="text-box" name="text-box" cols="10" rows="2" required=""></textarea>
-                            <div class="invalid-feedback">Please fill in the content.</div>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                    <form class="dropzone" id="singleFileUpload" action="https://admin.pixelstrap.net/upload.php">
-                        <div class="m-0 dz-message needsclick"><i data-feather="cloud"></i>
-                          <h4 class="mb-0">Drop files here or click to upload.</h4>
-                        </div>
-                      </form>
-                    <div class="btn-showcase text-end">
-                      <button class="btn btn-primary" type="submit">Post</button>
-                      <input class="btn btn-light" type="reset" onclick="clearForm()" value="Discard">
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+
           <script>
             function clearForm() {
               document.getElementById("formPost").reset();
             }
-          </script>        
+          </script>
           <!-- Container-fluid Ends-->
         </div>
         <!-- footer start-->
@@ -650,7 +619,7 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <!-- Plugin used-->
-    
+
   </body>
 
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->

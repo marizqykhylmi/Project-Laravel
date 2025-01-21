@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\SponsorController;
 
 Route::get('/', function () {
     return view('auth.login'); // Halaman login
@@ -17,11 +19,22 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
 
-Route::get('/gallery', [PostController::class, 'index'])->name('gallery');
-Route::get('/add-post', [PostController::class, 'create'])->name('post.create');
-Route::post('/add-post', [PostController::class, 'store'])->name('post.store');
 
-Route::get('/sponsor', [PostController::class, 'indexSponsor'])->name('sponsor.index');
+
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/add-post', [GalleryController::class, 'create'])->name('post.create');
+Route::post('/add-post', [GalleryController::class, 'store'])->name('post.store');
+
+Route::get('/sponsor', [SponsorController::class, 'indexSponsor'])->name('sponsor');
+Route::get('/add-sponsor', [SponsorController::class, 'create'])->name('sponsor.create');
+Route::post('/add-sponsor', [SponsorController::class, 'store'])->name('sponsor.store');
+
+Route::get('/program', [PostController::class, 'indexProgram'])->name('program');
+Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
+Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
+
+
 
 
 
@@ -82,15 +95,6 @@ Route::get('/cart', function () {
     return view('cart'); // Halaman gallery
 })->name('cart');
 
-Route::get('/program', function () {
-    return view('program'); // Halaman gallery
-})->name('program');
-
-Route::get('/sponsor', function () {
-    return view('sponsor'); // Halaman gallery
-})->name('sponsor');
-
 Route::get('/slider', function () {
     return view('slider'); // Halaman gallery
 })->name('slider');
-

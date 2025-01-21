@@ -2,46 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
-use App\Models\Post;
 
-class PostController extends Controller
+class SponsorController extends Controller
 {
-    public function indexProgram()
+    public function indexSponsor()
     {
-        $posts = Post::orderBy('title', 'desc')->get();
-        return view('program', compact('posts'));
+        $posts = Sponsor::orderBy('title', 'desc')->get();
+        return view('sponsor', compact('posts'));
     }
 
     public function create()
     {
-        return view('add-post-program');
+        return view('add-post-sponsor');
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'content' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $imageName = time() . '.' . $request->image->extension();
         $request->file('image')->storeAs('images', $imageName, 'public');
 
-        Post::create([
+        Sponsor::create([
             'title' => $request->title,
-            'description' => $request->description,
+            'content' => $request->content,
             'image' => $imageName,
         ]);
 
-        return redirect()->route('program')->with('success', 'Post created successfully!');
+        return redirect()->route('sponsor')->with('success', 'Post created successfully!');
     }
 
 
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Sponsor::findOrFail($id);
 
         // Hapus file gambar dari storage
         if ($post->image && file_exists(storage_path('app/public/images/' . $post->image))) {
@@ -51,6 +51,6 @@ class PostController extends Controller
         // Hapus data dari database
         $post->delete();
 
-        return redirect()->route('program')->with('success', 'Post deleted successfully!');
+        return redirect()->route('sponsor')->with('success', 'Post deleted successfully!');
     }
 }

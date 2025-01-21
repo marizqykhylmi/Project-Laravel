@@ -550,15 +550,6 @@
                           <div class="invalid-feedback">Please choose a date and time.</div>
                         </div>
                       </div>
-                      {{-- <div class="email-wrapper">
-                        <div class="theme-form">
-                          <div class="mb-3">
-                            <label>Content:</label>
-                            <textarea id="text-box" name="content" cols="10" rows="2" required=""></textarea>
-                            <div class="invalid-feedback">Please fill in the content.</div>
-                          </div>
-                        </div>
-                      </div> --}}
                       <div class="mb-3">
                         <div class="col-12">
                           <label class="form-label" for="image">Image:</label>
