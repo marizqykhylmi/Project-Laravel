@@ -19,6 +19,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
     
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
@@ -42,6 +45,9 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
   </head>
   <body> 
     <!-- loader starts-->
@@ -256,8 +262,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -383,27 +389,210 @@
             </div>
           </div>
           <!-- Container-fluid starts-->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <h4>IMAGE GALLERY </h4>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header pb-0">
+                      <h4>IMAGE GALLERY</h4>
+                    </div>
+                    <div class="my-gallery card-body row gallery-with-description" itemscope="">
+                      @foreach($posts as $post)
+                      <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
+                        <a href="#" itemprop="contentUrl">
+                          <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
+                          <div class="caption">
+                            <h4>{{ $post->title }}</h4>
+                            <p>{{ $post->description }}</p>
+                            <p><small>Published on: {{ $post->publish_date }}</small></p>
+                            <button class="btn btn-danger btn-delete" data-id="{{ $post->id }}">
+                              <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                            </button>
+                            <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+                          </div>
+                        </a>
+                      </figure>
+                      @endforeach
+                    </div>
                   </div>
-                  <div class="my-gallery card-body row gallery-with-description" itemscope="">
-                    @foreach($posts as $post)
-                    <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
-                      <a href="#" itemprop="contentUrl">
-                        <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
-                        <div class="caption">
-                          <h4>{{ $post->title }}</h4>
-                          <p>{{ $post->description }}</p>
-                          <p><small>Published on: {{ $post->publish_date }}</small></p>
-                        </div>
-                      </a>
-                    </figure>
-                    @endforeach
+                </div>
+              </div>
+            </div>
+
+            {{-- editModel --}}
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
+                  <div class="modal-body">
+                    <form id="editForm">
+                      @csrf
+                      <input type="hidden" id="editId">
+                      <div class="form-group">
+                        <label for="editTitle">Title</label>
+                        <input type="text" class="form-control" id="editTitle" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="editDescription">Description</label>
+                        <textarea class="form-control" id="editDescription" rows="3" required></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="editImage">Current Image</label>
+                        <div id="currentImage"></div>
+                      </div>
+                      <div class="form-group">
+                        <label for="newImage">Upload New Image (Optional)</label>
+                        <input type="file" class="form-control" id="newImage">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" href={{ route('gallery') }}>Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+              document.querySelector('.close').addEventListener('click', function () {
+                window.location.href = "{{ route('gallery') }}";
+              });
+            </script>
+                      
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const editModal = document.getElementById('editModal');
+                const editForm = document.getElementById('editForm');
+                const editId = document.getElementById('editId');
+                const editTitle = document.getElementById('editTitle');
+                const editDescription = document.getElementById('editDescription');
+                const currentImage = document.getElementById('currentImage');
+                const newImage = document.getElementById('newImage');
+                const saveChanges = document.getElementById('saveChanges');
+
+                document.querySelectorAll('.btn-edit').forEach(button => {
+                  button.addEventListener('click', function () {
+                    editId.value = this.getAttribute('data-id');
+                    editTitle.value = this.getAttribute('data-title');
+                    editDescription.value = this.getAttribute('data-description');
+                    currentImage.innerHTML = `<img src="/storage/images/${this.getAttribute('data-image')}" alt="Current Image" class="img-fluid">`;
+                    
+                    $(editModal).modal('show');
+                  });
+                });
+
+                saveChanges.addEventListener('click', function () {
+                  const formData = new FormData(editForm);
+                  formData.append('_method', 'PUT');
+                  formData.append('id', editId.value);
+                  formData.append('title', editTitle.value);
+                  formData.append('description', editDescription.value);
+                  
+                  if (newImage.files[0]) {
+                    formData.append('image', newImage.files[0]);
+                  }
+
+                  fetch(`/posts/${editId.value}`, {
+                    method: 'POST',
+                    headers: {
+                      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    },
+                    body: formData
+                  })
+                  .then(response => {
+                    if (response.ok) {
+                      alert('Post updated successfully!');
+                      location.reload();
+                    } else {
+                      alert('Failed to update post.');
+                    }
+                  })
+                  .catch(error => console.error('Error:', error));
+                });
+              });
+
+              document.addEventListener('DOMContentLoaded', function () {
+  const deleteButtons = document.querySelectorAll('.btn-delete');
+
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const postId = this.getAttribute('data-id');
+
+      // SweetAlert2 konfirmasi
+      Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: 'Gambar ini akan dihapus secara permanen!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Kirim permintaan DELETE
+          fetch(`/posts/${postId}`, {
+            method: 'DELETE',
+            headers: {
+              'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              Swal.fire(
+                'Dihapus!',
+                'Gambar telah berhasil dihapus.',
+                'success'
+              ).then(() => {
+                location.reload(); // Muat ulang halaman
+              });
+            } else {
+              Swal.fire(
+                'Gagal!',
+                'Gambar tidak dapat dihapus.',
+                'error'
+              );
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            Swal.fire(
+              'Kesalahan!',
+              'Terjadi kesalahan saat menghapus gambar.',
+              'error'
+            );
+          });
+        }
+      });
+    });
+  });
+});
+
+              fetch(`/posts/${postId}`, {
+      method: 'DELETE',
+      headers: {
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      },
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.message) {
+          alert(data.message);
+      }
+      if (response.ok) {
+          location.reload();
+      }
+  })
+  .catch(error => console.error('Error:', error));
+
+            </script>
+                    
                   
                   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
                     <!--
@@ -468,8 +657,11 @@
                   <svg class="footer-icon">
                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart"></use>
                   </svg>
+                  <style>
+                    
+                  </style>
                 </p>
-              </div>
+              </div>    
             </div>
           </div>
         </footer>
@@ -500,6 +692,7 @@
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme-customizer/customizer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Plugin used-->
   </body>
 

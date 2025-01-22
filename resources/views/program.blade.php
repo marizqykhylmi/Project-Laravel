@@ -260,8 +260,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -591,7 +591,7 @@
                 </div>
                 <div class="col-sm-6 pe-0">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">
+                    <li class="breadcrumb-item"><a href="{{ route ('index') }}">
                         <svg class="stroke-icon">
                           <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                         </svg></a></li>
@@ -603,81 +603,83 @@
             </div>
           </div>
           <!-- Container-fluid starts-->
+          
           <div class="container-fluid blog-page">
             <div class="row">
               <div class="col-xxl-6 box-col-40 xl-40">
                 <div class="card">
                   <div class="blog-box blog-shadow">
                     <div class="blog-details">
+                      <!-- Konten blog -->
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="container-fluid blog-page">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header pb-0">
-                                <h4>Program Blog Posts</h4>
-                            </div>
-                            <div class="card-body">
-                                @if($posts->isEmpty())
-                                    <p>No posts available at the moment.</p>
-                                @else
-                                    <div class="row">
-                                        @foreach($posts as $post)
-                                            <div class="col-xxl-6 box-col-40 xl-40">
-                                                <div class="card">
-                                                    <div class="blog-box blog-shadow">
-                                                        <div class="row">
-                                                            <div class="col-sm-5">
-                                                                <img class="img-fluid sm-100-w" src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}">
-                                                            </div>
-                                                            <div class="col-sm-7">
-                                                                <div class="blog-details">
-                                                                    <div class="blog-date">
-                                                                        <span>{{ \Carbon\Carbon::parse($post->publish_date)->format('d') }}</span>
-                                                                        {{ \Carbon\Carbon::parse($post->publish_date)->format('F Y') }}
-                                                                    </div>
-                                                                    <h4>{{ $post->title }}</h4>
-                                                                    <div class="blog-bottom-content">
-                                                                        <hr>
-                                                                        <p class="mt-0">{{ $post->description }}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             
-          <!-- Container-fluid Ends-->
-        </div>
-        <!-- footer start-->
-        <footer class="footer">
-          <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6 p-0 footer-copyright">
-                <p class="mb-0">Copyright 2024 © Crocs theme by pixelstrap.</p>
-              </div>
-              <div class="col-md-6 p-0">
-                <p class="heart mb-0">Hand crafted &amp; made with
-                  <svg class="footer-icon">
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart"></use>
-                  </svg>
-                </p>
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header pb-0">
+                    <h4>Program Blog Posts</h4>
+                  </div>
+                  <div class="card-body">
+                    @if($posts->isEmpty())
+                      <p>No posts available at the moment.</p>
+                    @else
+                      <div class="row">
+                        @foreach($posts as $post)
+                          <div class="col-xxl-6 box-col-40 xl-40">
+                            <div class="card">
+                              <div class="blog-box blog-shadow">
+                                <div class="row">
+                                  <div class="col-sm-5">
+                                    <img class="img-fluid sm-100-w" src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}">
+                                  </div>
+                                  <div class="col-sm-7">
+                                    <div class="blog-details">
+                                      <div class="blog-date">
+                                        <span>{{ \Carbon\Carbon::parse($post->publish_date)->format('d') }}</span>
+                                        {{ \Carbon\Carbon::parse($post->publish_date)->format('F Y') }}
+                                      </div>
+                                      <h4>{{ $post->title }}</h4>
+                                      <div class="blog-bottom-content">
+                                        <hr>
+                                        <p class="mt-0">{{ $post->description }}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        @endforeach
+                      </div>
+                    @endif
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </footer>
+          
+          <!-- Footer -->
+          <footer class="footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 p-0 footer-copyright">
+                  <p class="mb-0">Copyright 2024 © Crocs theme by pixelstrap.</p>
+                </div>
+                <div class="col-md-6 p-0">
+                  <p class="heart mb-0">Hand crafted &amp; made with
+                    <svg class="footer-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart"></use>
+                    </svg>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
     <!-- latest jquery-->

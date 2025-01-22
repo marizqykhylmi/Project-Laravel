@@ -312,8 +312,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -368,9 +368,9 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span>Dashboard</span></a>
+                      </svg><span class="lan-3">Dashboard</span></a>
                     <ul class="sidebar-submenu">
-                      <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
+                      <li><a href="{{ route('index') }}">Default</a></li>
                       <li><a href="{{ route ('about-us') }}">About Us</a></li>
 
                     </ul>
@@ -381,7 +381,7 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span>Highlight</span></a>
+                      </svg><span class=>Highlight</span></a>
                     <ul class="sidebar-submenu">
                       <li><a href="{{ route ('gallery') }}">Gallery</a></li>
                       <li><a href="{{ route ('product') }}">Product</a></li>
@@ -413,214 +413,59 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-landing-page"></use>
-                      </svg><span>Landing page</span></a></li>
+                      
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="sample-page.html">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sample-page"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sample-page"></use>
-                      </svg><span>Sample page</span></a></li>
+                      
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="translate.html">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-internationalization"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-internationalization"></use>
-                      </svg><span>Translate</span></a></li>
+                      
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-starter-kit"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-starter-kit"></use>
-                      </svg><span>Starter kit</span></a></li>
+                      
                   <li class="mega-menu sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-others"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-others"></use>
-                      </svg><span>Others</span></a>
+                      
                     <div class="mega-menu-container menu-content">
                       <div class="container-fluid">
                         <div class="row">
                           <div class="col mega-box">
                             <div class="link-section">
                               <div class="submenu-title">
-                                <h5>Error Page</h5>
-                              </div>
-                              <ul class="submenu-content opensubmegamenu">
-                                <li><a href="error-400.html">Error 400</a></li>
-                                <li><a href="error-401.html">Error 401</a></li>
-                                <li><a href="error-403.html">Error 403</a></li>
-                                <li><a href="error-404.html">Error 404</a></li>
-                                <li><a href="error-500.html">Error 500</a></li>
-                                <li><a href="error-503.html">Error 503</a></li>
-                              </ul>
-                            </div>
+                                
                           </div>
                           <div class="col mega-box">
                             <div class="link-section">
-                              <div class="submenu-title">
-                                <h5> Authentication</h5>
-                              </div>
-                              <ul class="submenu-content opensubmegamenu">
-                                <li><a href="login.html" target="_blank">Login Simple</a></li>
-                                <li><a href="login_one.html" target="_blank">Login bg image</a></li>
-                                <li><a href="login_two.html" target="_blank">Login image two                      </a></li>
-                                <li><a href="login-bs-validation.html" target="_blank">Login validation</a></li>
-                                <li><a href="login-bs-tt-validation.html" target="_blank">Login tooltip</a></li>
-                                <li><a href="login-sa-validation.html" target="_blank">Login sweetalert</a></li>
-                                <li><a href="sign-up.html" target="_blank">Register Simple</a></li>
-                                <li><a href="sign-up-one.html" target="_blank">Register Image                              </a></li>
-                                <li><a href="sign-up-two.html" target="_blank">Register two</a></li>
-                                <li><a href="sign-up-wizard.html" target="_blank">Register wizard</a></li>
-                                <li><a href="unlock.html">Unlock User</a></li>
-                                <li><a href="forget-password.html">Forget Password</a></li>
-                                <li><a href="reset-password.html">Reset Password</a></li>
-                                <li><a href="maintenance.html">Maintenance</a></li>
-                              </ul>
-                            </div>
+                              
                           </div>
                           <div class="col mega-box">
                             <div class="link-section">
-                              <div class="submenu-title">
-                                <h5>Coming Soon</h5>
-                              </div>
-                              <ul class="submenu-content opensubmegamenu">
-                                <li><a href="comingsoon.html">Coming Simple</a></li>
-                                <li><a href="comingsoon-bg-video.html">Coming with Bg video</a></li>
-                                <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
-                              </ul>
-                            </div>
+                              
                           </div>
                           <div class="col mega-box">
                             <div class="link-section">
-                              <div class="submenu-title">
-                                <h5>Email templates</h5>
-                              </div>
-                              <ul class="submenu-content opensubmegamenu">
-                                <li><a href="basic-template.html">Basic Email</a></li>
-                                <li><a href="email-header.html">Basic Header</a></li>
-                                <li><a href="template-email.html">Ecomerce Template</a></li>
-                                <li><a href="template-email-2.html">Email Template 2</a></li>
-                                <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
-                                <li><a href="email-order-success.html">Order Success</a></li>
-                              </ul>
-                            </div>
+                              
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6>Miscellaneous</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery"></use>
-                      </svg><span>Gallery</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="gallery.html">Gallery Grid</a></li>
-                      <li><a href="gallery-with-description.html">Gallery Grid Desc</a></li>
-                      <li><a href="gallery-masonry.html">Masonry Gallery</a></li>
-                      <li><a href="masonry-gallery-with-disc.html">Masonry with Desc</a></li>
-                      <li><a href="gallery-hover.html">Hover Effects</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-blog"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-blog"></use>
-                      </svg><span>Blog</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="blog.html">Blog Details</a></li>
-                      <li><a href="blog-single.html">Blog Single</a></li>
-                      <li><a href="add-post.html">Add Post</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="faq.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-faq"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-faq"></use>
-                      </svg><span>FAQ</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-job-search"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-job-search"></use>
-                      </svg><span>Job Search</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="job-cards-view.html">Cards view</a></li>
-                      <li><a href="job-list-view.html">List View</a></li>
-                      <li><a href="job-details.html">Job Details</a></li>
-                      <li><a href="job-apply.html">Apply</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-learning"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-learning"></use>
-                      </svg><span>Learning</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="learning-list-view.html">Learning List</a></li>
-                      <li><a href="learning-detailed.html">Detailed Course</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-maps"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-maps"></use>
-                      </svg><span>Maps</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="map-js.html">Maps JS</a></li>
-                      <li><a href="vector-map.html">Vector Maps</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-editors"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-editors"></use>
-                      </svg><span>Editors</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="summernote.html">Summer Note</a></li>
-                      <li><a href="ckeditor.html">CK editor</a></li>
-                      <li><a href="simple-MDE.html">MDE editor</a></li>
-                      <li><a href="ace-code-editor.html">ACE code editor </a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="knowledgebase.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-knowledgebase"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-knowledgebase"></use>
-                      </svg><span>Knowledgebase</span></a></li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-support-tickets"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-support-tickets"></use>
-                      </svg><span>Support Ticket</span></a></li>
-                </ul>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
             </nav>
@@ -655,8 +500,8 @@
                   <div class="card-body">
                     <div class="d-flex">
                       <div class="flex-grow-1">
-                        <h1>Hello,Anna Miller.</h1>
-                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn" href="{{ route ('list-products') }}">Go Premium</a>
+                        <h1>Hello,User.</h1>
+                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn">Go Premium</a>
                       </div>
                       <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
                       <div>

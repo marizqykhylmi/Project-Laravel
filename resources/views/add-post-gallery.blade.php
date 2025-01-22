@@ -314,8 +314,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -553,10 +553,69 @@
                       <div class="mb-3">
                         <div class="col-12">
                           <label class="form-label" for="image">Image:</label>
-                          <input class="form-control" id="image" name="image" type="file" required="">
+                          <input class="form-control" id="image" name="image" type="file" required="" accept="image/*">
                           <div class="invalid-feedback">Please upload an image.</div>
+                      
+                          <!-- Area untuk preview gambar -->
+                          <div class="mt-3 position-relative" style="display: inline-block;">
+                            <img id="imagePreview" src="#" alt="Preview Image" class="img-fluid d-none" style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
+                      
+                            <!-- Ukuran file di tengah gambar -->
+                            <div id="fileInfo" class="position-absolute text-white bg-dark rounded-pill px-3 py-1 d-none" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;"></div>
+                      
+                            <!-- Tombol untuk menghapus gambar -->
+                            <button id="removeImage" class="btn btn-danger btn-sm position-absolute d-none" style="top: 10px; right: 10px; border-radius: 50%;">X</button>
+                          </div>
                         </div>
                       </div>
+                      
+                      <script>
+                        // Elemen DOM
+                        const imageInput = document.getElementById('image');
+                        const imagePreview = document.getElementById('imagePreview');
+                        const fileInfo = document.getElementById('fileInfo');
+                        const removeImage = document.getElementById('removeImage');
+                      
+                        // Event listener untuk memilih file
+                        imageInput.addEventListener('change', function (event) {
+                          const file = event.target.files[0]; // Ambil file pertama
+                      
+                          if (file) {
+                            const reader = new FileReader();
+                      
+                            // Setelah file dibaca
+                            reader.onload = function (e) {
+                              // Tampilkan preview gambar
+                              imagePreview.src = e.target.result;
+                              imagePreview.classList.remove('d-none');
+                      
+                              // Tampilkan informasi ukuran file
+                              const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2); // Konversi ke MB
+                              fileInfo.textContent = `${fileSizeInMB} MB`;
+                              fileInfo.classList.remove('d-none');
+                      
+                              // Tampilkan tombol hapus
+                              removeImage.classList.remove('d-none');
+                            };
+                      
+                            reader.readAsDataURL(file); // Baca file sebagai URL data
+                          }
+                        });
+                      
+                        // Event listener untuk tombol hapus
+                        removeImage.addEventListener('click', function () {
+                          // Reset input file
+                          imageInput.value = '';
+                      
+                          // Sembunyikan elemen preview, ukuran file, dan tombol hapus
+                          imagePreview.src = '#';
+                          imagePreview.classList.add('d-none');
+                          fileInfo.classList.add('d-none');
+                          removeImage.classList.add('d-none');
+                        });
+                      </script>
+                      
+                      
                       <div class="btn-showcase text-end">
                         <button class="btn btn-primary" type="submit">Post</button>
                         <input class="btn btn-light" type="reset" onclick="clearForm()" value="Discard">

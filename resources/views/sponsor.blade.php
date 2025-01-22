@@ -267,8 +267,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -620,11 +620,30 @@
         </div>
     </div>
 @endif
-
                       </div>
                     </div>
                   </section>
-                </div>                
+                </div>     
+                
+                <!--footer-->
+                <footer class="footer">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-6 p-0 footer-copyright">
+                        <p class="mb-0">Copyright 2024 © Crocs theme by pixelstrap.</p>
+                      </div>
+                      <div class="col-md-6 p-0">
+                        <p class="heart mb-0">Hand crafted &amp; made with
+                          <svg class="footer-icon">
+                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart"></use>
+                          </svg>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
+              </div>
+            </div>
     <!-- latest jquery-->
     <script src="../assets/js/jquery.min.js"></script>
     <!-- Bootstrap js-->

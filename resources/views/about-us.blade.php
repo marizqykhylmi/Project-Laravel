@@ -312,8 +312,8 @@
                 </div>
               </li>
               <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/profile.png" alt="">
-                  <div class="flex-grow-1"><span>Alen Miller</span>
+                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
+                  <div class="flex-grow-1"><span>User</span>
                     <p class="mb-0">UI Designer </p>
                   </div>
                 </div>
@@ -504,92 +504,277 @@
                 <div class="row"></div> <!-- Elemen row kosong, isi sesuai kebutuhan -->
               </div>
           
-              <div class="container-fluid">
-                <!-- About Our Company -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="card">
-                      <div class="card-header">
-                        <h4 class="card-title">About Our Company</h4>
-                      </div>
-                      <div class="card-body">
-                        <p>
-                          We are a dedicated team providing the best solutions in software development and digital services.
-                          With years of experience in the technology industry, we are committed to creating innovative and beneficial
-                          products for society.
-                        </p>
-                        <p>
-                          Our mission is to help customers achieve their goals through efficient, secure, and affordable technology. We
-                          believe in collaboration and are always open to new ideas to improve the quality of our services.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-                <!-- Vision and Mission -->
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card">
-                      <div class="card-header">
-                        <h5>Vision</h5>
-                      </div>
-                      <div class="card-body">
-                        <p>
-                          To become a leader in technological innovation by providing solutions that positively impact people's lives. We aim to inspire change and drive progress through cutting-edge technology.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card">
-                      <div class="card-header">
-                        <h5>Mission</h5>
-                      </div>
-                      <div class="card-body">
-                        <ul>
-                          <li>Providing high-quality services that focus on customer needs</li>
-                          <li>Supporting business growth through advanced technology</li>
-                          <li>Building strong and mutually beneficial relationships with partners and customers.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-                <!-- Our Team -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="card">
-                      <div class="card-header">
-                        <h5>Our Team</h5>
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col-sm-4 text-center">
-                            <img src="{{ asset('assets/css/img/ceo.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
-                            <h6>John Doe</h6>
-                            <p>CEO & Founder</p>
-                          </div>
-                          <div class="col-sm-4 text-center">
-                            <img src="{{ asset('assets/css/img/sandhika.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
-                            <h6>Jane Smith</h6>
-                            <p>Lead Developer</p>
-                          </div>
-                          <div class="col-sm-4 text-center">
-                            <img src="{{ asset('assets/css/img/projectmngr.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
-                            <h6>Emily Brown</h6>
-                            <p>Project Manager</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-              </div> <!-- End of container-fluid -->
-            </div> <!-- End of page-body -->
+<!-- About Our Company -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">About Our Company</h4>
+        </div>
+        <div class="card-body">
+          <p id="company-description">
+            We are a dedicated team providing the best solutions in software development and digital services.
+            With years of experience in the technology industry, we are committed to creating innovative and beneficial
+            products for society.
+          </p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#editDescriptionModal">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vision and Mission -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Vision</h5>
+        </div>
+        <div class="card-body">
+          <p id="vision-text">
+            To become a leader in technological innovation by providing solutions that positively impact people's lives.
+            We aim to inspire change and drive progress through cutting-edge technology.
+          </p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#editVisionModal">Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Mission</h5>
+        </div>
+        <div class="card-body">
+          <ul id="mission-list">
+            <li>Providing high-quality services that focus on customer needs</li>
+            <li>Supporting business growth through advanced technology</li>
+            <li>Building strong and mutually beneficial relationships with partners and customers.</li>
+          </ul>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#editMissionModal">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 200px;
+    }
+    
+    .card-body p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+
+  <!-- Our Team -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="height: 300px">
+        <div class="card-header">
+          <h5>Our Team</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <img src="{{ asset('assets/css/img/ceo.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
+              <h6 id="team-member-1-name">John Doe</h6>
+              <p id="team-member-1-position">CEO & Founder</p>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal1">Edit</button>
+            </div>
+            
+            <div class="col-sm-4 text-center">
+              <img src="{{ asset('assets/css/img/sandhika.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
+              <h6 id="team-member-2-name">Jane Smith</h6>
+              <p id="team-member-2-position">Lead Developer</p>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal2">Edit</button>
+            </div>
+            <div class="col-sm-4 text-center">
+              <img src="{{ asset('assets/css/img/projectmngr.jpg') }}" alt="Team Member" class="rounded-circle mb-2" style="width: 100px; height: 100px;">
+              <h6 id="team-member-3-name">Emily Brown</h6>
+              <p id="team-member-3-position">Project Manager</p>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal3">Edit</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- End of container-fluid -->
+</div> <!-- End of page-body -->
+</div>
+
+<!-- Modal Edit Deskripsi Perusahaan -->
+<div class="modal fade" id="editDescriptionModal" tabindex="-1" role="dialog" aria-labelledby="editDescriptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editDescriptionModalLabel">Edit Company Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editDescriptionForm">
+          @csrf
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="4">We are a dedicated team providing the best solutions in software development and digital services...</textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveDescription">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Vision -->
+<div class="modal fade" id="editVisionModal" tabindex="-1" role="dialog" aria-labelledby="editVisionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editVisionModalLabel">Edit Vision</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editVisionForm">
+          @csrf
+          <div class="form-group">
+            <label for="vision">Vision</label>
+            <textarea class="form-control" id="vision" rows="4">To become a leader in technological innovation by providing solutions that positively impact people's lives...</textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveVision">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Mission -->
+<div class="modal fade" id="editMissionModal" tabindex="-1" role="dialog" aria-labelledby="editMissionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editMissionModalLabel">Edit Mission</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editMissionForm">
+          @csrf
+          <div class="form-group">
+            <label for="mission">Mission</label>
+            <textarea class="form-control" id="mission" rows="4">Providing high-quality services that focus on customer needs...</textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveMission">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Team Member 1 -->
+<div class="modal fade" id="editTeamModal1" tabindex="-1" role="dialog" aria-labelledby="editTeamModalLabel1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editTeamModalLabel1">Edit Team Member 1</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editTeamForm1">
+          @csrf
+          <div class="form-group">
+            <label for="teamMemberName">Name</label>
+            <input type="text" class="form-control" id="teamMemberName" value="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="teamMemberRole">Role</label>
+            <input type="text" class="form-control" id="teamMemberRole" value="CEO & Founder">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveTeamMember1">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- JS to handle saving data -->
+<script>
+  document.getElementById('saveDescription').addEventListener('click', function() {
+    var description = document.getElementById('description').value;
+    $.ajax({
+      url: '/save-description',
+      type: 'POST',
+      data: {
+        _token: '{{ csrf_token() }}',
+        description: description
+      },
+      success: function(response) {
+        $('#editDescriptionModal').modal('hide');
+        document.getElementById('company-description').innerText = description;
+      }
+    });
+  });
+
+  document.getElementById('saveVision').addEventListener('click', function() {
+    var vision = document.getElementById('vision').value;
+    $.ajax({
+      url: '/save-vision',
+      type: 'POST',
+      data: {
+        _token: '{{ csrf_token() }}',
+        vision: vision
+      },
+      success: function(response) {
+        $('#editVisionModal').modal('hide');
+        document.getElementById('vision-text').innerText = vision;
+      }
+    });
+  });
+
+  document.getElementById('saveMission').addEventListener('click', function() {
+    var mission = document.getElementById('mission').value;
+    $.ajax({
+      url: '/save-mission',
+      type: 'POST',
+      data: {
+        _token: '{{ csrf_token() }}',
+        mission: mission
+      },
+      success: function(response) {
+        $('#editMissionModal').modal('hide');
+        document.getElementById('mission-list').innerHTML = mission.split('\n').map(function(item) {
+          return '<li>' + item + '</li>';
+        }).join('');
+      }
+    });
+  });
+</script>
+
           
 
                   <!-- footer start-->
@@ -661,6 +846,15 @@
       <!-- Theme js-->
       <script src="../assets/js/script.js"></script>
       <script src="../assets/js/theme-customizer/customizer.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Include jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <!-- Include Bootstrap JS -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
       <!-- Plugin used-->
     </body>
   

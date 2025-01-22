@@ -21,7 +21,7 @@ Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name
 
 
 
-
+//post, delete, edit
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/add-post', [GalleryController::class, 'create'])->name('post.create');
 Route::post('/add-post', [GalleryController::class, 'store'])->name('post.store');
@@ -34,6 +34,13 @@ Route::get('/program', [PostController::class, 'indexProgram'])->name('program')
 Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
 Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
 
+Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+
+//about us
+Route::post('/save-description', [AboutUsController::class, 'saveDescription']);
+Route::post('/save-vision', [AboutUsController::class, 'saveVision']);
+Route::post('/save-mission', [AboutUsController::class, 'saveMission']);
 
 
 
