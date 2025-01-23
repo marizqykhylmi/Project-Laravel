@@ -36,8 +36,8 @@ class AuthController extends Controller
         // Jika validasi gagal
         if ($validator->fails()) {
             return redirect()->route('register')
-                             ->withErrors($validator)
-                             ->withInput();
+            ->withErrors($validator)
+            ->withInput();
         }
 
         // Membuat user baru

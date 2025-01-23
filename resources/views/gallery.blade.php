@@ -405,9 +405,13 @@
                             <h4>{{ $post->title }}</h4>
                             <p>{{ $post->description }}</p>
                             <p><small>Published on: {{ $post->publish_date }}</small></p>
-                            <button class="btn btn-danger btn-delete" data-id="{{ $post->id }}">
-                              <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                            </button>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" id="deleteForm{{ $post->id }}">
+                              @csrf
+                              @method('DELETE')
+                              <button  type="button" class="btn btn-danger btn-delete mt-2"  data-id="{{ $post->id }}" >
+                                  Delete
+                              </button>
+                          </form>
                             <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
                           </div>
                         </a>
@@ -419,45 +423,66 @@
               </div>
             </div>
 
-            {{-- editModel --}}
-            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="editForm">
-                      @csrf
-                      <input type="hidden" id="editId">
-                      <div class="form-group">
-                        <label for="editTitle">Title</label>
-                        <input type="text" class="form-control" id="editTitle" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="editDescription">Description</label>
-                        <textarea class="form-control" id="editDescription" rows="3" required></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="editImage">Current Image</label>
-                        <div id="currentImage"></div>
-                      </div>
-                      <div class="form-group">
-                        <label for="newImage">Upload New Image (Optional)</label>
-                        <input type="file" class="form-control" id="newImage">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" href={{ route('gallery') }}>Cancel</button>
-                    <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+             <!-- Modal Konfirmasi Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              Are you sure you want to delete this post? This action cannot be undone.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+              {{-- editModel --}}
+              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="editForm">
+                        @csrf
+                        <input type="hidden" id="editId">
+                        <div class="form-group">
+                          <label for="editTitle">Title</label>
+                          <input type="text" class="form-control" id="editTitle" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="editDescription">Description</label>
+                          <textarea class="form-control" id="editDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="editImage">Current Image</label>
+                          <div id="currentImage"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="newImage">Upload New Image (Optional)</label>
+                          <input type="file" class="form-control" id="newImage">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" href={{ route('gallery') }}>Cancel</button>
+                      <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             <script>
               document.querySelector('.close').addEventListener('click', function () {
                 window.location.href = "{{ route('gallery') }}";
@@ -516,80 +541,31 @@
                 });
               });
 
-              document.addEventListener('DOMContentLoaded', function () {
-  const deleteButtons = document.querySelectorAll('.btn-delete');
+              
 
-  deleteButtons.forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      const postId = this.getAttribute('data-id');
-
-      // SweetAlert2 konfirmasi
-      Swal.fire({
-        title: 'Apakah Anda yakin?',
-        text: 'Gambar ini akan dihapus secara permanen!',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
-        confirmButtonText: 'Ya, hapus!',
-        cancelButtonText: 'Batal'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Kirim permintaan DELETE
-          fetch(`/posts/${postId}`, {
-            method: 'DELETE',
-            headers: {
-              'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-            },
-          })
-          .then(response => {
-            if (response.ok) {
-              Swal.fire(
-                'Dihapus!',
-                'Gambar telah berhasil dihapus.',
-                'success'
-              ).then(() => {
-                location.reload(); // Muat ulang halaman
-              });
-            } else {
-              Swal.fire(
-                'Gagal!',
-                'Gambar tidak dapat dihapus.',
-                'error'
-              );
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            Swal.fire(
-              'Kesalahan!',
-              'Terjadi kesalahan saat menghapus gambar.',
-              'error'
-            );
-          });
-        }
-      });
-    });
-  });
-});
-
-              fetch(`/posts/${postId}`, {
-      method: 'DELETE',
-      headers: {
-          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      },
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.message) {
-          alert(data.message);
-      }
-      if (response.ok) {
-          location.reload();
-      }
-  })
-  .catch(error => console.error('Error:', error));
+              // Menangani tombol Delete
+              document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const postId = e.target.getAttribute('data-id');
+            const form = document.getElementById(`deleteForm${postId}`);
+            
+            // Menampilkan SweetAlert2 untuk konfirmasi delete
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika konfirmasi, submit form
+                    form.submit();
+                }
+            });
+        });
+    });x
 
             </script>
                     

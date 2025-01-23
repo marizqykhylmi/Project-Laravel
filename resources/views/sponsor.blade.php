@@ -600,26 +600,26 @@
                   <section class="ribbon sponsor-slider">
                     <div>
                       @if($posts->isEmpty())
-    <p>No posts available.</p>
-@else
-    <div class="row">
-        <div class="col-12">
-            <div>
-                <div class="marquee">
-                    <ul class="marquee__content">
-                        @foreach ($posts as $post)
-                            <li>
-                                <a data-toggle="lightbox" data-gallery="sponsor-slider" href="{{ asset('storage/images/' . $post->image) }}" title="{{ $post->title }}" class="d-block bg-white">
-                                    <img src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}" loading="lazy">
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
+                    <p>No posts available.</p>
+                      @else
+                          <div class="row">
+                              <div class="col-12">
+                                  <div>
+                                      <div class="marquee">
+                                          <ul class="marquee__content">
+                                              @foreach ($posts as $post)
+                                                  <li>
+                                                      <a data-toggle="lightbox" data-gallery="sponsor-slider" href="{{ asset('storage/images/' . $post->image) }}" title="{{ $post->title }}" class="d-block bg-white">
+                                                          <img src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}" loading="lazy">
+                                                      </a>
+                                                  </li>
+                                              @endforeach
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      @endif
                       </div>
                     </div>
                   </section>

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\AboutUsController;
 
 Route::get('/', function () {
     return view('auth.login'); // Halaman login
@@ -33,14 +34,18 @@ Route::post('/add-sponsor', [SponsorController::class, 'store'])->name('sponsor.
 Route::get('/program', [PostController::class, 'indexProgram'])->name('program');
 Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
 Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
-
-Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
-Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+//gallery
+Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::put('/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
 
 //about us
 Route::post('/save-description', [AboutUsController::class, 'saveDescription']);
 Route::post('/save-vision', [AboutUsController::class, 'saveVision']);
 Route::post('/save-mission', [AboutUsController::class, 'saveMission']);
+
+//program
+Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::put('/posts/update', [PostController::class, 'update'])->name('posts.update');
 
 
 
