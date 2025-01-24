@@ -291,77 +291,74 @@
       <!-- Page Header Ends                              -->
       <!-- Page Body Start-->
       <div class="page-body-wrapper">
-        <!-- Page Sidebar Start-->
-        <div class="sidebar-wrapper" data-layout="fill-svg">
+         <!-- Page Sidebar Start-->
+         <div class="sidebar-wrapper" data-layout="fill-svg">
           <div>
-            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
+            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
                 <svg class="sidebar-toggle"> 
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
             </div>
-            <div class="logo-icon-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+            <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
               <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
-                  <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                  <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
+                  
                   </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6 class="lan-1">General</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('index') }}">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span>Dashboard</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
-                      <li><a href="{{ route ('about-us') }}">About Us</a></li>
-                      
-                    </ul>
+                      </svg><span  href="{{ route('index') }}">Home</span></a>                    
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('gallery') }}">
                       <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-layout"></use>
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery"></use>
                       </svg>
                       <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span>Highlight</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
-                      <li><a href="{{ route ('product') }}">Product</a></li>
-                      <li><a href="{{ route ('program') }}">Program</a></li>
-                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
-                      <li><a href="{{ route ('slider') }}">Slider</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery"></use>
+                      </svg><span  href="{{ route('gallery') }}">Gallery</span></a>
+                    <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('product') }}">
                     <svg class="stroke-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product"></use>
                     </svg>
-                    <svg class="fill-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                    </svg><span>Post</span></a>
-                  <ul class="sidebar-submenu">
-                    <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
-<li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
-<li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
-                  </ul>
-                </li>
-                    </ul>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product"></use>
+                  </svg><span  href="{{ route('product') }}">Product</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('program') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-program"></use>
+                  </svg><span  href="{{ route('program') }}">Program</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('sponsor') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sponsor"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor"></use>
+                  </svg><span  href="{{ route('sponsor') }}">Sponsor</span></a>
+                    <div class="mega-menu-container menu-content">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col mega-box">
+                            <div class="link-section">
+                            </div>
+                          </div>
+                             
+                        </div>
+                      </div>
+                    </div>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">                     
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      </svg><span>Editors</span></a>
                   </li>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
@@ -383,14 +380,14 @@
                           <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                         </svg></a></li>
                     <li class="breadcrumb-item">Blog</li>
-                    <li class="breadcrumb-item active">Blog Details</li>
+                    <li class="breadcrumb-item active"><a href="{{ route('add-post-program') }}">Add Program</a></li>
                   </ol>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- Container-fluid starts-->
-          
           <div class="row">
             <div class="col-sm-12">
                 <div class="card" style="background-color: white; border: 1px solid #ccc;">
@@ -420,22 +417,28 @@
                                                             <hr>
                                                             <p class="mt-0">{{ $post->description }}</p>
                                                         </div>
-                                                        <!-- Tambahkan button Edit -->
-                                                        <button class="btn btn-primary btn-edit mt-2" 
+                                                        <div style="display: flex; gap: 10px; align-items: center;">
+                                                          <!-- Tambahkan button Edit -->
+                                                          <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="button" class="btn btn-primary btn-edit mt-2" 
                                                             data-id="{{ $post->id }}"
                                                             data-title="{{ $post->title }}"
                                                             data-description="{{ $post->description }}"
                                                             data-image="{{ asset('storage/images/' . $post->image) }}">
                                                             Edit
-                                                        </button>
-                                                        <!-- Tambahkan button Delete -->
-                                                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" id="deleteForm{{ $post->id }}">
-                                                          @csrf
-                                                          @method('DELETE')
-                                                          <button  type="button" class="btn btn-danger btn-delete mt-2"  data-id="{{ $post->id }}" >
-                                                              Delete
-                                                          </button>
-                                                      </form>
+                                                            </button>
+                                                          </form>  
+                                                          <!-- Tambahkan button Delete -->
+                                                          <form action="{{ route('posts.destroy', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button" class="btn btn-danger btn-delete mt-2" data-id="{{ $post->id }}">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                                            </button>
+                                                          </form>
+                                                        </div>                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -470,64 +473,54 @@
   </div>
 </div>
 
-        <!-- Modal Edit Post -->
-        <div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <form id="editPostForm" action="{{ route('posts.update') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" id="editPostId" name="post_id">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editPostModalLabel">Edit Blog Post</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="editPostTitle">Title</label>
-                                <input type="text" class="form-control" id="editPostTitle" name="title" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="editPostDescription">Description</label>
-                                <textarea class="form-control" id="editPostDescription" name="description" rows="4" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="editPostImage">Image</label>
-                                <input type="file" class="form-control" id="editPostImage" name="image">
-                                <img id="editPostImagePreview" src="" class="img-fluid mt-2" style="max-height: 200px;" alt="Preview">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+        <!-- Button Edit untuk membuka Modal -->
+
+
+<!-- Modal Edit Post -->
+<div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST" enctype="multipart/form-data" id="editPostForm">
+        @csrf
+        @method('PUT')
+        <input type="hidden" id="editPostId" name="post_id">
+        <div class="form-group">
+            <label for="editPostTitle">Title</label>
+            <input type="text" class="form-control" id="editPostTitle" name="title" required>
         </div>
-        
-        <script>
-            // Menangani tombol Edit
-            document.querySelectorAll('.btn-edit').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const id = e.target.getAttribute('data-id');
-                    const title = e.target.getAttribute('data-title');
-                    const description = e.target.getAttribute('data-description');
-                    const image = e.target.getAttribute('data-image');
-        
-                    // Isi data ke dalam form modal
-                    document.getElementById('editPostId').value = id;
-                    document.getElementById('editPostTitle').value = title;
-                    document.getElementById('editPostDescription').value = description;
-                    document.getElementById('editPostImagePreview').src = image;
-        
-                    // Tampilkan modal
-                    $('#editPostModal').modal('show');
-                });
-            });
-            
+        <div class="form-group">
+            <label for="editPostDescription">Description</label>
+            <textarea class="form-control" id="editPostDescription" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="editPostImage">Image</label>
+            <input type="file" class="form-control" id="editPostImage" name="image">
+            <img id="editPostImagePreview" src="" class="img-fluid mt-2" style="max-height: 200px;" alt="Preview">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+</div>
+
+<script>
+// Menangani tombol Edit
+document.querySelectorAll('.btn-edit').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const id = e.target.getAttribute('data-id');
+        const title = e.target.getAttribute('data-title');
+        const description = e.target.getAttribute('data-description');
+        const image = e.target.getAttribute('data-image');
+    
+        // Isi data ke dalam form modal
+        document.getElementById('editPostId').value = id;
+        document.getElementById('editPostTitle').value = title;
+        document.getElementById('editPostDescription').value = description;
+        document.getElementById('editPostImagePreview').src = image;
+    
+        // Tampilkan modal
+        $('#editPostModal').modal('show');
+    });
+});
+          
               // Menangani tombol Delete
               document.querySelectorAll('.btn-delete').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -604,8 +597,8 @@
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/theme-customizer/customizer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script src="../assets/js/theme-customizer/customizer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     <!-- Plugin used-->
   </body>
 

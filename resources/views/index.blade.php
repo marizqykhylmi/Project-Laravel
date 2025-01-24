@@ -20,6 +20,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -81,6 +82,9 @@
                     <div class="Typeahead Typeahead--twitterUsers">
                       <div class="u-posRelative d-flex">
                         <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
+                        {{-- <svg class="search-bg svg-color me-2"><!-- Menggunakan Font Awesome -->
+                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"></use>
+                        </svg> --}}
                         <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
                       </div>
                     </div>
@@ -346,7 +350,9 @@
           <div>
             <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <i class="fas fa-toggle-on"></i>
+                <svg class="sidebar-toggle"> 
+                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
+                </svg>
               </div>
             </div>
             <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
@@ -357,114 +363,56 @@
                   <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6 class="lan-1">General</h6>
-                    </div>
+                  
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('index') }}">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span class="lan-3">Dashboard</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="{{ route('index') }}">Default</a></li>
-                      <li><a href="{{ route ('about-us') }}">About Us</a></li>
-
-                    </ul>
+                      </svg><span  href="{{ route('index') }}">Home</span></a>                    
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('gallery') }}">
                       <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-layout"></use>
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery"></use>
                       </svg>
                       <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span class=>Highlight</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
-                      <li><a href="{{ route ('product') }}">Product</a></li>
-                      <li><a href="{{ route ('program') }}">Program</a></li>
-                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
-                      <li><a href="{{ route ('slider') }}">Slider</a></li>
-
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery"></use>
+                      </svg><span  href="{{ route('gallery') }}">Gallery</span></a>
+                    <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('product') }}">
                     <svg class="stroke-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product"></use>
                     </svg>
-                    <svg class="fill-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                    </svg><span>Post</span></a>
-                  <ul class="sidebar-submenu">
-                    <li><a href="{{ route('post.create') }}">Add Post Gallery</a></li>
-                    <li><a href="{{ route('sponsor.create') }}">Add Post Sponsor</a></li>
-                    <li><a href="{{ route('program.create') }}">Add Post Program</a></li>
-                  </ul>
-                </li>
-                    </ul>
-                  </li>
-
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="landing-page.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-landing-page"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-landing-page"></use>
-                      
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="sample-page.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sample-page"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sample-page"></use>
-                      
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="translate.html">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-internationalization"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-internationalization"></use>
-                      
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-starter-kit"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-starter-kit"></use>
-                      
-                  <li class="mega-menu sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-others"></use>
-                      </svg>
-                      <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-others"></use>
-                      
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product"></use>
+                  </svg><span  href="{{ route('product') }}">Product</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('program') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-program"></use>
+                  </svg><span  href="{{ route('program') }}">Program</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('sponsor') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sponsor"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor"></use>
+                  </svg><span  href="{{ route('sponsor') }}">Sponsor</span></a>
                     <div class="mega-menu-container menu-content">
                       <div class="container-fluid">
                         <div class="row">
                           <div class="col mega-box">
                             <div class="link-section">
-                              <div class="submenu-title">
-                                
+                            </div>
                           </div>
-                          <div class="col mega-box">
-                            <div class="link-section">
-                              
-                          </div>
-                          <div class="col mega-box">
-                            <div class="link-section">
-                              
-                          </div>
-                          <div class="col mega-box">
-                            <div class="link-section">
-                              
-                          </div>
+                             
                         </div>
                       </div>
                     </div>
+                  </li>
                   </li>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
@@ -501,7 +449,7 @@
                     <div class="d-flex">
                       <div class="flex-grow-1">
                         <h1>Hello,User.</h1>
-                        <p>Welcome to the Admin clan! We appreciate your interest in our dashboard.</p><a class="btn">Go Premium</a>
+                        <p>Welcome to the Crocs clan! We appreciate your interest in our dashboard.</p><a class="btn" href="{{ route('about-us') }}">About Company</a>
                       </div>
                       <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
                       <div>
@@ -536,7 +484,7 @@
                 <div class="card earning-card">
                   <div class="card-header">
                     <div class="header-top">
-                      <h5>Total Earnings</h5>
+                      <h5>Total Sales</h5>
                       <div class="dropdown icon-dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
                         <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
@@ -578,7 +526,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-xl-40 col-md-7 box-col-5e">
+              <div class="col-xl-4 col-xl-45 col-md-7 box-col-5e">
                 <div class="card selling-product">
                   <div class="card-header pb-0">
                     <div class="header-top">
@@ -659,7 +607,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-7 col-lg-7 box-col-7">
+              <div class="col-xl-12 col-lg-7 box-col-7">
                 <div class="card">
                   <div class="card-header pb-0">
                     <div class="header-top">
@@ -686,7 +634,7 @@
                             <th>ID</th>
                             <th>Date</th>
                             <th>City</th>
-                            <th>Status</th>
+                            <th>Post</th>
                             <th>Amount</th>
                           </tr>
                         </thead>
@@ -788,280 +736,9 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-5 col-lg-5 box-col-5">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Our Growth</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="growth-chart"></div>
-                  </div>
+              </div>           
                 </div>
-              </div>
-              <div class="col-xl-8 col-lg-8 col-md-7">
-                <div class="card transaction-history">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Product Valuation</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body pb-0">
-                    <div class="current-sale-container order-container">
-                      <div class="overview-wrapper" id="orderoverview"></div>
-                      <div class="back-bar-container">
-                        <div id="order-bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-5">
-                <div class="card transaction-history">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Transaction History</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive custom-scrollbar">
-                      <table class="table display" style="width:100%">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#send"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{route('list-products')}}"><span>Receipt from external Wallet</span>
-                                    <h5>Mar 21,2024, 4:45pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Completed</td>
-                            <td>+ $248.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-secondary history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#work"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{route('list-products')}}"><span>Process refund to</span>
-                                    <h5>Feb 20,2024, 2:10pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Pending</td>
-                            <td>+ $548.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-success history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#graph"></use>
-                                  </svg></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{route('list-products')}}"><span>Sending to Citizen</span>
-                                    <h5>Jun 17,2024, 12:45pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Verified</td>
-                            <td>+ $953.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-danger history">
-                                  <svg>
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#payment-bookmark"></use>
-                                  </svg>
-                                </span>
-                                <div class="flex-grow-1 ms-2"><a href="{{route('list-products')}}"><span>Payment From #12345</span>
-                                    <h5>Oct 30,2024, 1:31pm</h5></a></div>
-                              </div>
-                            </td>
-                            <td>Rejected</td>
-                            <td>+ $349.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="card notifications-tabs">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Notifications</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex header-tab">
-                      <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">3</span></a></li>
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Following</a></li>
-                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Archive</a></li>
-                      </ul>
-                      <h6>Mark all as read</h6>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent">
-                      <div class="tab-pane fade show active" id="bottom-home" role="tabpanel" aria-labelledby="bottom-tabContent">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a>
-                            <button class="btn btn-secondary mt-1 mb-1">Decline</button>
-                            <button class="btn btn-primary mt-1 mb-1">Accept</button>
-                          </div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Stephen Curry <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a>
-                                 <button class="btn btn-secondary mt-1 mb-1">Decline</button>
-                                 <button class="btn btn-primary mt-1 mb-1">Accept</button>
-                                </div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-secondary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Watson <strong> Completed </strong> Create new component</h5><span>10.15pm</span></a>
-                                 <button class="btn btn-secondary mt-1 mb-1">Decline</button>
-                                 <button class="btn btn-primary mt-1 mb-1">Accept</button>
-                                </div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-secondary"></div>
-                          </div>
-                        </div>
-                        <div class="figma-icon">
-                          <svg class="me-2">
-                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#file"></use>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent2">
-                      <div class="tab-pane fade show" id="bottom-contact" role="tabpanel" aria-labelledby="bottom-tabContent2">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Wilson Requested to Follow</h5><span>1w Ago</span></a></div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/2.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Nasuha Makusta Requested to Follow</h5><span>20 min Ago</span></a></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-content content-tab" id="bottom-tabContent3">
-                      <div class="tab-pane fade show" id="bottom-inbox" role="tabpanel" aria-labelledby="bottom-tabContent3">
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Ralph Edwards Started Following you.</h5><span>35 min Ago</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Jenny Wilson Requested to Follow</h5><span>1w Ago</span></a></div>
-                        </div>
-                        <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/7.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>Jenny Wilson Started Following you.</h5><span>3.10pm</span></a></div>
-                          <div class="flex-shrink-0">
-                            <div class="activity-dot-primary"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/2.png" alt="">
-                          <div class="flex-grow-1 ms-2"><a href="user-profile.html">
-                              <h5>
-                                 Nasuha Makusta Requested to Follow</h5><span>20 min Ago</span></a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="card user-country">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>User By Country</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <h2 class="me-2">216.459</h2><span class="bg-light-success">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#up-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-success">+ 5.09%</h6>
-                    </div><span>Increase than last month</span>
-                    <div class="jvector-map-height" id="world-map2"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4">
-                <div class="card schedule">
-                  <div class="card-header pb-0">
-                    <div class="header-top">
-                      <h4>Schedule</h4>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="timeline-calendar custom-scrollbar">
-                      <div class="custom-calendar" id="calendar-container">
-                        <div class="time-line" id="calendar"></div>
-                      </div>
+              </div>   
                     </div>
                   </div>
                 </div>

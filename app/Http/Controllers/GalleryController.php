@@ -14,6 +14,27 @@ class GalleryController extends Controller
         return view('gallery', compact('posts'));
     }
 
+    public function edit($id)
+{
+    $post = Post::findOrFail($id); // Temukan data berdasarkan ID
+    return view('edit-post-program', compact('post')); // Tampilkan view edit dengan data
+}
+
+public function update(Request $request)
+{
+    $post = Post::find($request->post_id);
+
+    if ($post) {
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->save();
+
+        return redirect()->back()->with('success', 'Post updated successfully');
+    }
+
+    return redirect()->back()->with('error', 'Post not found');
+}
+
     public function create()
     {
         return view('add-post-gallery');
@@ -43,17 +64,18 @@ class GalleryController extends Controller
 
 
     public function destroy($id)
-{
-    $post = Post::find($id);
-    if ($post) {
-        $filePath = public_path('storage/images/' . $post->image);
-        if (file_exists($filePath)) {
-            unlink($filePath); // Menghapus file
+    {
+        $post = Post::findOrFail($id);
+
+        // Hapus file gambar dari storage
+        if ($post->image && file_exists(storage_path('app/public/images/' . $post->image))) {
+            unlink(storage_path('app/public/images/' . $post->image));
         }
+
+        // Hapus data dari database
         $post->delete();
-        return response()->json(['message' => 'Gambar berhasil dihapus.'], 200);
+
+        return redirect()->route('gallery')->with('success', 'Post deleted successfully!');
     }
-    return response()->json(['message' => 'Gagal menghapus gambar.'], 400);
-}
 
 }

@@ -291,77 +291,74 @@
       <!-- Page Header Ends                              -->
       <!-- Page Body Start-->
       <div class="page-body-wrapper">
-        <!-- Page Sidebar Start-->
-        <div class="sidebar-wrapper" data-layout="fill-svg">
+         <!-- Page Sidebar Start-->
+         <div class="sidebar-wrapper" data-layout="fill-svg">
           <div>
-            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
+            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
                 <svg class="sidebar-toggle"> 
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
             </div>
-            <div class="logo-icon-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+            <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
               <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
-                  <li class="back-btn"><a href="{{ route ('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                  <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
+                  
                   </li>
-                  <li class="sidebar-main-title">
-                    <div>
-                      <h6 class="lan-1">General</h6>
-                    </div>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('index') }}">
                       <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home"></use>
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span>Dashboard</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
-                      <li><a href="{{ route ('about-us') }}">About Us</a></li>
-                      
-                    </ul>
+                      </svg><span  href="{{ route('index') }}">Home</span></a>                    
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('gallery') }}">
                       <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-layout"></use>
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery"></use>
                       </svg>
                       <svg class="fill-icon">
-                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-layout"></use>
-                      </svg><span>Highlight</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a href="{{ route ('gallery') }}">Gallery</a></li>
-                      <li><a href="{{ route ('product') }}">Product</a></li>
-                      <li><a href="{{ route ('program') }}">Program</a></li>
-                      <li><a href="{{ route ('sponsor') }}">Sponsor</a></li>
-                      <li><a href="{{ route ('slider') }}">Slider</a></li>
-                    </ul>
-                  </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery"></use>
+                      </svg><span  href="{{ route('gallery') }}">Gallery</span></a>
+                    <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('product') }}">
                     <svg class="stroke-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-widget"></use>
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product"></use>
                     </svg>
-                    <svg class="fill-icon">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-widget"></use>
-                    </svg><span>Post</span></a>
-                  <ul class="sidebar-submenu">
-                    <li><a href="{{ route ('add-post-gallery') }}">Add Post Gallery</a></li>
-<li><a href="{{ route ('add-post-sponsor') }}">Add Post Sponsor</a></li>
-<li><a href="{{ route ('add-post-program') }}">Add Post Program</a></li>
-                  </ul>
-                </li>
-                    </ul>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product"></use>
+                  </svg><span  href="{{ route('product') }}">Product</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('program') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-program"></use>
+                  </svg><span  href="{{ route('program') }}">Program</span></a>
+                  <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('sponsor') }}">
+                    <svg class="stroke-icon">
+                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sponsor"></use>
+                    </svg>
+                  <svg class="fill-icon">
+                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor"></use>
+                  </svg><span  href="{{ route('sponsor') }}">Sponsor</span></a>
+                    <div class="mega-menu-container menu-content">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col mega-box">
+                            <div class="link-section">
+                            </div>
+                          </div>
+                             
+                        </div>
+                      </div>
+                    </div>
                   </li>
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.net/crocs/starter-kit/{{ route ('index') }}" target="_blank">
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">                     
-                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
-                      </svg><span>Editors</span></a>
                   </li>
               </div>
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
@@ -408,11 +405,12 @@
                             <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" id="deleteForm{{ $post->id }}">
                               @csrf
                               @method('DELETE')
-                              <button  type="button" class="btn btn-danger btn-delete mt-2"  data-id="{{ $post->id }}" >
+                              <button  type="button" class="btn btn-danger btn-delete mt-2"  data-id="{{ $post->id }}" ><i class="fa fa-trash" aria-hidden="true"></i>
                                   Delete
                               </button>
                           </form>
-                            <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+                            <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                            </button>
                           </div>
                         </a>
                       </figure>
