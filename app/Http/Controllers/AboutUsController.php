@@ -14,4 +14,5 @@ class AboutUsController extends Controller
     return response()->json(['status' => 'success']);
 }
 
+
 }

@@ -20,16 +20,28 @@ class GalleryController extends Controller
     return view('edit-post-program', compact('post')); // Tampilkan view edit dengan data
 }
 
-public function update(Request $request)
+public function update(Request $request, $id)
 {
-    $post = Post::find($request->post_id);
+    // Validasi input
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255', // Pastikan 'title' tidak kosong
+        'description' => 'required|string',
+    ]);
 
+    // Temukan post berdasarkan ID
+    $post = Post::find($id);
     if ($post) {
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->title = $validatedData['title'];
+        $post->description = $validatedData['description'];
+
+        // Cek jika ada gambar baru
+        if ($request->hasFile('image')) {
+            $post->image = $request->file('image')->store('images', 'public');
+        }
+
         $post->save();
 
-        return redirect()->back()->with('success', 'Post updated successfully');
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully');
     }
 
     return redirect()->back()->with('error', 'Post not found');

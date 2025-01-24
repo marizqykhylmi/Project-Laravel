@@ -34,10 +34,12 @@ Route::post('/add-sponsor', [SponsorController::class, 'store'])->name('sponsor.
 Route::get('/program', [PostController::class, 'indexProgram'])->name('program');
 Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
 Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
+
 //gallery
-Route::delete('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('posts.destroy');
-Route::post('/gallery/update/{id?}', [GalleryController::class, 'update'])->name('gallery.update');
-Route::put('/gallery/{id}/update', [PostController::class, 'update'])->name('gallery.update');
+Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::post('/posts/update/{id?}', [PostController::class, 'update'])->name('posts.update');
+Route::put('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::get('/posts', [PostController::class, 'indexProgram'])->name('posts.index');
 
 
 //about us
