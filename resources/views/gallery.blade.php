@@ -386,40 +386,41 @@
             </div>
           </div>
           <!-- Container-fluid starts-->
-            <div class="container-fluid">
-              <div class="row">
+          <div class="container-fluid">
+            <div class="row">
                 <div class="col-sm-12">
-                  <div class="card">
-                    <div class="card-header pb-0">
-                      <h4>IMAGE GALLERY</h4>
+                    <div class="card">
+                        <div class="card-header pb-0">
+                            <h4>IMAGE GALLERY</h4>
+                        </div>
+                        <div class="my-gallery card-body row gallery-with-description" itemscope="">
+                            @foreach($posts as $post)
+                            <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
+                                <a href="#" itemprop="contentUrl">
+                                    <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
+                                    <div class="caption">
+                                        <h4>{{ $post->title }}</h4>
+                                        <p>{{ $post->description }}</p>
+                                        <p><small>Published on: {{ $post->publish_date }}</small></p>
+                                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" id="deleteForm{{ $post->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger btn-delete mt-2" data-toggle="modal" data-target="#deleteModal" data-id="{{ $post->id }}">
+                                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                            </button>
+                                        </form>
+                                        <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>
+                                    </div>
+                                </a>
+                            </figure>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="my-gallery card-body row gallery-with-description" itemscope="">
-                      @foreach($posts as $post)
-                      <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" itemscope="">
-                        <a href="#" itemprop="contentUrl">
-                          <img src="{{ asset('storage/images/'.$post->image) }}" itemprop="thumbnail" alt="{{ $post->title }}">
-                          <div class="caption">
-                            <h4>{{ $post->title }}</h4>
-                            <p>{{ $post->description }}</p>
-                            <p><small>Published on: {{ $post->publish_date }}</small></p>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" id="deleteForm{{ $post->id }}">
-                              @csrf
-                              @method('DELETE')
-                              <button  type="button" class="btn btn-danger btn-delete mt-2"  data-id="{{ $post->id }}" ><i class="fa fa-trash" aria-hidden="true"></i>
-                                  Delete
-                              </button>
-                          </form>
-                            <button class="btn btn-primary btn-edit" data-id="{{ $post->id }}" data-title="{{ $post->title }}" data-description="{{ $post->description }}" data-image="{{ $post->image }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit
-                            </button>
-                          </div>
-                        </a>
-                      </figure>
-                      @endforeach
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
+        </div>
 
              <!-- Modal Konfirmasi Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

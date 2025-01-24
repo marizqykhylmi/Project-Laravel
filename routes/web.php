@@ -35,9 +35,10 @@ Route::get('/program', [PostController::class, 'indexProgram'])->name('program')
 Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
 Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
 //gallery
-Route::delete('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+Route::delete('/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('posts.destroy');
 Route::post('/gallery/update/{id?}', [GalleryController::class, 'update'])->name('gallery.update');
 Route::put('/gallery/{id}/update', [PostController::class, 'update'])->name('gallery.update');
+
 
 //about us
 Route::post('/save-description', [AboutUsController::class, 'saveDescription']);
@@ -46,7 +47,11 @@ Route::post('/save-mission', [AboutUsController::class, 'saveMission']);
 
 //program
 Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
-Route::put('/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
+Route::post('/posts/update/{id?}', [PostController::class, 'update'])->name('posts.update');
+Route::put('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::get('/posts', [PostController::class, 'indexProgram'])->name('posts.index');
+
+
 
 
 

@@ -386,71 +386,67 @@
               </div>
             </div>
           </div>
-
-          <!-- Container-fluid starts-->
-          <div class="row">
-            <div class="col-sm-12">
-                <div class="card" style="background-color: white; border: 1px solid #ccc;">
-                    <div class="card-header pb-0">
-                        <h4>Program Blog Posts</h4>
-                    </div>
-                    <div class="card-body">
-                        @if($posts->isEmpty())
-                            <p>No posts available at the moment.</p>
-                        @else
-                            <div class="row">
-                                @foreach($posts as $post)
-                                    <div class="col-xxl-6 box-col-40 xl-40">
-                                        <div class="card" style="background-color: white; border: 1px solid #ccc;">
-                                            <div class="row">
-                                                <div class="col-sm-5">
-                                                    <img class="img-fluid sm-100-w" src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}">
-                                                </div>
-                                                <div class="col-sm-7">
-                                                    <div class="blog-details">
-                                                        <div class="blog-date">
-                                                            <span>{{ \Carbon\Carbon::parse($post->publish_date)->format('d') }}</span>
-                                                            {{ \Carbon\Carbon::parse($post->publish_date)->format('F Y') }}
-                                                        </div>
-                                                        <h4>{{ $post->title }}</h4>
-                                                        <div class="blog-bottom-content">
-                                                            <hr>
-                                                            <p class="mt-0">{{ $post->description }}</p>
-                                                        </div>
-                                                        <div style="display: flex; gap: 10px; align-items: center;">
-                                                          <!-- Tambahkan button Edit -->
-                                                          <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <button type="button" class="btn btn-primary btn-edit mt-2" 
-                                                            data-id="{{ $post->id }}"
-                                                            data-title="{{ $post->title }}"
-                                                            data-description="{{ $post->description }}"
-                                                            data-image="{{ asset('storage/images/' . $post->image) }}">
-                                                            Edit
-                                                            </button>
-                                                          </form>  
-                                                          <!-- Tambahkan button Delete -->
-                                                          <form action="{{ route('posts.destroy', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="button" class="btn btn-danger btn-delete mt-2" data-id="{{ $post->id }}">
-                                                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                                            </button>
-                                                          </form>
-                                                        </div>                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
+          
+         <!-- Container-fluid starts-->
+<div class="row">
+  <div class="col-sm-12">
+      <div class="card" style="background-color: white; border: 1px solid #ccc;">
+          <div class="card-header pb-0">
+              <h4>Program Blog Posts</h4>
+          </div>
+          <div class="card-body">
+              @if($posts->isEmpty())
+                  <p>No posts available at the moment.</p>
+              @else
+                  <div class="row">
+                      @foreach($posts as $post)
+                          <div class="col-xxl-6 box-col-40 xl-40">
+                              <div class="card" style="background-color: white; border: 1px solid #ccc;">
+                                  <div class="row">
+                                      <div class="col-sm-5">
+                                          <img class="img-fluid sm-100-w" src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->title }}">
+                                      </div>
+                                      <div class="col-sm-7">
+                                          <div class="blog-details">
+                                              <div class="blog-date">
+                                                  <span>{{ \Carbon\Carbon::parse($post->publish_date)->format('d') }}</span>
+                                                  {{ \Carbon\Carbon::parse($post->publish_date)->format('F Y') }}
+                                              </div>
+                                              <h4>{{ $post->title }}</h4>
+                                              <div class="blog-bottom-content">
+                                                  <hr>
+                                                  <p class="mt-0">{{ $post->description }}</p>
+                                              </div>
+                                              <div style="display: flex; gap: 10px; align-items: center;">
+                                                  <!-- Button Edit -->
+                                                  <button class="btn btn-primary btn-edit mt-2"
+                                                      data-id="{{ $post->id }}"
+                                                      data-title="{{ $post->title }}"
+                                                      data-description="{{ $post->description }}"
+                                                      data-image="{{ asset('storage/images/' . $post->image) }}">
+                                                      Edit
+                                                  </button>
+                                                  <!-- Button Delete -->
+                                                  <form action="{{ route('posts.destroy', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <button type="button" class="btn btn-danger btn-delete mt-2" data-id="{{ $post->id }}">
+                                                          <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                                      </button>
+                                                  </form>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      @endforeach
+                  </div>
+              @endif
+          </div>
+      </div>
+  </div>
+</div>
         
         <!-- Modal Konfirmasi Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -473,78 +469,90 @@
   </div>
 </div>
 
-        <!-- Button Edit untuk membuka Modal -->
-
-
-<!-- Modal Edit Post -->
+        <!-- Modal Edit Post -->
 <div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-    <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST" enctype="multipart/form-data" id="editPostForm">
-        @csrf
-        @method('PUT')
-        <input type="hidden" id="editPostId" name="post_id">
-        <div class="form-group">
-            <label for="editPostTitle">Title</label>
-            <input type="text" class="form-control" id="editPostTitle" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="editPostDescription">Description</label>
-            <textarea class="form-control" id="editPostDescription" name="description" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="editPostImage">Image</label>
-            <input type="file" class="form-control" id="editPostImage" name="image">
-            <img id="editPostImagePreview" src="" class="img-fluid mt-2" style="max-height: 200px;" alt="Preview">
-        </div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-    </form>
-</div>
+  <div class="modal-dialog" role="document">
+      <form id="editPostForm" action="" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PUT')
+          <input type="hidden" id="editPostId" name="post_id">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="editPostModalLabel">Edit Blog Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                      <label for="editPostTitle">Title</label>
+                      <input type="text" class="form-control" id="editPostTitle" name="title" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="editPostDescription">Description</label>
+                      <textarea class="form-control" id="editPostDescription" name="description" rows="4" required></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="editPostImage">Image</label>
+                      <input type="file" class="form-control" id="editPostImage" name="image">
+                      <img id="editPostImagePreview" src="" class="img-fluid mt-2" style="max-height: 200px;" alt="Preview">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+          </div>
+      </form>
+  </div>
 </div>
 
 <script>
-// Menangani tombol Edit
-document.querySelectorAll('.btn-edit').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const id = e.target.getAttribute('data-id');
-        const title = e.target.getAttribute('data-title');
-        const description = e.target.getAttribute('data-description');
-        const image = e.target.getAttribute('data-image');
-    
-        // Isi data ke dalam form modal
-        document.getElementById('editPostId').value = id;
-        document.getElementById('editPostTitle').value = title;
-        document.getElementById('editPostDescription').value = description;
-        document.getElementById('editPostImagePreview').src = image;
-    
-        // Tampilkan modal
-        $('#editPostModal').modal('show');
-    });
-});
+  // Menangani tombol Edit
+  document.querySelectorAll('.btn-edit').forEach(button => {
+      button.addEventListener('click', (e) => {
+          const id = e.currentTarget.getAttribute('data-id');
+          const title = e.currentTarget.getAttribute('data-title');
+          const description = e.currentTarget.getAttribute('data-description');
+          const image = e.currentTarget.getAttribute('data-image');
+
+          // Isi data ke dalam form modal
+          document.getElementById('editPostId').value = id;
+          document.getElementById('editPostTitle').value = title;
+          document.getElementById('editPostDescription').value = description;
+          document.getElementById('editPostImagePreview').src = image;
+
+          // Set action form dengan parameter id
+          document.getElementById('editPostForm').action = `/posts/update/${id}`;
+
+          // Tampilkan modal
+          $('#editPostModal').modal('show');
+      });
+  });
+
+  // Menangani tombol Delete
+  document.querySelectorAll('.btn-delete').forEach(button => {
+      button.addEventListener('click', (e) => {
+          const postId = e.target.getAttribute('data-id');
+          const form = document.getElementById(`deleteForm${postId}`);
           
-              // Menangani tombol Delete
-              document.querySelectorAll('.btn-delete').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const postId = e.target.getAttribute('data-id');
-            const form = document.getElementById(`deleteForm${postId}`);
-            
-            // Menampilkan SweetAlert2 untuk konfirmasi delete
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Jika konfirmasi, submit form
-                    form.submit();
-                }
-            });
-        });
-    });x
-        </script>
+          // SweetAlert2 untuk konfirmasi
+          Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#d33',
+              cancelButtonColor: '#3085d6',
+              confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  form.submit();
+              }
+          });
+      });
+  });
+</script>
         
           
           
@@ -597,8 +605,8 @@ document.querySelectorAll('.btn-edit').forEach(button => {
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
-    {{-- <script src="../assets/js/theme-customizer/customizer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    <script src="../assets/js/theme-customizer/customizer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Plugin used-->
   </body>
 

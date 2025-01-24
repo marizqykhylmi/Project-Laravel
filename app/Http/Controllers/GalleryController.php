@@ -64,18 +64,19 @@ public function update(Request $request)
 
 
     public function destroy($id)
-    {
-        $post = Post::findOrFail($id);
+{
+    $post = Post::findOrFail($id);
 
-        // Hapus file gambar dari storage
-        if ($post->image && file_exists(storage_path('app/public/images/' . $post->image))) {
-            unlink(storage_path('app/public/images/' . $post->image));
-        }
-
-        // Hapus data dari database
-        $post->delete();
-
-        return redirect()->route('gallery')->with('success', 'Post deleted successfully!');
+    // Hapus file gambar dari storage
+    if ($post->image && file_exists(storage_path('app/public/images/' . $post->image))) {
+        unlink(storage_path('app/public/images/' . $post->image));
     }
+
+    // Hapus data dari database
+    $post->delete();
+
+    return redirect()->route('gallery')->with('success', 'Post deleted successfully!');
+}
+
 
 }
