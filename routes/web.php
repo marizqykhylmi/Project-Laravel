@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\SponsorController;
-use App\Http\Controllers\AboutUsController;
 
 Route::get('/', function () {
     return view('auth.login'); // Halaman login
@@ -20,54 +21,45 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
 
-
-
-//post, delete, edit
+//! Gallery
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/add-post', [GalleryController::class, 'create'])->name('post.create');
-Route::post('/add-post', [GalleryController::class, 'store'])->name('post.store');
+Route::get('/add-post-gallery', [GalleryController::class, 'create'])->name('gallery.create');
+Route::post('/add-post-gallery', [GalleryController::class, 'store'])->name('gallery.store');
+Route::get('/edit-post-gallery/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+Route::put('/edit-post-gallery/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+Route::delete('/delete-post-gallery/{id}', [GalleryController::class, 'destroy'])->name('gallery.delete');
 
-Route::get('/sponsor', [SponsorController::class, 'indexSponsor'])->name('sponsor');
-Route::get('/add-sponsor', [SponsorController::class, 'create'])->name('sponsor.create');
-Route::post('/add-sponsor', [SponsorController::class, 'store'])->name('sponsor.store');
+//! Sponsor
+Route::get('/sponsor', [SponsorController::class, 'index'])->name('sponsor');
+Route::get('/add-post-sponsor', [SponsorController::class, 'create'])->name('sponsor.create');
+Route::post('/add-post-sponsor', [SponsorController::class, 'store'])->name('sponsor.store');
+Route::get('/edit-post-sponsor/{id}', [SponsorController::class, 'edit'])->name('sponsor.edit');
+Route::put('/edit-post-sponsor/{id}', [SponsorController::class, 'update'])->name('sponsor.update');
+Route::delete('/delete-post-sponsor/{id}', [SponsorController::class, 'destroy'])->name('sponsor.delete');
 
-Route::get('/program', [PostController::class, 'indexProgram'])->name('program');
-Route::get('/add-program', [PostController::class, 'create'])->name('program.create');
-Route::post('/add-program', [PostController::class, 'store'])->name('program.store');
+//! Program
+Route::get('/program', [ProgramController::class, 'index'])->name('program');
+Route::get('/add-post-program', [ProgramController::class, 'create'])->name('program.create');
+Route::post('/add-post-program', [ProgramController::class, 'store'])->name('program.store');
+Route::get('/edit-post-program/{id}', [ProgramController::class, 'edit'])->name('program.edit');
+Route::put('/edit-post-program/{id}', [ProgramController::class, 'update'])->name('program.update');
+Route::delete('/delete-post-program/{id}', [ProgramController::class, 'destroy'])->name('program.delete');
 
-//gallery
-Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
-Route::post('/posts/update/{id?}', [PostController::class, 'update'])->name('posts.update');
-Route::put('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
-Route::get('/posts', [PostController::class, 'indexProgram'])->name('posts.index');
+//! List Product
+Route::get('/list-products', [ProductController::class, 'index'])->name('list-products');
+Route::get('/add-list-product', [ProductController::class, 'create'])->name('list-product.create');
+Route::post('/add-list-product', [ProductController::class, 'store'])->name('list-product.store');
+Route::get('/edit-list-product/{id}', [ProductController::class, 'edit'])->name('list-product.edit');
+Route::put('/edit-list-product/{id}', [ProductController::class, 'update'])->name('list-product.update');
+Route::delete('/delete-list-product/{id}', [ProductController::class, 'destroy'])->name('list-product.delete');
 
+//! About Us
+Route::get('/about-us', [ContentController::class, 'index'])->name('about-us');
+Route::get('/add-about-us/{type}', [ContentController::class, 'create'])->name('create-content');
+Route::post('/add-about-us/{type}', [ContentController::class, 'store'])->name('store-content');
+Route::get('/edit-about-us/{type}/{id}', [ContentController::class, 'edit'])->name('edit-content');
+Route::put('/edit-about-us/{type}/{id}', [ContentController::class, 'update'])->name('update-content');
 
-//about us
-Route::post('/save-description', [AboutUsController::class, 'saveDescription']);
-Route::post('/save-vision', [AboutUsController::class, 'saveVision']);
-Route::post('/save-mission', [AboutUsController::class, 'saveMission']);
-
-//program
-Route::delete('/posts/{id}/delete', [PostController::class, 'destroy'])->name('posts.destroy');
-Route::post('/posts/update/{id?}', [PostController::class, 'update'])->name('posts.update');
-Route::put('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
-Route::get('/posts', [PostController::class, 'indexProgram'])->name('posts.index');
-
-
-
-
-
-//sponsor
-Route::delete('/sponsor/{id}', [SponsorController::class, 'destroy'])->name('sponsor.destroy');
-
-
-
-
-
-
-
-// Route::get('/sponsor', [PostController::class, 'index'])->name('sponsor.index');
-// Route::post('/post', [PostController::class, 'store'])->name('post.store');
 
 
 // Halaman index yang hanya bisa diakses setelah login
@@ -82,34 +74,14 @@ Route::get('user-profile', function () {
     return view('user-profile'); // Halaman user profile
 })->name('user-profile');
 
-Route::get('list-products', function () {
-    return view('list-products'); // Halaman list products
-})->name('list-products');
 
 Route::get('checkout', function () {
     return view('checkout'); // Halaman checkout
 })->name('checkout');
 
-//route add post
-Route::get('add-post-gallery', function () {
-    return view('add-post-gallery'); // Halaman add post
-})->name('add-post-gallery');
-
-Route::get('add-post-sponsor', function () {
-    return view('add-post-sponsor'); // Halaman add post
-})->name('add-post-sponsor');
-
-Route::get('add-post-program', function () {
-    return view('add-post-program'); // Halaman add post
-})->name('add-post-program');
-
 Route::get('add-products', function () {
     return view('add-products'); // Halaman add products
 })->name('add-products');
-
-Route::get('about-us', function () {
-    return view('about-us'); // Halaman about us
-})->name('about-us');
 
 Route::get('visi-misi', function () {
     return view('visi-misi'); // Halaman visi misi

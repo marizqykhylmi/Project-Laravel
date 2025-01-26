@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('about', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->text('description')->nullable();
+            $table->string('name')->nullable(); // Hanya untuk tipe 'team'
+            $table->string('type');
+            $table->text('content');
+            $table->string('image')->nullable(); // Hanya untuk tipe 'team'
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('contents');
     }
 };

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:42:58 GMT -->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,9 +23,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
@@ -37,12 +35,13 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
     <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/select2.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/calendar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/datatables.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/fullcalender.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -51,10 +50,9 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
-
 </head>
 
-<body>
+<body onload="startTime()">
     <!-- loader starts-->
     <div class="loader-wrapper">
         <div class="loader">
@@ -389,325 +387,270 @@
                     </ul>
                 </div>
                 <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">
-            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-            <div class="ProfileCard-details">
-            <div class="ProfileCard-realName"></div>
-            </div>
-            </div>
-          </script>
+              <div class="ProfileCard u-cf">
+              <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+              <div class="ProfileCard-details">
+              <div class="ProfileCard-realName"></div>
+              </div>
+              </div>
+            </script>
                 <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
             </div>
         </div>
         <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
-            <!-- Page Sidebar Start-->
-            <div class="sidebar-wrapper" data-layout="fill-svg">
-                <div>
-                    <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
-                                src="../assets/images/logo/logo.png" alt=""></a>
-                        <div class="toggle-sidebar">
-                            <svg class="sidebar-toggle">
-                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon">
-                                </use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
-                                src="../assets/images/logo/logo-icon.png" alt=""></a></div>
-                    <nav class="sidebar-main">
-                        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
-                        <div id="sidebar-menu">
-                            <ul class="sidebar-links" id="simple-bar">
-                                <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid"
-                                            src="../assets/images/logo/logo-icon.png" alt=""></a>
-                                    <div class="mobile-back text-end"><span>Back</span><i
-                                            class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
-                                </li>
-
-                                </li>
-                                <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('index') }}">
-                                        <svg class="stroke-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home">
-                                            </use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home">
-                                            </use>
-                                        </svg><span href="{{ route('index') }}">Home</span></a>
-                                </li>
-                                <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('gallery') }}">
-                                        <svg class="stroke-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery">
-                                            </use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery">
-                                            </use>
-                                        </svg><span href="{{ route('gallery') }}">Gallery</span></a>
-                                <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('product') }}">
-                                        <svg class="stroke-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product">
-                                            </use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product">
-                                            </use>
-                                        </svg><span href="{{ route('product') }}">Product</span></a>
-                                <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('program') }}">
-                                        <svg class="stroke-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program">
-                                            </use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-program">
-                                            </use>
-                                        </svg><span href="{{ route('program') }}">Program</span></a>
-                                <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('sponsor') }}">
-                                        <svg class="stroke-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sponsor">
-                                            </use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use
-                                                href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor">
-                                            </use>
-                                        </svg><span href="{{ route('sponsor') }}">Sponsor</span></a>
-                                    <div class="mega-menu-container menu-content">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col mega-box">
-                                                    <div class="link-section">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                </li>
-                        </div>
-                        <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-                    </nav>
-                </div>
-            </div>
-            <!-- Page Sidebar Ends-->
-            <div class="page-body">
-                <div class="container-fluid">
-                    <div class="page-title">
-                        <div class="row">
-                            <div class="col-sm-6 ps-0">
-                                <h3>Post Gallery</h3>
-                            </div>
-                            <div class="col-sm-6 p-0">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">
-                                            <span class="material-icons"
-                                                style="font-size: 24px; color: black;">home</span>
-                                        </a></li>
-                                    <li class="breadcrumb-item">Blog</li>
-                                    <li class="breadcrumb-item active">Add Post</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Container-fluid starts-->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <div class="card-header pb-0">
-                                    <h4>Post Edit</h4>
-                                </div>
-                                <div class="card-body add-post">
-                                    <form class="row needs-validation" novalidate="" id="formPost"
-                                        action="{{ route('gallery.store') }}" method="POST"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="col-sm-12">
-                                            <div class="mb-3">
-                                                <label for="title">Title:</label>
-                                                <input class="form-control" id="title" name="title"
-                                                    type="text" placeholder="Post Title" required="">
-                                                <div class="invalid-feedback">Please fill in the title.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="mb-3">
-                                                <label for="description">Description:</label>
-                                                <input class="form-control" id="description" name="description"
-                                                    type="text" placeholder="Post Description" required="">
-                                                <div class="invalid-feedback">Please fill in the description.</div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="col-12">
-                                                <label class="form-label" for="datetime-local1">Publish Date &
-                                                    Time</label>
-                                                <div class="input-group flatpicker-calender product-date">
-                                                    <input class="form-control" id="datetime-local1"
-                                                        name="publish_date" type="datetime-local" required="">
-                                                </div>
-                                                <div class="invalid-feedback">Please choose a date and time.</div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="col-12">
-                                                <label class="form-label" for="image">Image:</label>
-                                                <input class="form-control" id="image" name="image"
-                                                    type="file" required="" accept="image/*">
-                                                <div class="invalid-feedback">Please upload an image.</div>
-
-                                                <!-- Area untuk preview gambar -->
-                                                <div class="mt-3 position-relative" style="display: inline-block;">
-                                                    <img id="imagePreview" src="#" alt="Preview Image"
-                                                        class="img-fluid d-none"
-                                                        style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
-
-                                                    <!-- Ukuran file di tengah gambar -->
-                                                    <div id="fileInfo"
-                                                        class="position-absolute text-white bg-dark rounded-pill px-3 py-1 d-none"
-                                                        style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;">
-                                                    </div>
-
-                                                    <!-- Tombol untuk menghapus gambar -->
-                                                    <button id="removeImage"
-                                                        class="btn btn-danger btn-sm position-absolute d-none"
-                                                        style="top: 10px; right: 10px; border-radius: 50%;">X</button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <script>
-                                            // Elemen DOM
-                                            const imageInput = document.getElementById('image');
-                                            const imagePreview = document.getElementById('imagePreview');
-                                            const fileInfo = document.getElementById('fileInfo');
-                                            const removeImage = document.getElementById('removeImage');
-
-                                            // Event listener untuk memilih file
-                                            imageInput.addEventListener('change', function(event) {
-                                                const file = event.target.files[0]; // Ambil file pertama
-
-                                                if (file) {
-                                                    const reader = new FileReader();
-
-                                                    // Setelah file dibaca
-                                                    reader.onload = function(e) {
-                                                        // Tampilkan preview gambar
-                                                        imagePreview.src = e.target.result;
-                                                        imagePreview.classList.remove('d-none');
-
-                                                        // Tampilkan informasi ukuran file
-                                                        const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2); // Konversi ke MB
-                                                        fileInfo.textContent = `${fileSizeInMB} MB`;
-                                                        fileInfo.classList.remove('d-none');
-
-                                                        // Tampilkan tombol hapus
-                                                        removeImage.classList.remove('d-none');
-                                                    };
-
-                                                    reader.readAsDataURL(file); // Baca file sebagai URL data
-                                                }
-                                            });
-
-                                            // Event listener untuk tombol hapus
-                                            removeImage.addEventListener('click', function() {
-                                                // Reset input file
-                                                imageInput.value = '';
-
-                                                // Sembunyikan elemen preview, ukuran file, dan tombol hapus
-                                                imagePreview.src = '#';
-                                                imagePreview.classList.add('d-none');
-                                                fileInfo.classList.add('d-none');
-                                                removeImage.classList.add('d-none');
-                                            });
-                                        </script>
-
-
-                                        <div class="btn-showcase text-end">
-                                            <button class="btn btn-primary" type="submit">Post</button>
-                                            <input class="btn btn-light" type="reset" onclick="clearForm()"
-                                                value="Discard">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Container-fluid Ends-->
-            </div>
-            <!-- footer start-->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 p-0 footer-copyright">
-                            <p class="mb-0">Copyright 2024 © Crocs theme by pixelstrap.</p>
-                        </div>
-                        <div class="col-md-6 p-0">
-                            <p class="heart mb-0">Hand crafted &amp; made with
-                                <svg class="footer-icon">
-                                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart">
+            <!-- Page Body Start-->
+            <div class="page-body-wrapper">
+                <!-- Page Sidebar Start-->
+                <div class="sidebar-wrapper" data-layout="fill-svg">
+                    <div>
+                        <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
+                                    src="../assets/images/logo/logo.png" alt=""></a>
+                            <div class="toggle-sidebar">
+                                <svg class="sidebar-toggle">
+                                    <use
+                                        href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon">
                                     </use>
                                 </svg>
-                            </p>
+                            </div>
                         </div>
+                        <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
+                                    src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+                        <nav class="sidebar-main">
+                            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+                            <div id="sidebar-menu">
+                                <ul class="sidebar-links" id="simple-bar">
+                                    <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid"
+                                                src="../assets/images/logo/logo-icon.png" alt=""></a>
+                                        <div class="mobile-back text-end"><span>Back</span><i
+                                                class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
+                                    </li>
+
+                                    </li>
+                                    <li class="sidebar-list"><i class=""></i><a
+                                            class="sidebar-link sidebar-title" href="{{ route('index') }}">
+                                            <svg class="stroke-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-home">
+                                                </use>
+                                            </svg>
+                                            <svg class="fill-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home">
+                                                </use>
+                                            </svg><span href="{{ route('index') }}">Default</span></a>
+
+                                    </li>
+                                    <li class="sidebar-list"><i class=""></i><a
+                                            class="sidebar-link sidebar-title" href="{{ route('gallery') }}">
+                                            <svg class="stroke-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-gallery">
+                                                </use>
+                                            </svg>
+                                            <svg class="fill-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery">
+                                                </use>
+                                            </svg><span href="{{ route('gallery') }}">Gallery</span></a>
+                                    <li class="sidebar-list"><i class=""></i><a
+                                            class="sidebar-link sidebar-title" href="{{ route('product') }}">
+                                            <svg class="stroke-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product">
+                                                </use>
+                                            </svg>
+                                            <svg class="fill-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product">
+                                                </use>
+                                            </svg><span href="{{ route('product') }}">Product</span></a>
+                                    <li class="sidebar-list"><i class=""></i><a
+                                            class="sidebar-link sidebar-title" href="{{ route('program') }}">
+                                            <svg class="stroke-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program">
+                                                </use>
+                                            </svg>
+                                            <svg class="fill-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-program">
+                                                </use>
+                                            </svg><span href="{{ route('program') }}">Program</span></a>
+                                    <li class="sidebar-list"><i class=""></i><a
+                                            class="sidebar-link sidebar-title" href="{{ route('sponsor') }}">
+                                            <svg class="stroke-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-sponsor">
+                                                </use>
+                                            </svg>
+                                            <svg class="fill-icon">
+                                                <use
+                                                    href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor">
+                                                </use>
+                                            </svg><span href="{{ route('sponsor') }}">Sponsor</span></a>
+                                        <div class="mega-menu-container menu-content">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col mega-box">
+                                                        <div class="link-section">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    </li>
+                            </div>
+                            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+                        </nav>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </div>
-    <!-- latest jquery-->
-    <script src="../assets/js/jquery.min.js"></script>
-    <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <!-- feather icon js-->
-    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
-    <!-- scrollbar js-->
-    <script src="../assets/js/scrollbar/simplebar.js"></script>
-    <script src="../assets/js/scrollbar/custom.js"></script>
-    <!-- Sidebar jquery-->
-    <script src="../assets/js/config.js"></script>
-    <!-- Plugins JS start-->
-    <script src="../assets/js/sidebar-menu.js"></script>
-    <script src="../assets/js/sidebar-pin.js"></script>
-    <script src="../assets/js/editor/ckeditor/ckeditor.js"></script>
-    <script src="../assets/js/editor/ckeditor/adapters/jquery.js"></script>
-    <script src="../assets/js/slick/slick.min.js"></script>
-    <script src="../assets/js/slick/slick.js"></script>
-    <script src="../assets/js/header-slick.js"></script>
-    <script src="../assets/js/dropzone/dropzone.js"></script>
-    <script src="../assets/js/dropzone/dropzone-script.js"></script>
-    <script src="../assets/js/select2/select2.full.min.js"></script>
-    <script src="../assets/js/select2/select2-custom.js"></script>
-    <script src="../assets/js/email-app.js"></script>
-    <script src="../assets/js/form-validation-custom.js"></script>
-    <!-- Plugins JS Ends-->
-    <!-- Theme js-->
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/theme-customizer/customizer.js"></script>
-    <!-- Plugin used-->
+                <!-- Page Sidebar Ends-->
+                <div class="page-body">
+                    <div class="container-fluid">
+                        <div class="page-title">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4 class="mb-3">Add {{ ucfirst($type) }}</h4>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Add {{ ucfirst($type) }} Content</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="{{ route('store-content', $type) }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="type" value="{{ $type }}">
+
+                                                @if ($type == 'team')
+                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name</label>
+                                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
+                                                        @error('name')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="image" class="form-label">Upload Image</label>
+                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*">
+                                                        @error('image')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+                                                @endif
+
+                                                <div class="mb-3">
+                                                    <label for="content" class="form-label">Content</label>
+                                                    <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="5" required>{{ old('content') }}</textarea>
+                                                    @error('content')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                                <a href="{{ route('about-us') }}" class="btn btn-secondary">Cancel</a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End container-fluid -->
+                </div> <!-- End page-body -->
+                <!-- footer start-->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 p-0 footer-copyright">
+                                <p class="mb-0">Copyright 2024 © Crocs theme by pixelstrap.</p>
+                            </div>
+                            <div class="col-md-6 p-0">
+                                <p class="heart mb-0">Hand crafted &amp; made with
+                                    <svg class="footer-icon">
+                                        <use
+                                            href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#heart">
+                                        </use>
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- latest jquery-->
+        <script src="../assets/js/jquery.min.js"></script>
+        <!-- Bootstrap js-->
+        <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <!-- feather icon js-->
+        <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+        <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+        <!-- scrollbar js-->
+        <script src="../assets/js/scrollbar/simplebar.js"></script>
+        <script src="../assets/js/scrollbar/custom.js"></script>
+        <!-- Sidebar jquery-->
+        <script src="../assets/js/config.js"></script>
+        <!-- Plugins JS start-->
+        <script src="../assets/js/sidebar-menu.js"></script>
+        <script src="../assets/js/sidebar-pin.js"></script>
+        <script src="../assets/js/clock.js"></script>
+        <script src="../assets/js/calendar/fullcalendar.min.js"></script>
+        <script src="../assets/js/calendar/fullcalendar-custom.js"></script>
+        <script src="../assets/js/calendar/fullcalender.js"></script>
+        <script src="../assets/js/calendar/custom-calendar.js"></script>
+        <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
+        <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
+        <script src="../assets/js/chart/apex-chart/moment.min.js"></script>
+        <script src="../assets/js/notify/bootstrap-notify.min.js"></script>
+        <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
+        <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
+        <script src="../assets/js/dashboard/default.js"></script>
+        <script src="../assets/js/notify/index.js"></script>
+        <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/datatable/datatables/datatable.custom.js"></script>
+        <script src="../assets/js/datatable/datatables/datatable.custom1.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.en.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.custom.js"></script>
+        <script src="../assets/js/typeahead/handlebars.js"></script>
+        <script src="../assets/js/typeahead/typeahead.bundle.js"></script>
+        <script src="../assets/js/typeahead/typeahead.custom.js"></script>
+        <script src="../assets/js/typeahead-search/handlebars.js"></script>
+        <script src="../assets/js/typeahead-search/typeahead-custom.js"></script>
+        <script src="../assets/js/vector-map/map-vector.js"></script>
+        <!-- Plugins JS Ends-->
+        <!-- Theme js-->
+        <script src="../assets/js/script.js"></script>
+        <script src="../assets/js/theme-customizer/customizer.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Include Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Plugin used-->
 </body>
 
-<!-- Mirrored from admin.pixelstrap.net/crocs/template/add-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:46:27 GMT -->
+<!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
 
 </html>

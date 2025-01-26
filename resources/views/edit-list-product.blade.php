@@ -368,7 +368,7 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-6">
-                            <h4>Product List</h4>
+                            <h4>Edit Product</h4>
                         </div>
                         <div class="col-6">
                             <ol class="breadcrumb">
@@ -378,96 +378,100 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">ECommerce</li>
-                                <li class="breadcrumb-item active">Product List</li>
+                                <li class="breadcrumb-item active">Edit Product</li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Container-fluid starts -->
+            <!-- Container-fluid starts-->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="list-product-header">
-                                    <div>
-                                        <a class="btn btn-primary" href="{{ route('list-product.create') }}">
-                                            <i class="fa fa-plus"></i> Add Product
+                                <form action="{{ route('list-product.update', $product->id) }}" method="POST" 
+                                    enctype="multipart/form-data" class="needs-validation">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Product Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" 
+                                            value="{{ old('name', $product->name) }}" placeholder="Enter Product Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="sku" class="form-label">SKU</label>
+                                        <input type="text" class="form-control" id="sku" name="sku" 
+                                            value="{{ old('sku', $product->sku) }}" placeholder="Enter SKU">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="category" class="form-label">Category</label>
+                                        <select class="form-select" id="category" name="category">
+                                            <option value="" disabled>Choose Category</option>
+                                            <option value="Furniture" {{ $product->category == 'Furniture' ? 'selected' : '' }}>
+                                                Furniture
+                                            </option>
+                                            <option value="Smart" {{ $product->category == 'Smart' ? 'selected' : '' }}>
+                                                Smart Gadgets
+                                            </option>
+                                            <option value="Electronics" {{ $product->category == 'Electronics' ? 'selected' : '' }}>
+                                                Electronics
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label">Price</label>
+                                        <input type="number" class="form-control" id="price" name="price" 
+                                            value="{{ old('price', $product->price) }}" placeholder="Enter Price">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="quantity" class="form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" 
+                                            value="{{ old('quantity', $product->quantity) }}" placeholder="Enter Quantity">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="status" class="form-label">Status</label>
+                                        <select class="form-select" id="status" name="status">
+                                            <option value="" disabled>Choose Status</option>
+                                            <option value="Stock" {{ $product->status == 'Stock' ? 'selected' : '' }}>In Stock</option>
+                                            <option value="Sold" {{ $product->status == 'Sold' ? 'selected' : '' }}>Sold Out</option>
+                                            <option value="Order" {{ $product->status == 'Order' ? 'selected' : '' }}>Pre Order</option>
+                                            <option value="Limited" {{ $product->status == 'Limited' ? 'selected' : '' }}>Limited Stock</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="rating" class="form-label">Rating</label>
+                                        <input type="number" class="form-control" id="rating" name="rating" 
+                                            value="{{ old('rating', $product->rating) }}" min="1" max="5"
+                                            placeholder="Enter Rating (1-5)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label">Product Image</label>
+                                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                                        @if ($product->image)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" 
+                                                    style="max-height: 150px;">
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-save"></i> Save Changes
+                                        </button>
+                                        <a href="{{ route('list-products') }}" class="btn btn-secondary">
+                                            <i class="fa fa-arrow-left"></i> Back
                                         </a>
                                     </div>
-                                </div>
-                                <div class="list-product">
-                                    <table class="table" id="project-status">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input checkbox-primary" type="checkbox">
-                                                    </div>
-                                                </th>
-                                                <th>Product Name</th>
-                                                <th>SKU</th>
-                                                <th>Category</th>
-                                                <th>Price</th>
-                                                <th>Qty</th>
-                                                <th>Status</th>
-                                                <th>Rating</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($products as $product)
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input checkbox-primary" type="checkbox">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-names">
-                                                            <img src="{{ asset('storage/uploads/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
-                                                            <p>{{ $product->name }}</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{ $product->sku }}</td>
-                                                    <td>{{ $product->category }}</td>
-                                                    <td>{{ number_format($product->price, 2) }}</td>
-                                                    <td>{{ $product->quantity }}</td>
-                                                    <td>
-                                                        <span class="badge badge-light-secondary">{{ $product->status }}</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating">
-                                                            @for ($i = 1; $i <= 5; $i++)
-                                                                <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
-                                                                @endfor
-                                                                {{ $product->rating }}
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                                        <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                    <div>
-                                        {{-- {{ $products->links() }} Pagination --}}
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Container-fluid Ends -->
+            <!-- Container-fluid Ends-->
         </div>
+                
         <!-- footer start-->
         <footer class="footer">
           <div class="container-fluid">

@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-        $table->string('title');
-        $table->text('description');
-        $table->timestamp('publish_date')->nullable(); // buat nullable jika tidak selalu ada
-        $table->string('image')->nullable(); // buat nullable jika tidak selalu ada
-        $table->timestamps();
+            $table->string('title');
+            $table->text('description');
+            $table->timestamp('publish_date')->nullable();
+            $table->string('image')->nullable();
+            $table->timestamps();
         });
     }
 

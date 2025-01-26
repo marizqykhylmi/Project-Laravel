@@ -28,6 +28,9 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -512,72 +515,71 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6 ps-0">
-                                <h3>Post Gallery</h3>
+                                <h3>Edit Program</h3>
                             </div>
                             <div class="col-sm-6 p-0">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">
+                                    <li class="breadcrumb-item">
+                                        <a href="{{ route('index') }}">
                                             <span class="material-icons"
                                                 style="font-size: 24px; color: black;">home</span>
-                                        </a></li>
+                                        </a>
+                                    </li>
                                     <li class="breadcrumb-item">Blog</li>
-                                    <li class="breadcrumb-item active">Add Post</li>
+                                    <li class="breadcrumb-item active">Edit Post</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Container-fluid starts-->
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header pb-0">
-                                    <h4>Post Edit</h4>
+                                    <h4>Edit Post</h4>
                                 </div>
                                 <div class="card-body add-post">
                                     <form class="row needs-validation" novalidate="" id="formPost"
-                                        action="{{ route('gallery.store') }}" method="POST"
+                                        action="{{ route('program.update', $program->id) }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
+                                        @method('PUT')
+
                                         <div class="col-sm-12">
                                             <div class="mb-3">
                                                 <label for="title">Title:</label>
                                                 <input class="form-control" id="title" name="title"
-                                                    type="text" placeholder="Post Title" required="">
+                                                    type="text" placeholder="Post Title"
+                                                    value="{{ $program->title }}" required="">
                                                 <div class="invalid-feedback">Please fill in the title.</div>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-12">
                                             <div class="mb-3">
                                                 <label for="description">Description:</label>
                                                 <input class="form-control" id="description" name="description"
-                                                    type="text" placeholder="Post Description" required="">
+                                                    type="text" placeholder="Post Description"
+                                                    value="{{ $program->description }}" required="">
                                                 <div class="invalid-feedback">Please fill in the description.</div>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <div class="col-12">
-                                                <label class="form-label" for="datetime-local1">Publish Date &
-                                                    Time</label>
-                                                <div class="input-group flatpicker-calender product-date">
-                                                    <input class="form-control" id="datetime-local1"
-                                                        name="publish_date" type="datetime-local" required="">
-                                                </div>
-                                                <div class="invalid-feedback">Please choose a date and time.</div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="col-12">
+
+                                        <div class="col-sm-12">
+                                            <div class="mb-3">
                                                 <label class="form-label" for="image">Image:</label>
                                                 <input class="form-control" id="image" name="image"
-                                                    type="file" required="" accept="image/*">
+                                                    type="file" accept="image/*">
                                                 <div class="invalid-feedback">Please upload an image.</div>
 
-                                                <!-- Area untuk preview gambar -->
+                                                <!-- Preview gambar jika ada -->
                                                 <div class="mt-3 position-relative" style="display: inline-block;">
-                                                    <img id="imagePreview" src="#" alt="Preview Image"
-                                                        class="img-fluid d-none"
+                                                    <img id="imagePreview"
+                                                        src="{{ asset('storage/' . $program->image) }}"
+                                                        alt="Preview Image" class="img-fluid"
                                                         style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
 
                                                     <!-- Ukuran file di tengah gambar -->
@@ -588,51 +590,36 @@
 
                                                     <!-- Tombol untuk menghapus gambar -->
                                                     <button id="removeImage"
-                                                        class="btn btn-danger btn-sm position-absolute d-none"
+                                                        class="btn btn-danger btn-sm position-absolute"
                                                         style="top: 10px; right: 10px; border-radius: 50%;">X</button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <script>
-                                            // Elemen DOM
                                             const imageInput = document.getElementById('image');
                                             const imagePreview = document.getElementById('imagePreview');
                                             const fileInfo = document.getElementById('fileInfo');
                                             const removeImage = document.getElementById('removeImage');
 
-                                            // Event listener untuk memilih file
                                             imageInput.addEventListener('change', function(event) {
-                                                const file = event.target.files[0]; // Ambil file pertama
-
+                                                const file = event.target.files[0];
                                                 if (file) {
                                                     const reader = new FileReader();
-
-                                                    // Setelah file dibaca
                                                     reader.onload = function(e) {
-                                                        // Tampilkan preview gambar
                                                         imagePreview.src = e.target.result;
                                                         imagePreview.classList.remove('d-none');
-
-                                                        // Tampilkan informasi ukuran file
-                                                        const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2); // Konversi ke MB
+                                                        const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2);
                                                         fileInfo.textContent = `${fileSizeInMB} MB`;
                                                         fileInfo.classList.remove('d-none');
-
-                                                        // Tampilkan tombol hapus
                                                         removeImage.classList.remove('d-none');
                                                     };
-
-                                                    reader.readAsDataURL(file); // Baca file sebagai URL data
+                                                    reader.readAsDataURL(file);
                                                 }
                                             });
 
-                                            // Event listener untuk tombol hapus
                                             removeImage.addEventListener('click', function() {
-                                                // Reset input file
                                                 imageInput.value = '';
-
-                                                // Sembunyikan elemen preview, ukuran file, dan tombol hapus
                                                 imagePreview.src = '#';
                                                 imagePreview.classList.add('d-none');
                                                 fileInfo.classList.add('d-none');
@@ -640,11 +627,9 @@
                                             });
                                         </script>
 
-
                                         <div class="btn-showcase text-end">
-                                            <button class="btn btn-primary" type="submit">Post</button>
-                                            <input class="btn btn-light" type="reset" onclick="clearForm()"
-                                                value="Discard">
+                                            <button class="btn btn-primary" type="submit">Update</button>
+                                            <a href="{{ route('program') }}" class="btn btn-light">Cancel</a>
                                         </div>
                                     </form>
                                 </div>

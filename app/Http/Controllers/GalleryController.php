@@ -4,56 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
-use App\Models\Post;
 
 class GalleryController extends Controller
 {
+    // Menampilkan semua data gallery
     public function index()
     {
-        $posts = Gallery::orderBy('publish_date', 'desc')->get();
-        return view('gallery', compact('posts'));
+        // Ambil semua data gallery dengan urutan terbaru berdasarkan publish_date
+        $galleries = Gallery::orderBy('publish_date', 'desc')->get();
+        return view('gallery', compact('galleries'));
     }
 
-    public function edit($id)
-{
-    $post = Post::findOrFail($id); // Temukan data berdasarkan ID
-    return view('edit-post-program', compact('post')); // Tampilkan view edit dengan data
-}
-
-public function update(Request $request, $id)
-{
-    // Validasi input
-    $validatedData = $request->validate([
-        'title' => 'required|string|max:255', // Pastikan 'title' tidak kosong
-        'description' => 'required|string',
-    ]);
-
-    // Temukan post berdasarkan ID
-    $post = Post::find($id);
-    if ($post) {
-        $post->title = $validatedData['title'];
-        $post->description = $validatedData['description'];
-
-        // Cek jika ada gambar baru
-        if ($request->hasFile('image')) {
-            $post->image = $request->file('image')->store('images', 'public');
-        }
-
-        $post->save();
-
-        return redirect()->route('posts.index')->with('success', 'Post updated successfully');
-    }
-
-    return redirect()->back()->with('error', 'Post not found');
-}
-
+    // Menampilkan halaman tambah gallery
     public function create()
     {
         return view('add-post-gallery');
     }
 
+    // Menyimpan data gallery baru ke database
     public function store(Request $request)
     {
+        // Validasi input dari form
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -61,9 +32,11 @@ public function update(Request $request, $id)
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        // Simpan gambar dengan nama unik berdasarkan timestamp
         $imageName = time() . '.' . $request->image->extension();
         $request->file('image')->storeAs('images', $imageName, 'public');
 
+        // Simpan data ke database
         Gallery::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -74,21 +47,65 @@ public function update(Request $request, $id)
         return redirect()->route('gallery')->with('success', 'Post created successfully!');
     }
 
-
-    public function destroy($id)
-{
-    $post = Post::findOrFail($id);
-
-    // Hapus file gambar dari storage
-    if ($post->image && file_exists(storage_path('app/public/images/' . $post->image))) {
-        unlink(storage_path('app/public/images/' . $post->image));
+    // Menampilkan halaman edit gallery berdasarkan ID
+    public function edit($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        return view('edit-post-gallery', compact('gallery'));
     }
 
-    // Hapus data dari database
-    $post->delete();
+    // Memperbarui data gallery
+    public function update(Request $request, $id)
+    {
+        // Validasi input yang dikirim dari form
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Gambar opsional
+        ]);
 
-    return redirect()->route('gallery')->with('success', 'Post deleted successfully!');
-}
+        $gallery = Gallery::findOrFail($id);
 
+        if ($gallery) {
+            // Update data gallery
+            $gallery->title = $validatedData['title'];
+            $gallery->description = $validatedData['description'];
 
+            // Cek apakah ada gambar baru yang diunggah
+            if ($request->hasFile('image')) {
+                // Hapus gambar lama jika ada
+                if ($gallery->image && file_exists(storage_path('app/public/images/' . $gallery->image))) {
+                    unlink(storage_path('app/public/images/' . $gallery->image));
+                }
+
+                // Simpan gambar baru
+                $imageName = time() . '.' . $request->image->extension();
+                $request->file('image')->storeAs('images', $imageName, 'public');
+                $gallery->image = $imageName;
+            }
+
+            // Simpan perubahan
+            $gallery->save();
+
+            return redirect()->route('gallery')->with('success', 'Post updated successfully!');
+        }
+
+        return redirect()->back()->with('error', 'Post not found.');
+    }
+
+    // Menghapus data gallery
+    public function destroy($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($gallery->image && file_exists(storage_path('app/public/images/' . $gallery->image))) {
+            unlink(storage_path('app/public/images/' . $gallery->image));
+        }
+
+        // Hapus data dari database
+        $gallery->delete();
+
+        return redirect()->route('gallery')->with('success', 'Post deleted successfully!');
+    }
 }
