@@ -8,6 +8,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.31",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
@@ -33,6 +34,10 @@
         }
     },
     "scripts": {
+        "files.autoSave": "afterDelay",
+        "editor.renderWhitespace": "none",
+        "editor.formatOnSave": false,
+
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -70,4 +75,3 @@
     "minimum-stability": "stable",
     "prefer-stable": true
 }
-
