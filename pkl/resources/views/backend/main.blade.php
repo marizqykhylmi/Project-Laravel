@@ -478,7 +478,7 @@
                                 <li><a href="sign-up-two.html" target="_blank">Register two</a></li>
                                 <li><a href="sign-up-wizard.html" target="_blank">Register wizard</a></li>
                                 <li><a href="unlock.html">Unlock User</a></li>
-                                <li><a href="{{ route('password.update') }}l">Forget Password</a></li>
+                                <li><a href="{{ route('reset-password') }}l">Forget Password</a></li>
                                 <li><a href="reset-password.html">Reset Password</a></li>
                                 <li><a href="maintenance.html">Maintenance</a></li>
                               </ul>

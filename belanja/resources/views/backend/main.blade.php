@@ -45,7 +45,7 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset("assets/css/responsive.css") }}">
   </head>
-  <body onload="startTime()">
+  <body> <!-- onload="startTime()" -->
     <!-- loader starts-->
     <div class="loader-wrapper">
       <div class="loader">
@@ -700,7 +700,12 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/theme-customizer/customizer.js') }}"></script>
     <!-- Plugin used-->
-  </body>
 
+    <script>
+        function startTime() {
+
+        }
+    </script>
+  </body>
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
 </html>
