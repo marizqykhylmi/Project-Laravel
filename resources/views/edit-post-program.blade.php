@@ -411,11 +411,12 @@
                     <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
                                 src="../assets/images/logo/logo.png" alt=""></a>
                         <div class="toggle-sidebar">
-                            <svg class="sidebar-toggle">
-                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon">
-                                </use>
-                            </svg>
-                        </div>
+                <svg class="sidebar-toggle" width="30" height="30" viewBox="0 0 100 80" fill="black">
+                  <rect width="100" height="20"></rect>
+                  <rect y="30" width="100" height="20"></rect>
+                  <rect y="60" width="100" height="20"></rect>
+                </svg>
+              </div>
                     </div>
                     <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
                                 src="../assets/images/logo/logo-icon.png" alt=""></a></div>
@@ -456,7 +457,7 @@
                                             </use>
                                         </svg><span href="{{ route('gallery') }}">Gallery</span></a>
                                 <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
-                                        href="{{ route('product') }}">
+                                        href="{{ route('list-products') }}">
                                         <svg class="stroke-icon">
                                             <use
                                                 href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product">
@@ -466,7 +467,7 @@
                                             <use
                                                 href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product">
                                             </use>
-                                        </svg><span href="{{ route('product') }}">Product</span></a>
+                                        </svg><span href="{{ route('list-products') }}">Product</span></a>
                                 <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title"
                                         href="{{ route('program') }}">
                                         <svg class="stroke-icon">

@@ -323,13 +323,13 @@
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-gallery"></use>
                       </svg><span  href="{{ route('gallery') }}">Gallery</span></a>
-                    <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('product') }}">
+                    <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('list-products') }}">
                     <svg class="stroke-icon">
                       <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-product"></use>
                     </svg>
                   <svg class="fill-icon">
                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-product"></use>
-                  </svg><span  href="{{ route('product') }}">Product</span></a>
+                  </svg><span  href="{{ route('list-products') }}">Product</span></a>
                   <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('program') }}">
                     <svg class="stroke-icon">
                       <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-program"></use>
