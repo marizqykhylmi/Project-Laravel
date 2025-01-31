@@ -228,7 +228,7 @@
                                             @foreach ($galleries as $gallery)
                                                 <tr>
                                                     <td class="text-center">
-                                                    <img src="{{ asset('storage/images/' . $gallery->image) }}" 
+                                                        <img src="{{ asset('storage/images/' . $gallery->image) }}" 
                                                     alt="{{ $gallery->title }}" width="100">
                                                     </td>
                                                     <td>{{ $gallery->title }}</td>

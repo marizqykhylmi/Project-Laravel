@@ -166,7 +166,118 @@
             </div>
           </div>
           
-          
+          {{-- <!-- About Our Company -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card text-center">
+                                        <div class="card-header">
+                                            <h4 class="card-title">About Our Company</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            @php $about = $contents->where('type', 'about')->first(); @endphp
+                                            <p id="company-description">
+                                                {{ $about->content ?? 'No description available.' }}
+                                            </p>
+                                            <a href="{{ $about ? route('edit-content', ['type' => 'about', 'id' => $about->id]) : route('create-content', 'about') }}"
+                                                class="btn btn-primary">
+                                                {{ $about ? 'Edit' : 'Add' }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vision and Mission -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card text-center">
+                                        <div class="card-header">
+                                            <h5>Vision</h5>
+                                        </div>
+                                        <div class="card-body ">
+                                            @php $vision = $contents->where('type', 'visi')->first(); @endphp
+                                            <p id="vision-text">
+                                                {{ $vision->content ?? 'No vision available.' }}
+                                            </p>
+                                            <a href="{{ $vision ? route('edit-content', ['type' => 'visi', 'id' => $vision->id]) : route('create-content', 'visi') }}"
+                                                class="btn btn-primary">
+                                                {{ $vision ? 'Edit' : 'Add' }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card  text-center">
+                                        <div class="card-header">
+                                            <h5>Mission</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            @php $missions = $contents->where('type', 'misi'); @endphp
+                                            @if ($missions->isEmpty())
+                                                <p>No mission available.</p>
+                                            @else
+                                                <ul id="mission-list">
+                                                    @foreach ($missions as $misi)
+                                                        <li>{{ $misi->content }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                            <a href="{{ route('create-content', 'misi') }}"
+                                                class="btn btn-primary">Add</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Our Team -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Our Team</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                @php $teams = $contents->where('type', 'team'); @endphp
+                                                @if ($teams->isEmpty())
+                                                    <p class="text-center">No team members available.</p>
+                                                    <div class="text-center">
+                                                        <a href="{{ route('create-content', 'team') }}"
+                                                            class="btn btn-primary">Add Team Member</a>
+                                                    </div>
+                                                @else
+                                                    @foreach ($teams as $team)
+                                                        <div class="col-sm-4 text-center">
+                                                            @if ($team->image)
+                                                                <img src="{{ asset('storage/' . $team->image) }}"
+                                                                    alt="{{ $team->name }}"
+                                                                    class="img-fluid rounded-circle mb-3"
+                                                                    style="width: 150px; height: 150px; object-fit: cover;">
+                                                            @else
+                                                                <img src="{{ asset('images/default-profile.png') }}"
+                                                                    alt="Default Image"
+                                                                    class="img-fluid rounded-circle mb-3"
+                                                                    style="width: 150px; height: 150px; object-fit: cover;">
+                                                            @endif
+                                                            <h6>{{ $team->name }}</h6>
+                                                            <p>{{ $team->content }}</p>
+                                                            <a href="{{ route('edit-content', ['type' => 'team', 'id' => $team->id]) }}"
+                                                                class="btn btn-primary">Edit</a>
+                                                        </div>
+                                                    @endforeach
+                                                    <div class="text-center pt-2">
+                                                        <a href="{{ route('create-content', 'team') }}"
+                                                            class="btn btn-primary">Add Team Member</a>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End of container-fluid -->
+                    </div> <!-- End of page-body --> --}}
           <!-- Container-fluid starts-->
           <div class="container-fluid project-dashboard">
             <div class="row">
@@ -239,7 +350,7 @@
                     <div class="d-flex"> 
                       <div class="flex-grow-1"> 
                         <h4>Upgrade Your Subscription Plan</h4>
-                        <p>The goal of this message is to welcome you to our app.</p><a class="btn btn-primary" href="{{route ('about-us')}}">Go Premium</a>
+                        <p>The goal of this message is to welcome you to our app.</p><a class="btn btn-primary" href="">Go Premium</a>
                       </div>
                       <div class="flex-shrink-0"> <img src="../assets/images/dashboard-3/upgrade.png" alt=""></div>
                     </div>
