@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Storage;
 class ContentController extends Controller
 {
     public function index()
-    {
-        // Mengambil semua data content dan menampilkannya di halaman about-us
-        $contents = Content::all();
-        return view('about-us', compact('contents'));
-    }
+{
+    // Ambil data "about"
+    $about = Content::where('type', 'about')->first();
+    // Pastikan Anda mengirimkan data ini ke view 'index'
+    return view('index', compact('about-us'));
+}
+
 
     public function create($type)
     {

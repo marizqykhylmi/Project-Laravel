@@ -466,7 +466,7 @@
                               <td><span>$6935.00  </span></td>
                             </tr>
                             <tr>
-                              <td class="text-end" colspan="5"><a class="btn btn-secondary cart-btn-transform" href="{{ route ('list-products') }}">Continue Shopping</a></td>
+                              <td class="text-end" colspan="5"><a class="btn btn-secondary cart-btn-transform" href="{{ route ('product') }}">Continue Shopping</a></td>
                               <td><a class="btn btn-success cart-btn-transform" href="{{ route ('checkout') }}">Check out</a></td>
                             </tr>
                           </tbody>

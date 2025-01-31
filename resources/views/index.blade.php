@@ -65,285 +65,7 @@
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-      <!-- Page Header Start-->
-      <div class="page-header">
-        <div class="header-wrapper row m-0">
-          <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
-            <div class="toggle-sidebar">
-              <span class="material-icons">menu</span>
-            </div>
-            
-          </div>
-          <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
-            <div class="left-menu-header">
-              <ul class="header-left">
-                <li>
-                  <div class="form-group w-100">
-                    <div class="Typeahead Typeahead--twitterUsers">
-                      <div class="u-posRelative d-flex">
-                        <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
-                        {{-- <svg class="search-bg svg-color me-2"><!-- Menggunakan Font Awesome -->
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"></use>
-                        </svg> --}}
-                        <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
-            <ul class="nav-menus">
-              <li class="serchinput">
-                <div class="serchbox">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"></use>
-                  </svg>
-                </div>
-                <div class="form-group search-form">
-                  <input type="text" placeholder="Search here...">
-                </div>
-              </li>
-              <li class="onhover-dropdown">
-                <div class="notification-box">
-                  <i class="fa fa-bell animated-icon"></i>
-                  <span class="badge rounded-pill badge-primary">3</span>
-
-              <style>
-                .animated-icon {
-                  animation: bell-shake 1.5s infinite;
-                }
-
-                @keyframes bell-shake {
-                  0%, 100% {
-                    transform: rotate(0);
-                  }
-                  25% {
-                    transform: rotate(-15deg);
-                  }
-                  50% {
-                    transform: rotate(15deg);
-                  }
-                  75% {
-                    transform: rotate(-15deg);
-                  }
-                }
-
-                /* Tombol switch theme */
-                .theme-toggle-btn {
-                  background-color: transparent;
-                  border: none;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  padding: 10px;
-                  cursor: pointer;
-                  border-radius: 50%;
-                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-                  transition: all 0.3s ease;
-                }
-
-                .theme-toggle-btn:hover {
-                  background-color: rgba(0, 0, 0, 0.1);
-                }
-
-                .theme-icon {
-                  width: 20px;
-                  height: 20px;
-                  fill: #333;
-                  transition: all 0.3s ease;
-                }
-
-                /* Dark mode toggle */
-                body.dark-mode .theme-toggle-btn .theme-icon {
-                  transform: rotate(180deg);
-                  fill: #fff;
-                }
-              </style>
-
-                <div class="onhover-show-div notification-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
-                  <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                        <h5>
-                           Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                    <div class="flex-shrink-0">
-                      <div class="activity-dot-primary"></div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                        <h5>
-                           Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                    <div class="flex-shrink-0">
-                      <div class="activity-dot-secondary"></div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                    <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                        <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
-                  </div>
-                </div>
-              </li>
-              <li class="onhover-dropdown">
-                <div class="icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                <div class="onhover-show-div bookmark-flip">
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="front">
-                        <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                        <ul class="bookmark-dropdown">
-                          <li>
-                            <div class="row">
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="file-text"></i></div><span>Forms</span>
-                                </div>
-                              </div>
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="user"></i></div><span>Profile</span>
-                                </div>
-                              </div>
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="server"></i></div><span>Tables</span>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="text-center"><a class="flip-btn f-w-700" id="flip-btn" href="javascript:void(0)">Add New Bookmark</a></li>
-                        </ul>
-                      </div>
-                      <div class="back">
-                        <ul>
-                          <li>
-                            <div class="bookmark-dropdown flip-back-content">
-                              <input type="text" placeholder="search...">
-                            </div>
-                          </li>
-                          <li><a class="f-w-700 d-block flip-back" id="flip-back" href="javascript:void(0)">Back</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="mode">
-                  <button id="theme-toggle" class="theme-toggle-btn">
-                    <svg class="theme-icon" width="24" height="24">
-                      <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
-                    </svg>
-                  </button>
-              </li>
-              <li class="onhover-dropdown">
-                <div class="message">
-                  <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6c757d" width="24" height="24">
-                    <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z"/>
-                  </svg>
-
-                  <span class="badge rounded-pill badge-secondary">4</span>
-                </div>
-                <div class="onhover-show-div message-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Message</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/3.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Helen Walter</a></h5>
-                          <p>Do you want to go see movie?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/6.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
-                          <p>Thank you for rating us.</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/10.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
-                          <p>What`s the project report update?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li><a class="f-w-700" href="chat.html">Check all</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="cart-nav onhover-dropdown">
-                <div class="cart-box">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="cart-dropdown onhover-show-div">
-                  <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-60" src="../assets/images/ecommerce/06.jpg" alt="">
-                        <div class="flex-grow-1"><span>Winter T-shirt</span>
-                          <h6>1 X $ 299.00</h6>
-                        </div>
-                        <div class="close-circle"><a href="#"><i class="fa fa-times"></i></a></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-60" src="../assets/images/ecommerce/02.jpg" alt="">
-                        <div class="flex-grow-1"><span>Men Shirt</span>
-                          <h6>1 X $ 299.00</h6>
-                        </div>
-                        <div class="close-circle"><a href="#"><i class="fa fa-times"></i></a></div>
-                      </div>
-                    </li>
-                    <li class="total">
-                      <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
-                    </li>
-                    <li><a class="view-cart" href="{{ route ('cart') }}">View Cart</a><a class="view-checkout f-right" href="{{ route ('checkout') }}">Checkout</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
-                  <div class="flex-grow-1"><span>User</span>
-                    <p class="mb-0">UI Designer </p>
-                  </div>
-                </div>
-                <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="user-profile.html"><i data-feather="user"></i><span>Account </span></a></li>
-                  <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                  <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                  <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="{{route ('login')}}"><i data-feather="log-in"> </i><span>Logout</span></a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">
-            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-            <div class="ProfileCard-details">
-            <div class="ProfileCard-realName"></div>
-            </div>
-            </div>
-          </script>
-          <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
-        </div>
-      </div>
-      <!-- Page Header Ends                              -->
+                                    -->
       <!-- Page Body Start-->
       <div class="page-body-wrapper">
         <!-- Page Sidebar Start-->
@@ -411,7 +133,6 @@
                             <div class="link-section">
                             </div>
                           </div>
-                             
                         </div>
                       </div>
                     </div>
@@ -430,6 +151,7 @@
                 <div class="col-sm-6 p-0">
                   <h3>Default Dashboard </h3>
                 </div>
+                
                 <div class="col-sm-6 p-0">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('index') }}">
@@ -443,187 +165,430 @@
               </div>
             </div>
           </div>
+          
+          
           <!-- Container-fluid starts-->
-          <div class="container-fluid default-dashboard">
+          <div class="container-fluid project-dashboard">
             <div class="row">
-              <div class="col-xl-4 col-lg-4 col-md-7 box-col-4">
-                <div class="card welcome-card">
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <div class="flex-grow-1">
-                        <h1>Hello,User.</h1>
-                        <p>Welcome to the Crocs clan! We appreciate your interest in our dashboard.</p><a class="btn" href="{{ route('about-us') }}">About Company</a>
+              <div class="col-xl-3 col-lg-3 col-md-4">
+                <div class="row"> 
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                    <div class="card project-task">
+                      <div class="card-body">
+                        <div class="website-design">
+                          <div class="d-flex"> 
+                            <h4 class="font-primary">Website Design</h4><span>Done</span>
+                          </div>
+                          <div class="progress-value"> 
+                            <h5>Task Completed: 10/10</h5>
+                            <div class="progress">
+                              <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                          <div class="client">
+                            <div class="flex-grow-1"> 
+                              <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
+                            </div>
+                            <div class="flex-shrink-0"> 
+                              <div class="design-card bg-light-primary"> 
+                                <svg>
+                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#website-design"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
-                      <div>
-                        <div class="clockbox">
-                          <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
-                            <g id="face">
-                              <circle class="circle" cx="300" cy="300" r="253.9"></circle>
-                              <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"></path>
-                              <circle class="mid-circle" cx="300" cy="300" r="16.2"></circle>
-                            </g>
-                            <g id="hour">
-                              <path class="hour-hand" d="M300.5 298V142"></path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
-                            </g>
-                            <g id="minute">
-                              <path class="minute-hand" d="M300.5 298V67">   </path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
-                            </g>
-                            <g id="second">
-                              <path class="second-hand" d="M300.5 350V55"></path>
-                              <circle class="sizing-box" cx="300" cy="300" r="253.9">   </circle>
-                            </g>
-                          </svg>
-                          <div class="badge f-10 p-0" id="txt"></div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                    <div class="card project-task">
+                      <div class="card-body">
+                        <div class="website-design">
+                          <div class="d-flex"> 
+                            <h4 class="font-secondary">NFT App Design</h4><span>Running</span>
+                          </div>
+                          <div class="progress-value"> 
+                            <h5>Task Completed: 4/10</h5>
+                            <div class="progress">
+                              <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                          <div class="client">
+                            <div class="flex-grow-1"> 
+                              <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
+                            </div>
+                            <div class="flex-shrink-0"> 
+                              <div class="design-card bg-light-secondary"> 
+                                <svg>
+                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#nft-app"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-2 col-xl-25 col-md-5 col-sm-6 box-col-3">
-                <div class="card earning-card">
-                  <div class="card-header">
-                    <div class="header-top">
-                      <h5>Total Sales</h5>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+              
+              <div class="col-xl-3 col-lg-5 col-md-5">
+                <div class="card upgrade-card">
+                  <div class="card-body">
+                    <div class="d-flex"> 
+                      <div class="flex-grow-1"> 
+                        <h4>Upgrade Your Subscription Plan</h4>
+                        <p>The goal of this message is to welcome you to our app.</p><a class="btn btn-primary" href="{{route ('about-us')}}">Go Premium</a>
                       </div>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div id="Earnings-chart"></div>
-                    <div class="d-flex p-3 pt-0">
-                      <h2 class="me-2">$ 12,463</h2><span class="bg-light-danger">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#down-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-danger">+ 20.08%</h6>
+                      <div class="flex-shrink-0"> <img src="../assets/images/dashboard-3/upgrade.png" alt=""></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-2 col-md-5 col-sm-6 expenses-card">
-                <div class="card earning-card">
-                  <div class="card-header">
-                    <div class="header-top">
-                      <h5>Total Expenses</h5>
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="expenses-chart" id="Expenses-chart"></div>
-                    <div class="d-flex p-3 pt-0">
-                      <h2 class="me-2">$ 14,852</h2><span class="bg-light-success">
-                        <svg>
-                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#up-arrow"> </use>
-                        </svg></span>
-                      <h6 class="font-success">+ 60.09%</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-xl-45 col-md-7 box-col-5e">
-                <div class="card selling-product">
+              <div class="col-xl-6 col-lg-7 col-md-7">
+                <div class="card today-task">
                   <div class="card-header pb-0">
                     <div class="header-top">
-                      <h4>Top Selling Product</h4>
+                      <h5>Today Task</h5>
                       <div class="dropdown icon-dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
                         <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <div class="table-responsive custom-scrollbar">
-                      <table class="table display" style="width:100%">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/1.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Sneaker Shoes</span>
-                                    <h5>#A5647KB</h5></a></div>
-                              </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX001</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/1.png" alt=""></td>
-                            <td> <span>-51%</span>
-                              <h5>$99.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/2.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Sweat Shirt</span>
-                                    <h5>#NB86H2E</h5></a></div>
-                              </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX002</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/2.png" alt=""></td>
-                            <td> <span>-78%</span>
-                              <h5>$66.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/3.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Nike Travel Bag</span>
-                                    <h5>#UB654GH</h5></a></div>
-                              </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX003</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/3.png" alt=""></td>
-                            <td> <span>-04%</span>
-                              <h5>$116.00</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex"><span class="bg-light-primary"><img src="../assets/images/dashboard/product/4.png" alt=""></span>
-                                <div class="flex-grow-1 ms-2"><a href="{{ route ('list-products') }}"><span>Monster Cap</span>
-                                    <h5>#BAS4567</h5></a></div>
-                              </div>
-                            </td>
-                            <td> <span>Coupon code</span>
-                              <h5>PIX004</h5>
-                            </td>
-                            <td> <img src="../assets/images/dashboard/flag/4.png" alt=""></td>
-                            <td> <span>-60%</span>
-                              <h5>$99.00</h5>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                  <div class="card-body"> 
+                    <div class="d-flex header-tab">
+                      <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">5</span></a></li>
+                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Important</a></li>
+                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Notes</a></li>
+                        <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-links-tab" data-bs-toggle="tab" href="#bottom-links" role="tab" aria-controls="bottom-links" aria-selected="false">Links</a></li>
+                      </ul>
+                    </div>
+                    <div class="tab-content content-tab" id="bottom-tabContent">
+                      <div class="tab-pane fade show active" id="bottom-home" role="tabpanel">
+                        <div class="table-responsive custom-scrollbar">
+                          <table class="table display" style="width:100%">
+                            <tbody>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create a Userflow. Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Slimmuch Product Design Main Page</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-secondary">Pending</button>
+                                </td>
+                                <td>Aug 06,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Design of Interactive Prototypes</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-primary">In Progress</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create Userflow Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Dec 20,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create Userflow Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-primary">In Progress</button>
+                                </td>
+                                <td>Sep 20,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-content content-tab" id="bottom-tabContent-2">
+                      <div class="tab-pane fade show" id="bottom-inbox" role="tabpanel">
+                        <div class="table-responsive custom-scrollbar">
+                          <table class="table display" style="width:100%">
+                            <tbody>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create a Userflow. Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Slimmuch Product Design Main Page</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-secondary">Pending</button>
+                                </td>
+                                <td>Aug 06,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Design of Interactive Prototypes</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-primary">In Progress</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-content content-tab" id="bottom-tabContent-3">
+                      <div class="tab-pane fade show" id="bottom-contact" role="tabpanel">
+                        <div class="table-responsive custom-scrollbar">
+                          <table class="table display" style="width:100%">
+                            <tbody>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create a Userflow. Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Slimmuch Product Design Main Page</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-secondary">Pending</button>
+                                </td>
+                                <td>Aug 06,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-content content-tab" id="bottom-tabContent-4">
+                      <div class="tab-pane fade show" id="bottom-links" role="tabpanel">
+                        <div class="table-responsive custom-scrollbar">
+                          <table class="table display" style="width:100%">
+                            <tbody>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create a Userflow. Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Slimmuch Product Design Main Page</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-secondary">Pending</button>
+                                </td>
+                                <td>Aug 06,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Design of Interactive Prototypes</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-primary">In Progress</button>
+                                </td>
+                                <td>Nov 03,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                      </svg></a></span></td>
+                              </tr>
+                              <tr>
+                                <td> 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p>Create Userflow Social Application Design</p>
+                                </td>
+                                <td> 
+                                  <button class="btn btn-success">Done</button>
+                                </td>
+                                <td>Dec 20,2024</td>
+                                <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                      <svg class="remove">
+                                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete">                  </use>
+                                      </svg></a></span></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-lg-7 box-col-7">
+              <div class="col-xl-12">
                 <div class="card">
                   <div class="card-header pb-0">
                     <div class="header-top">
-                      <h4>Recent Order </h4>
+                      <h5>Project Summery</h5>
                       <div class="dropdown icon-dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
                         <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="card-body pt-0 recent">
+                  <div class="card-body pt-0 project-summary">
                     <div class="table-responsive custom-scrollbar">
-                      <table class="table display" id="recent-order" style="width:100%">
+                      <table class="table display" id="project-summary" style="width:100%">
                         <thead>
                           <tr>
                             <th>
@@ -632,13 +597,13 @@
                                 <label class="form-check-label"></label>
                               </div>
                             </th>
-                            <th>No.</th>
-                            <th>Customer Name</th>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>City</th>
-                            <th>Post</th>
-                            <th>Amount</th>
+                            <th> <span>Project name</span></th>
+                            <th> <span>Project Type</span></th>
+                            <th> <span>Teams</span></th>
+                            <th> <span>Start Date</span></th>
+                            <th> <span>Clients Location</span></th>
+                            <th> <span>Status</span></th>
+                            <th> </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -649,21 +614,26 @@
                                 <label class="form-check-label"></label>
                               </div>
                             </td>
-                            <td>1</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/1.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Rocky Shoes </h6></a></div>
+                            <td><span>Landing page</span></td>
+                            <td>Website</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                </ul>
                               </div>
                             </td>
-                            <td>#8934</td>
-                            <td>01/12/2024</td>
-                            <td>Armenia</td>
-                            <td>
-                              <button class="btn btn-primary">Paid</button>
+                            <td>Oct 26,2024</td>
+                            <td>UK-John Peter</td>
+                            <td class="font-success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
                             </td>
-                            <td>$238.80</td>
                           </tr>
                           <tr>
                             <td>
@@ -672,21 +642,26 @@
                                 <label class="form-check-label"></label>
                               </div>
                             </td>
-                            <td>2</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/2.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Nasuha Makusta</h6></a></div>
+                            <td><span>NFT Website Page</span></td>
+                            <td>Campaign</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                </ul>
                               </div>
                             </td>
-                            <td>#6529</td>
-                            <td>12/10/2024</td>
-                            <td>Bhutan</td>
-                            <td>
-                              <button class="btn btn-secondary">Pending</button>
+                            <td>Nov 10,2024</td>
+                            <td>Srinsoft technology</td>
+                            <td class="font-secondary">Pending</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
                             </td>
-                            <td>$654.95</td>
                           </tr>
                           <tr>
                             <td>
@@ -695,21 +670,26 @@
                                 <label class="form-check-label"></label>
                               </div>
                             </td>
-                            <td>3</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/3.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Induan Kastorika</h6></a></div>
+                            <td><span>Email Design</span></td>
+                            <td>Design</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                </ul>
                               </div>
                             </td>
-                            <td>#3659</td>
-                            <td>09/04/2024</td>
-                            <td>Ghana</td>
-                            <td>
-                              <button class="btn btn-success">Done</button>
+                            <td>Feb 19,2024</td>
+                            <td>CA William sck</td>
+                            <td class="font-success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
                             </td>
-                            <td>$864.35</td>
                           </tr>
                           <tr>
                             <td>
@@ -718,30 +698,174 @@
                                 <label class="form-check-label"></label>
                               </div>
                             </td>
-                            <td>4</td>
-                            <td>
-                              <div class="d-flex">
-                                <div class="flex-shrink-0"><img src="../assets/images/dashboard/user/4.png" alt=""></div>
-                                <div class="flex-grow-1 ms-3"><a href="user-profile.html">
-                                    <h6>Pogba Nehuntas</h6></a></div>
+                            <td><span>Banner Design</span></td>
+                            <td>Banner</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                </ul>
                               </div>
                             </td>
-                            <td>#2158</td>
-                            <td>10/05/2024</td>
-                            <td>Kenya</td>
-                            <td>
-                              <button class="btn btn-danger">Cancel </button>
+                            <td>Nov 10,2024</td>
+                            <td>USA</td>
+                            <td class="font-secondary">Pending</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
                             </td>
-                            <td>$951.37</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label"></label>
+                              </div>
+                            </td>
+                            <td><span>Redesign Layout</span></td>
+                            <td>Landing</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>Jan 10,2024</td>
+                            <td>Design technology</td>
+                            <td class="font-Success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label"></label>
+                              </div>
+                            </td>
+                            <td><span>Login & Sign Up Ui</span></td>
+                            <td>Ui Design</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>Feb 19,2024</td>
+                            <td>CA William sck</td>
+                            <td class="font-success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label"></label>
+                              </div>
+                            </td>
+                            <td><span>Front-End Website</span></td>
+                            <td>Website</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>Nov 26,2024</td>
+                            <td>New zealand</td>
+                            <td class="font-success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label"></label>
+                              </div>
+                            </td>
+                            <td><span>NFT Website Page</span></td>
+                            <td>Campaign</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>Nov 10,2024</td>
+                            <td>Srinsoft technology</td>
+                            <td class="font-secondary">Pending</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label"></label>
+                              </div>
+                            </td>
+                            <td><span>Social Design</span></td>
+                            <td>Product Design</td>
+                            <td> 
+                              <div class="user-details customers">
+                                <ul> 
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                  <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>Feb 19,2024</td>
+                            <td>CA William</td>
+                            <td class="font-success">Active</td>
+                            <td> 
+                              <div class="dropdown icon-dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                              </div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
-              </div>           
-                </div>
-              </div>   
+              </div>
+              
                     </div>
                   </div>
                 </div>

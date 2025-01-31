@@ -550,7 +550,7 @@
                                                 @endif
 
                                                 <div class="mb-3">
-                                                    <label for="content" class="form-label">Content</label>
+                                                    <label for="content" class="form-label">Position</label>
                                                     <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="5" required>{{ old('content') }}</textarea>
                                                     @error('content')
                                                         <div class="invalid-feedback">{{ $message }}</div>

@@ -408,12 +408,11 @@
                     <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
                                 src="../assets/images/logo/logo.png" alt=""></a>
                         <div class="toggle-sidebar">
-                <svg class="sidebar-toggle" width="30" height="30" viewBox="0 0 100 80" fill="black">
-                  <rect width="100" height="20"></rect>
-                  <rect y="30" width="100" height="20"></rect>
-                  <rect y="60" width="100" height="20"></rect>
-                </svg>
-              </div>
+                            <svg class="sidebar-toggle">
+                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon">
+                                </use>
+                            </svg>
+                        </div>
                     </div>
                     <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
                                 src="../assets/images/logo/logo-icon.png" alt=""></a></div>
