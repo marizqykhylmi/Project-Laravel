@@ -10,9 +10,9 @@ class ContentController extends Controller
 {
     public function index()
     {
-        $contents = Content::all();  // Ambil semua data content dari database
-        return view('about-us', compact('contents'));  // Kirimkan $contents ke view
-    }    
+        $contents = Content::all(); // Pastikan model Content ada dan benar
+        return view('about-us', compact('contents')); // Mengirim data ke view
+    }
 
 
     public function create($type)

@@ -52,7 +52,7 @@ class ProductController extends Controller
             'price' => $validatedData['price'],
             'quantity' => $validatedData['quantity'],
             'status' => $validatedData['status'],
-            'rating' => $validatedData['rating'] ?? 0, // Kalau nggak ada rating, default 0
+            'rating' => $validatedData['rating'],
             'image' => $validatedData['image'] ?? null,
         ]);
 

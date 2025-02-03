@@ -18,6 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <!-- Menyertakan Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -66,6 +69,12 @@
         <div class="col-12 p-0">    
           <div class="login-card login-dark">
             <div>
+              @if (session('message'))
+                  <div class="alert alert-warning">
+                      {{ session('message') }}
+                  </div>
+              @endif
+
               <div><a class="logo" href="{{ route('login') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt="looginpage"></a></div>
               <div class="login-main"> 
                 <form class="theme-form" method="POST" action="{{ route('login.submit') }}">
@@ -74,7 +83,7 @@
                   <p>Enter your email & password to login</p>
                   <div class="form-group">
                     <label class="col-form-label">Email Address</label>
-                    <input class="form-control" type="email" name="email" required placeholder="Test@gmail.com" value="{{ old('email') }}">
+                    <input class="form-control" type="email" name="email" required placeholder="Your@gmail.com" value="{{ old('email') }}">
                     @error('email')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -82,13 +91,33 @@
                   <div class="form-group">
                     <label class="col-form-label">Password</label>
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="password" required placeholder="*********">
-                      @error('password')
-                          <div class="text-danger">{{ $message }}</div>
-                      @enderror
-                      <div class="show-hide"><span class="show"></span></div>
+                        <input class="form-control" id="password" type="password" name="password" required placeholder="*********">
+                        @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                        <div class="show-hide" style="position: absolute;  cursor: pointer;" onclick="togglePasswordVisibility()">
+                            <i id="show-password-icon" class="fas fa-eye"></i> <!-- Ikon mata -->
+                        </div>
                     </div>
-                  </div>
+                </div>
+                
+                <script>
+                    function togglePasswordVisibility() {
+                        var passwordField = document.getElementById('password');
+                        var showPasswordIcon = document.getElementById('show-password-icon');
+                        
+                        if (passwordField.type === "password") {
+                            passwordField.type = "text";
+                            showPasswordIcon.classList.remove('fa-eye');  // Menghapus ikon mata tertutup
+                            showPasswordIcon.classList.add('fa-eye-slash');  // Menambahkan ikon mata terbuka
+                        } else {
+                            passwordField.type = "password";
+                            showPasswordIcon.classList.remove('fa-eye-slash');  // Menghapus ikon mata terbuka
+                            showPasswordIcon.classList.add('fa-eye');  // Menambahkan ikon mata tertutup
+                        }
+                    }
+                </script>
+                
                   <div class="form-group mb-0">
                     <div class="custom-checkbox p-0">
                       <input id="checkbox1" type="checkbox">

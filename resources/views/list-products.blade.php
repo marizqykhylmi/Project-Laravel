@@ -120,6 +120,20 @@
                   <svg class="fill-icon">
                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor"></use>
                   </svg><span  href="{{ route('sponsor') }}">Sponsor</span></a>
+                  <li class="sidebar-list">
+                    <a class="sidebar-link sidebar-title" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-logout"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-logout"></use>
+                      </svg>
+                      <span>Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                  </li>
                     <div class="mega-menu-container menu-content">
                       <div class="container-fluid">
                         <div class="row">
@@ -202,7 +216,7 @@
                                                     </td>
                                                     <td>
                                                         <div class="product-names">
-                                                            <img src="{{ asset('/storage/uploads/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
+                                                            <img src="{{ asset('/storage/images/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
                                                             <p>{{ $product->name }}</p>
                                                         </div>
                                                     </td>
@@ -214,19 +228,33 @@
                                                         <span class="badge badge-light-secondary">{{ $product->status }}</span>
                                                     </td>
                                                     <td>
-                                                        <div class="rating">
-                                                            @for ($i = 1; $i <= 5; $i++)
-                                                                <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
-                                                                @endfor
-                                                                {{ $product->rating }}
-                                                        </div>
-                                                    </td>
+                                                      <div class="rating">
+                                                          @for ($i = 1; $i <= 5; $i++)
+                                                              <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
+                                                          @endfor
+                                                          {{ $product->rating }}
+                                                      </div>
+                                                  </td>
+                                                  <style>
+                                                    .rating {
+                                                      font-size: 1.5rem;
+                                                  }
+
+                                                  .txt-warning {
+                                                      color: yellow;
+                                                  }
+
+                                                  .f-light {
+                                                      color: lightgray;
+                                                  }
+
+                                                  </style>                                                  
                                                     <td>
-                                                        <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                                        <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
                                                         <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
                                                         </form>
                                                     </td>
                                                 </tr>

@@ -54,6 +54,7 @@ Route::put('/edit-list-product/{id}', [ProductController::class, 'update'])->nam
 Route::delete('/delete-list-product/{id}', [ProductController::class, 'destroy'])->name('list-product.delete');
 
 //! About Us
+// Route::get('/index', [ContentController::class, 'index'])->name('index');
 Route::get('/about-us', [ContentController::class, 'index'])->name('about-us');
 Route::get('/add-about-us/{type}', [ContentController::class, 'create'])->name('create-content');
 Route::post('/add-about-us/{type}', [ContentController::class, 'store'])->name('store-content');

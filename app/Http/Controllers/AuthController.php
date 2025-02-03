@@ -51,7 +51,7 @@ class AuthController extends Controller
         auth()->login($user);
 
         // Redirect ke halaman dashboard setelah login
-        return redirect()->route('dashboard');
+        return redirect()->route('index');
     }
 
     // Menampilkan form login
@@ -79,7 +79,7 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('login'); // Kembali ke halaman login setelah logout
+        return redirect()->route('login')->with('success', 'You have been logged out.'); // Kembali ke halaman login setelah logout
     }
 
     public function index()

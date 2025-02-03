@@ -509,6 +509,8 @@
                     </div>
                 </div>
                 <!-- Page Sidebar Ends-->
+                
+                {{-- container start --}}
                 <div class="page-body">
                     <div class="container-fluid">
                         <div class="page-title">
@@ -518,7 +520,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-8 offset-md-2">
@@ -565,7 +566,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div> <!-- End container-fluid -->
                 </div> <!-- End page-body -->
                 <!-- footer start-->

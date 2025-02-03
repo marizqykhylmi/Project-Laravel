@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
     <!-- Themify icon-->
@@ -578,10 +579,54 @@
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="image" class="form-label">Product Image</label>
-                                            <input type="file" class="form-control" id="image" name="image"
-                                                accept="image/*">
+                                            <label for="rating" class="form-label">Rating</label>
+                                            <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" placeholder="Enter Rating (1-5)" required>
                                         </div>
+                                        <style>
+                                        .rating {
+                                            font-size: 1.5rem;
+                                        }
+
+                                        .txt-warning {
+                                            color: yellow;
+                                        }
+
+                                        .f-light {
+                                            color: lightgray;
+                                        }
+
+                                        </style>                                         
+                                        <div class="mb-3">
+                                            <label for="image" class="form-label">Product Image</label>
+                                            <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage()">
+                                            <div id="imagePreview" class="mt-3 position-relative d-none" style="display: inline-block;">
+                                                <img id="previewImg" src="#" alt="Preview Image" class="img-fluid" style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
+                                                <div id="imageSize" class="position-absolute text-white bg-dark rounded-pill px-3 py-1" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;"></div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            function previewImage() {
+                                                const imageInput = document.getElementById('image');
+                                                const imagePreview = document.getElementById('imagePreview');
+                                                const previewImg = document.getElementById('previewImg');
+                                                const imageSize = document.getElementById('imageSize');
+                                                const file = imageInput.files[0];
+
+                                                if (file) {
+                                                    const reader = new FileReader();
+
+                                                    reader.onload = function(e) {
+                                                        previewImg.src = e.target.result;
+                                                        imagePreview.classList.remove('d-none');
+                                                        const fileSize = (file.size / (1024 * 1024)).toFixed(2); // file size in MB
+                                                        imageSize.textContent = `Size: ${fileSize} MB`;
+                                                    };
+
+                                                    reader.readAsDataURL(file);
+                                                }
+                                            }
+                                        </script>
                                         <div class="text-end">
                                             <button type="submit" class="btn btn-primary">
                                                 <i class="fa fa-plus"></i> Add Product
@@ -590,6 +635,7 @@
                                                 <i class="fa fa-arrow-left"></i> Back
                                             </a>
                                         </div>
+                                        
                                     </form>
                                 </div>
                             </div>

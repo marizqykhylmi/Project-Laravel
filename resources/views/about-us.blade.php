@@ -298,37 +298,65 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div> <!-- End of container-fluid -->
                     </div> <!-- End of page-body -->
-                </div>
-
-
-                <div class="container-fluid project-dashboard">
-                    <div class="row">
-                      <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="row"> 
-                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
-                            <div class="card project-task">
-                              <div class="card-body">
-                                <div class="website-design">
-                                  <div class="d-flex"> 
-                                    <h4 class="font-primary">Website Design</h4><span>Done</span>
-                                  </div>
-                                  <div class="progress-value"> 
-                                    <h5>Task Completed: 10/10</h5>
-                                    <div class="progress">
-                                      <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="container-fluid project-dashboard">
+                      <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-4">
+                          <div class="row"> 
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                              <div class="card project-task">
+                                <div class="card-body">
+                                  <div class="website-design">
+                                    <div class="d-flex"> 
+                                      <h4 class="font-primary">Website Design</h4><span>Done</span>
+                                    </div>
+                                    <div class="progress-value"> 
+                                      <h5>Task Completed: 10/10</h5>
+                                      <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                    </div>
+                                    <div class="client">
+                                      <div class="flex-grow-1"> 
+                                        <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
+                                      </div>
+                                      <div class="flex-shrink-0"> 
+                                        <div class="design-card bg-light-primary"> 
+                                          <svg>
+                                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#website-design"></use>
+                                          </svg>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
-                                  <div class="client">
-                                    <div class="flex-grow-1"> 
-                                      <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                              <div class="card project-task">
+                                <div class="card-body">
+                                  <div class="website-design">
+                                    <div class="d-flex"> 
+                                      <h4 class="font-secondary">NFT App Design</h4><span>Running</span>
                                     </div>
-                                    <div class="flex-shrink-0"> 
-                                      <div class="design-card bg-light-primary"> 
-                                        <svg>
-                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#website-design"></use>
-                                        </svg>
+                                    <div class="progress-value"> 
+                                      <h5>Task Completed: 4/10</h5>
+                                      <div class="progress">
+                                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                    </div>
+                                    <div class="client">
+                                      <div class="flex-grow-1"> 
+                                        <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
+                                      </div>
+                                      <div class="flex-shrink-0"> 
+                                        <div class="design-card bg-light-secondary"> 
+                                          <svg>
+                                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#nft-app"></use>
+                                          </svg>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -336,671 +364,641 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
-                            <div class="card project-task">
-                              <div class="card-body">
-                                <div class="website-design">
-                                  <div class="d-flex"> 
-                                    <h4 class="font-secondary">NFT App Design</h4><span>Running</span>
+                        </div>
+                        
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                          <div class="card upgrade-card">
+                            <div class="card-body">
+                              <div class="d-flex"> 
+                                <div class="flex-grow-1"> 
+                                  <h4>Upgrade Your Subscription Plan</h4>
+                                  <p>The goal of this message is to welcome you to our app.</p><a class="btn btn-primary" href="">Go Premium</a>
+                                </div>
+                                <div class="flex-shrink-0"> <img src="../assets/images/dashboard-3/upgrade.png" alt=""></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-7 col-md-7">
+                          <div class="card today-task">
+                            <div class="card-header pb-0">
+                              <div class="header-top">
+                                <h5>Today Task</h5>
+                                <div class="dropdown icon-dropdown">
+                                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                  <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-body"> 
+                              <div class="d-flex header-tab">
+                                <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">5</span></a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Important</a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Notes</a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-links-tab" data-bs-toggle="tab" href="#bottom-links" role="tab" aria-controls="bottom-links" aria-selected="false">Links</a></li>
+                                </ul>
+                              </div>
+                              <div class="tab-content content-tab" id="bottom-tabContent">
+                                <div class="tab-pane fade show active" id="bottom-home" role="tabpanel">
+                                  <div class="table-responsive custom-scrollbar">
+                                    <table class="table display" style="width:100%">
+                                      <tbody>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create a Userflow. Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Slimmuch Product Design Main Page</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-secondary">Pending</button>
+                                          </td>
+                                          <td>Aug 06,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Design of Interactive Prototypes</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-primary">In Progress</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create Userflow Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Dec 20,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create Userflow Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-primary">In Progress</button>
+                                          </td>
+                                          <td>Sep 20,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </div>
-                                  <div class="progress-value"> 
-                                    <h5>Task Completed: 4/10</h5>
-                                    <div class="progress">
-                                      <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                </div>
+                              </div>
+                              <div class="tab-content content-tab" id="bottom-tabContent-2">
+                                <div class="tab-pane fade show" id="bottom-inbox" role="tabpanel">
+                                  <div class="table-responsive custom-scrollbar">
+                                    <table class="table display" style="width:100%">
+                                      <tbody>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create a Userflow. Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Slimmuch Product Design Main Page</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-secondary">Pending</button>
+                                          </td>
+                                          <td>Aug 06,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Design of Interactive Prototypes</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-primary">In Progress</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </div>
-                                  <div class="client">
-                                    <div class="flex-grow-1"> 
-                                      <h6>Client: Brave Wings</h6><span>Deadline: 25 April 2024</span>
-                                    </div>
-                                    <div class="flex-shrink-0"> 
-                                      <div class="design-card bg-light-secondary"> 
-                                        <svg>
-                                          <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#nft-app"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
+                                </div>
+                              </div>
+                              <div class="tab-content content-tab" id="bottom-tabContent-3">
+                                <div class="tab-pane fade show" id="bottom-contact" role="tabpanel">
+                                  <div class="table-responsive custom-scrollbar">
+                                    <table class="table display" style="width:100%">
+                                      <tbody>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create a Userflow. Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Slimmuch Product Design Main Page</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-secondary">Pending</button>
+                                          </td>
+                                          <td>Aug 06,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tab-content content-tab" id="bottom-tabContent-4">
+                                <div class="tab-pane fade show" id="bottom-links" role="tabpanel">
+                                  <div class="table-responsive custom-scrollbar">
+                                    <table class="table display" style="width:100%">
+                                      <tbody>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create a Userflow. Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Slimmuch Product Design Main Page</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-secondary">Pending</button>
+                                          </td>
+                                          <td>Aug 06,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Design of Interactive Prototypes</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-primary">In Progress</button>
+                                          </td>
+                                          <td>Nov 03,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> 
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="">
+                                              <label class="form-check-label"></label>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <p>Create Userflow Social Application Design</p>
+                                          </td>
+                                          <td> 
+                                            <button class="btn btn-success">Done</button>
+                                          </td>
+                                          <td>Dec 20,2024</td>
+                                          <td> <span class="delete-option"> <a href="javascript:void(0)">
+                                                <svg class="remove">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete">                  </use>
+                                                </svg></a></span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-xl-3 col-lg-5 col-md-5">
-                        <div class="card upgrade-card">
-                          <div class="card-body">
-                            <div class="d-flex"> 
-                              <div class="flex-grow-1"> 
-                                <h4>Upgrade Your Subscription Plan</h4>
-                                <p>The goal of this message is to welcome you to our app.</p><a class="btn btn-primary" href="">Go Premium</a>
-                              </div>
-                              <div class="flex-shrink-0"> <img src="../assets/images/dashboard-3/upgrade.png" alt=""></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-6 col-lg-7 col-md-7">
-                        <div class="card today-task">
-                          <div class="card-header pb-0">
-                            <div class="header-top">
-                              <h5>Today Task</h5>
-                              <div class="dropdown icon-dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card-body"> 
-                            <div class="d-flex header-tab">
-                              <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
-                                <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">5</span></a></li>
-                                <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Important</a></li>
-                                <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Notes</a></li>
-                                <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-links-tab" data-bs-toggle="tab" href="#bottom-links" role="tab" aria-controls="bottom-links" aria-selected="false">Links</a></li>
-                              </ul>
-                            </div>
-                            <div class="tab-content content-tab" id="bottom-tabContent">
-                              <div class="tab-pane fade show active" id="bottom-home" role="tabpanel">
-                                <div class="table-responsive custom-scrollbar">
-                                  <table class="table display" style="width:100%">
-                                    <tbody>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create a Userflow. Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Slimmuch Product Design Main Page</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-secondary">Pending</button>
-                                        </td>
-                                        <td>Aug 06,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Design of Interactive Prototypes</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-primary">In Progress</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create Userflow Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Dec 20,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create Userflow Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-primary">In Progress</button>
-                                        </td>
-                                        <td>Sep 20,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                        <div class="col-xl-12">
+                          <div class="card">
+                            <div class="card-header pb-0">
+                              <div class="header-top">
+                                <h5>Project Summery</h5>
+                                <div class="dropdown icon-dropdown">
+                                  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                  <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
                                 </div>
                               </div>
                             </div>
-                            <div class="tab-content content-tab" id="bottom-tabContent-2">
-                              <div class="tab-pane fade show" id="bottom-inbox" role="tabpanel">
-                                <div class="table-responsive custom-scrollbar">
-                                  <table class="table display" style="width:100%">
-                                    <tbody>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create a Userflow. Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Slimmuch Product Design Main Page</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-secondary">Pending</button>
-                                        </td>
-                                        <td>Aug 06,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Design of Interactive Prototypes</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-primary">In Progress</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-content content-tab" id="bottom-tabContent-3">
-                              <div class="tab-pane fade show" id="bottom-contact" role="tabpanel">
-                                <div class="table-responsive custom-scrollbar">
-                                  <table class="table display" style="width:100%">
-                                    <tbody>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create a Userflow. Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Slimmuch Product Design Main Page</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-secondary">Pending</button>
-                                        </td>
-                                        <td>Aug 06,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-content content-tab" id="bottom-tabContent-4">
-                              <div class="tab-pane fade show" id="bottom-links" role="tabpanel">
-                                <div class="table-responsive custom-scrollbar">
-                                  <table class="table display" style="width:100%">
-                                    <tbody>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create a Userflow. Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Slimmuch Product Design Main Page</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-secondary">Pending</button>
-                                        </td>
-                                        <td>Aug 06,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Design of Interactive Prototypes</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-primary">In Progress</button>
-                                        </td>
-                                        <td>Nov 03,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete"></use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                      <tr>
-                                        <td> 
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label"></label>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p>Create Userflow Social Application Design</p>
-                                        </td>
-                                        <td> 
-                                          <button class="btn btn-success">Done</button>
-                                        </td>
-                                        <td>Dec 20,2024</td>
-                                        <td> <span class="delete-option"> <a href="javascript:void(0)">
-                                              <svg class="remove">
-                                                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#Delete">                  </use>
-                                              </svg></a></span></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
+                            <div class="card-body pt-0 project-summary">
+                              <div class="table-responsive custom-scrollbar">
+                                <table class="table display" id="project-summary" style="width:100%">
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </th>
+                                      <th> <span>Project name</span></th>
+                                      <th> <span>Project Type</span></th>
+                                      <th> <span>Teams</span></th>
+                                      <th> <span>Start Date</span></th>
+                                      <th> <span>Clients Location</span></th>
+                                      <th> <span>Status</span></th>
+                                      <th> </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Landing page</span></td>
+                                      <td>Website</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Oct 26,2024</td>
+                                      <td>UK-John Peter</td>
+                                      <td class="font-success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>NFT Website Page</span></td>
+                                      <td>Campaign</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Nov 10,2024</td>
+                                      <td>Srinsoft technology</td>
+                                      <td class="font-secondary">Pending</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Email Design</span></td>
+                                      <td>Design</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Feb 19,2024</td>
+                                      <td>CA William sck</td>
+                                      <td class="font-success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Banner Design</span></td>
+                                      <td>Banner</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Nov 10,2024</td>
+                                      <td>USA</td>
+                                      <td class="font-secondary">Pending</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Redesign Layout</span></td>
+                                      <td>Landing</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Jan 10,2024</td>
+                                      <td>Design technology</td>
+                                      <td class="font-Success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Login & Sign Up Ui</span></td>
+                                      <td>Ui Design</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Feb 19,2024</td>
+                                      <td>CA William sck</td>
+                                      <td class="font-success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Front-End Website</span></td>
+                                      <td>Website</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Nov 26,2024</td>
+                                      <td>New zealand</td>
+                                      <td class="font-success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>NFT Website Page</span></td>
+                                      <td>Campaign</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Nov 10,2024</td>
+                                      <td>Srinsoft technology</td>
+                                      <td class="font-secondary">Pending</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="">
+                                          <label class="form-check-label"></label>
+                                        </div>
+                                      </td>
+                                      <td><span>Social Design</span></td>
+                                      <td>Product Design</td>
+                                      <td> 
+                                        <div class="user-details customers">
+                                          <ul> 
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
+                                            <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
+                                          </ul>
+                                        </div>
+                                      </td>
+                                      <td>Feb 19,2024</td>
+                                      <td>CA William</td>
+                                      <td class="font-success">Active</td>
+                                      <td> 
+                                        <div class="dropdown icon-dropdown">
+                                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                                          <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-xl-12">
-                        <div class="card">
-                          <div class="card-header pb-0">
-                            <div class="header-top">
-                              <h5>Project Summery</h5>
-                              <div class="dropdown icon-dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card-body pt-0 project-summary">
-                            <div class="table-responsive custom-scrollbar">
-                              <table class="table display" id="project-summary" style="width:100%">
-                                <thead>
-                                  <tr>
-                                    <th>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </th>
-                                    <th> <span>Project name</span></th>
-                                    <th> <span>Project Type</span></th>
-                                    <th> <span>Teams</span></th>
-                                    <th> <span>Start Date</span></th>
-                                    <th> <span>Clients Location</span></th>
-                                    <th> <span>Status</span></th>
-                                    <th> </th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Landing page</span></td>
-                                    <td>Website</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Oct 26,2024</td>
-                                    <td>UK-John Peter</td>
-                                    <td class="font-success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>NFT Website Page</span></td>
-                                    <td>Campaign</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Nov 10,2024</td>
-                                    <td>Srinsoft technology</td>
-                                    <td class="font-secondary">Pending</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Email Design</span></td>
-                                    <td>Design</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Feb 19,2024</td>
-                                    <td>CA William sck</td>
-                                    <td class="font-success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Banner Design</span></td>
-                                    <td>Banner</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Nov 10,2024</td>
-                                    <td>USA</td>
-                                    <td class="font-secondary">Pending</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Redesign Layout</span></td>
-                                    <td>Landing</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Jan 10,2024</td>
-                                    <td>Design technology</td>
-                                    <td class="font-Success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Login & Sign Up Ui</span></td>
-                                    <td>Ui Design</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Feb 19,2024</td>
-                                    <td>CA William sck</td>
-                                    <td class="font-success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Front-End Website</span></td>
-                                    <td>Website</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/14.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/15.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/16.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Nov 26,2024</td>
-                                    <td>New zealand</td>
-                                    <td class="font-success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>NFT Website Page</span></td>
-                                    <td>Campaign</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/17.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/3.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/7.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Nov 10,2024</td>
-                                    <td>Srinsoft technology</td>
-                                    <td class="font-secondary">Pending</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <label class="form-check-label"></label>
-                                      </div>
-                                    </td>
-                                    <td><span>Social Design</span></td>
-                                    <td>Product Design</td>
-                                    <td> 
-                                      <div class="user-details customers">
-                                        <ul> 
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/12.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/18.png" alt="user"></li>
-                                          <li class="d-inline-block"><img src="../assets/images/dashboard-3/user/19.png" alt="user"></li>
-                                        </ul>
-                                      </div>
-                                    </td>
-                                    <td>Feb 19,2024</td>
-                                    <td>CA William</td>
-                                    <td class="font-success">Active</td>
-                                    <td> 
-                                      <div class="dropdown icon-dropdown">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
                             </div>
                           </div>
                         </div>

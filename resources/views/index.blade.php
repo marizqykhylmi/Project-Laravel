@@ -126,6 +126,21 @@
                   <svg class="fill-icon">
                     <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor"></use>
                   </svg><span  href="{{ route('sponsor') }}">Sponsor</span></a>
+                  <li class="sidebar-list">
+                    <a class="sidebar-link sidebar-title" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-logout"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-logout"></use>
+                      </svg>
+                      <span>Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                  </li>
+                  
                     <div class="mega-menu-container menu-content">
                       <div class="container-fluid">
                         <div class="row">
@@ -1055,6 +1070,7 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <!-- Plugin used-->
+  
   </body>
 
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('index') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:43:58 GMT -->
