@@ -11,7 +11,7 @@ class ContentController extends Controller
     public function index()
     {
         $contents = Content::all(); // Pastikan model Content ada dan benar
-        return view('about-us', compact('contents')); // Mengirim data ke view
+        return view('index', compact('contents')); // Mengirim data ke view
     }
 
 
@@ -44,7 +44,7 @@ class ContentController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('about-us')->with('success', ucfirst($type) . ' created successfully!');
+        return redirect()->route('index')->with('success', ucfirst($type) . ' created successfully!');
     }
 
     public function edit($type, $id)
@@ -83,6 +83,6 @@ class ContentController extends Controller
         // Perbarui data content
         $content->update($data);
 
-        return redirect()->route('about-us')->with('success', ucfirst($type) . ' updated successfully!');
+        return redirect()->route('index')->with('success', ucfirst($type) . ' updated successfully!');
     }
 }

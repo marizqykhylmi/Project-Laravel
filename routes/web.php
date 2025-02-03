@@ -7,19 +7,27 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\SponsorController;
+use App\Models\Content;
+
 
 Route::get('/', function () {
     return view('auth.login'); // Halaman login
 });
 
+// Signup route
 Route::get('/sign-up', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/sign-up', [AuthController::class, 'register'])->name('register.submit');
 
+// Login route
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
+
+// Logout route
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 //! Gallery
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
@@ -54,8 +62,8 @@ Route::put('/edit-list-product/{id}', [ProductController::class, 'update'])->nam
 Route::delete('/delete-list-product/{id}', [ProductController::class, 'destroy'])->name('list-product.delete');
 
 //! About Us
+// Route::get('/index', [ContentController::class, 'index'])->name('index');
 Route::get('/index', [ContentController::class, 'index'])->name('index');
-Route::get('/about-us', [ContentController::class, 'index'])->name('about-us');
 Route::get('/add-about-us/{type}', [ContentController::class, 'create'])->name('create-content');
 Route::post('/add-about-us/{type}', [ContentController::class, 'store'])->name('store-content');
 Route::get('/edit-about-us/{type}/{id}', [ContentController::class, 'edit'])->name('edit-content');
@@ -64,12 +72,10 @@ Route::put('/edit-about-us/{type}/{id}', [ContentController::class, 'update'])->
 
 
 // Halaman index yang hanya bisa diakses setelah login
-Route::get('/index', function () {
-    return view('index'); // Pastikan ada file index.blade.php di resources/views
-})->name('index')->middleware('auth'); // Menambahkan middleware 'auth'
-
-// Logout route
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route::get('/index', function () {
+//    $contents = Content::all(); // Pastikan model Content ada dan benar
+//    return view('index', compact('contents')); // Mengirim data ke view
+// })->name('index')->middleware('auth'); // Menambahkan middleware 'auth'
 
 Route::get('user-profile', function () {
     return view('user-profile'); // Halaman user profile

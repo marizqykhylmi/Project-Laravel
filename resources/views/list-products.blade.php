@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <!-- Mirrored from admin.pixelstrap.net/crocs/template/{{ route ('list-products') }} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 06:44:40 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -44,10 +44,10 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   </head>
-  <body> 
+  <body>
     <!-- loader starts-->
     <div class="loader-wrapper">
-      <div class="loader">    
+      <div class="loader">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -61,7 +61,7 @@
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-      
+
       <!-- Page Body Start-->
       <div class="page-body-wrapper">
          <!-- Page Sidebar Start-->
@@ -69,7 +69,7 @@
           <div>
             <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo.png" alt=""></a>
               <div class="toggle-sidebar">
-                <svg class="sidebar-toggle"> 
+                <svg class="sidebar-toggle">
                   <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon"></use>
                 </svg>
               </div>
@@ -82,7 +82,7 @@
                   <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
                     <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                   </li>
-                  
+
                   </li>
                   <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('index') }}">
                       <svg class="stroke-icon">
@@ -90,7 +90,7 @@
                       </svg>
                       <svg class="fill-icon">
                         <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-home"></use>
-                      </svg><span  href="{{ route('index') }}">Home</span></a>                    
+                      </svg><span  href="{{ route('index') }}">Home</span></a>
                   </li>
                   <li class="sidebar-list"><i class=""></i><a class="sidebar-link sidebar-title" href="{{ route('gallery') }}">
                       <svg class="stroke-icon">
@@ -141,7 +141,7 @@
                             <div class="link-section">
                             </div>
                           </div>
-                             
+
                         </div>
                       </div>
                     </div>
@@ -216,7 +216,8 @@
                                                     </td>
                                                     <td>
                                                         <div class="product-names">
-                                                            <img src="{{ asset('/storage/images/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
+
+                                                            <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
                                                             <p>{{ $product->name }}</p>
                                                         </div>
                                                     </td>
@@ -228,6 +229,7 @@
                                                         <span class="badge badge-light-secondary">{{ $product->status }}</span>
                                                     </td>
                                                     <td>
+                                                        {{-- {{ $product->rating }} --}}
                                                       <div class="rating">
                                                           @for ($i = 1; $i <= 5; $i++)
                                                               <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
@@ -248,7 +250,7 @@
                                                       color: lightgray;
                                                   }
 
-                                                  </style>                                                  
+                                                  </style>
                                                     <td>
                                                         <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
                                                         <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">

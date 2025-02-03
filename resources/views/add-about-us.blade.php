@@ -509,7 +509,7 @@
                     </div>
                 </div>
                 <!-- Page Sidebar Ends-->
-                
+
                 {{-- container start --}}
                 <div class="page-body">
                     <div class="container-fluid">
@@ -559,7 +559,7 @@
                                                 </div>
 
                                                 <button type="submit" class="btn btn-success">Save</button>
-                                                <a href="{{ route('about-us') }}" class="btn btn-secondary">Cancel</a>
+                                                <a href="{{ route('index') }}" class="btn btn-secondary">Cancel</a>
                                             </form>
                                         </div>
                                     </div>

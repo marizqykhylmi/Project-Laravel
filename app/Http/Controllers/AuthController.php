@@ -83,13 +83,13 @@ class AuthController extends Controller
     }
 
     public function index()
-    {   
+    {
         $title = "Welcome to my blog";
-        // return view ('pages.index', compact('title')); // first method 
+        // return view ('pages.index', compact('title')); // first method
 
-        return view ('pages.index')->with('title',$title); // 2 method 
+        return view ('pages.index')->with('title',$title); // 2 method
     }
-    
+
     protected function redirectTo($request)
 {
     if (! $request->expectsJson()) {

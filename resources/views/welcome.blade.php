@@ -565,7 +565,7 @@
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Update</button>
-                                                <a href="{{ route('about-us') }}" class="btn btn-secondary">Cancel</a>
+                                                <a href="{{ route('index') }}" class="btn btn-secondary">Cancel</a>
                                             </form>
                                         </div>
                                     </div>

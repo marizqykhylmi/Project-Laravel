@@ -85,7 +85,7 @@
                         </svg>
                     </div>
                 </div>
-                
+
                 <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
                     <ul class="nav-menus">
 
@@ -146,7 +146,7 @@
                                     }
                                 </style>
 
-                        
+
         <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
@@ -210,7 +210,7 @@
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Update</button>
-                                                <a href="{{ route('about-us') }}" class="btn btn-secondary">Cancel</a>
+                                                <a href="{{ route('index') }}" class="btn btn-secondary">Cancel</a>
                                             </form>
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@
 
                     </div> <!-- End container-fluid -->
                 </div> <!-- End page-body -->
-               
+
         <!-- latest jquery-->
         <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap js-->
