@@ -90,6 +90,13 @@ class AuthController extends Controller
         return view ('pages.index')->with('title',$title); // 2 method 
     }
     
+    protected function redirectTo($request)
+{
+    if (! $request->expectsJson()) {
+        return route('login'); // Pastikan ini merujuk ke route login yang benar
+    }
+}
+
 
 }
 

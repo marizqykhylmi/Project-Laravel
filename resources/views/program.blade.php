@@ -256,13 +256,39 @@
                                                             <a href="{{ route('program.edit', $program->id) }}" class="btn btn-sm btn-primary">
                                                                 <i class="fa fa-edit"></i> Edit
                                                             </a>
-                                                            <form action="{{ route('program.delete', $program->id) }}" method="POST" style="display: inline;">
+                                                            <form action="{{ route('program.delete', $program->id) }}" method="POST" class="delete-form d-inline">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                                                <button type="button" class="btn btn-sm btn-danger delete-btn">
                                                                     <i class="fa fa-trash"></i> Delete
                                                                 </button>
                                                             </form>
+                                                            
+                                                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                            <script>
+                                                            document.addEventListener("DOMContentLoaded", function () {
+                                                                document.querySelectorAll(".delete-btn").forEach(button => {
+                                                                    button.addEventListener("click", function () {
+                                                                        let form = this.closest(".delete-form");
+                                                            
+                                                                        Swal.fire({
+                                                                            title: "Are you sure?",
+                                                                            text: "You won't be able to revert this!",
+                                                                            icon: "warning",
+                                                                            showCancelButton: true,
+                                                                            confirmButtonColor: "#d33",
+                                                                            cancelButtonColor: "#3085d6",
+                                                                            confirmButtonText: "Yes, delete it!"
+                                                                        }).then((result) => {
+                                                                            if (result.isConfirmed) {
+                                                                                form.submit();
+                                                                            }
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                            </script>
+                                                            
                                                         </td>                                                        
                                                     </tr>
                                                 @endforeach
@@ -274,31 +300,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Footer -->
             </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    document.querySelectorAll(".view-more").forEach(button => {
-                        button.addEventListener("click", function () {
-                            let parent = this.closest("p");
-                            let shortText = parent.querySelector(".short-text");
-                            let fullText = parent.querySelector(".full-text");
-                
-                            if (this.textContent === "View All") {
-                                shortText.classList.add("d-none");
-                                fullText.classList.remove("d-none");
-                                this.textContent = "Hide";
-                            } else {
-                                shortText.classList.remove("d-none");
-                                fullText.classList.add("d-none");
-                                this.textContent = "View All";
-                            }
-                        });
-                    });
-                });
-                
-            </script>
             <!-- footer start-->
 
             <footer class="footer">

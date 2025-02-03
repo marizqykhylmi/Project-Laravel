@@ -254,13 +254,39 @@
                                                     <a href="{{ route('sponsor.edit', $sponsor->id) }}" class="btn btn-primary">
                                                         <i class="fa fa-edit"></i> Edit
                                                     </a>
-                                                    <form action="{{ route('sponsor.delete', $sponsor->id) }}" method="POST" class="d-inline">
+                                                    <form action="{{ route('sponsor.delete', $sponsor->id) }}" method="POST" class="delete-sponsor-form d-inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                                        <button type="button" class="btn btn-sm btn-danger delete-sponsor-btn">
                                                             <i class="fa fa-trash"></i> Delete
                                                         </button>
                                                     </form>
+                                                    
+                                                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                    <script>
+                                                    document.addEventListener("DOMContentLoaded", function () {
+                                                        document.querySelectorAll(".delete-sponsor-btn").forEach(button => {
+                                                            button.addEventListener("click", function () {
+                                                                let form = this.closest(".delete-sponsor-form");
+                                                    
+                                                                Swal.fire({
+                                                                    title: "Are you sure?",
+                                                                    text: "This action cannot be undone!",
+                                                                    icon: "warning",
+                                                                    showCancelButton: true,
+                                                                    confirmButtonColor: "#d33",
+                                                                    cancelButtonColor: "#3085d6",
+                                                                    confirmButtonText: "Yes, delete it!"
+                                                                }).then((result) => {
+                                                                    if (result.isConfirmed) {
+                                                                        form.submit();
+                                                                    }
+                                                                });
+                                                            });
+                                                        });
+                                                    });
+                                                    </script>
+                                                    
                                                 </td>
                                             </tr>
                                         @endforeach

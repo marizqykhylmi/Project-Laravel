@@ -224,6 +224,12 @@
                                 <h4 class="mb-0">Images Gallery</h4>
                             </div>
                             <div class="card-body">
+                                <form action="{{ request()->url() }}" method="GET" class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control" placeholder="Search by title" value="{{ request()->query('search') }}">
+                                        <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
                                 @if ($galleries->isEmpty())
                                     <p class="text-muted text-center">No posts available at the moment.</p>
                                 @else
@@ -252,14 +258,39 @@
                                                             <a href="{{ route('gallery.edit', $gallery->id) }}" class="btn btn-sm btn-outline-primary">
                                                                 <i class="fa fa-pen"></i> Edit
                                                             </a>
-                                                            <form action="{{ route('gallery.delete', $gallery->id) }}" method="POST">
+                                                            <form action="{{ route('gallery.delete', $gallery->id) }}" method="POST" class="delete-gallery-form d-inline">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button type="submit" 
-                                                                        class="btn btn-sm btn-outline-danger">
+                                                                <button type="button" class="btn btn-sm btn-outline-danger delete-gallery-btn">
                                                                     <i class="fa fa-trash"></i> Delete
                                                                 </button>
                                                             </form>
+                                                            
+                                                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                            <script>
+                                                            document.addEventListener("DOMContentLoaded", function () {
+                                                                document.querySelectorAll(".delete-gallery-btn").forEach(button => {
+                                                                    button.addEventListener("click", function () {
+                                                                        let form = this.closest(".delete-gallery-form");
+                                                            
+                                                                        Swal.fire({
+                                                                            title: "Are you sure?",
+                                                                            text: "You won't be able to revert this!",
+                                                                            icon: "warning",
+                                                                            showCancelButton: true,
+                                                                            confirmButtonColor: "#d33",
+                                                                            cancelButtonColor: "#3085d6",
+                                                                            confirmButtonText: "Yes, delete it!"
+                                                                        }).then((result) => {
+                                                                            if (result.isConfirmed) {
+                                                                                form.submit();
+                                                                            }
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                            </script>
+                                                            
                                                         </div>
                                                     </td>
                                                 </tr>

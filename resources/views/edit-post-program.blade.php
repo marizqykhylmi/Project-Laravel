@@ -691,6 +691,7 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <!-- Plugin used-->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 </body>
 
