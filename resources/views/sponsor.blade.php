@@ -221,47 +221,53 @@
                     </div>
                 </div>
             <!--content-->
-                <div class="container-fluid py-4">
-                    <div class="row">
-                        @if ($sponsors->isEmpty())
-                            <div class="col-12 text-center">
-                                <p class="text-muted">No sponsors available.</p>
-                            </div>
-                        @else    
-                            <div class="col-12">
-                                <table class="table table-striped">
-                                    <thead>
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="input-group">
+                            <input type="text" id="searchInputSponsors" class="form-control" placeholder="Search by title">
+                            <button class="btn btn-outline-primary" type="button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+            
+                    @if ($sponsors->isEmpty())
+                        <div class="col-12 text-center">
+                            <p class="text-muted">No sponsors available.</p>
+                        </div>
+                    @else    
+                        <div class="col-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($sponsors as $sponsor)
                                         <tr>
-                                            <th scope="col">Image</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($sponsors as $sponsor)
-                                            <tr>
-                                                <td>
-                                                    <img src="{{ asset('storage/images/' . $sponsor->image) }}" 
-                                                         alt="{{ $sponsor->title }}" 
-                                                         class="img-thumbnail" 
-                                                         style="max-height: 100px;">
-                                                </td>
-                                                <td>{{ $sponsor->title }}</td>
-                                                <td>
-                                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sponsorModal-{{ $sponsor->id }}">
-                                                        <i class="fa fa-eye"></i> View
+                                            <td>
+                                                <img src="{{ asset('storage/images/' . $sponsor->image) }}" 
+                                                     alt="{{ $sponsor->title }}" 
+                                                     class="img-thumbnail" 
+                                                     style="max-height: 100px;">
+                                            </td>
+                                            <td class="sponsor-title">{{ $sponsor->title }}</td>
+                                            <td>
+                                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sponsorModal-{{ $sponsor->id }}">
+                                                    <i class="fa fa-eye"></i> View
+                                                </button>
+                                                <a href="{{ route('sponsor.edit', $sponsor->id) }}" class="btn btn-primary">
+                                                    <i class="fa fa-edit"></i> Edit
+                                                </a>
+                                                <form action="{{ route('sponsor.delete', $sponsor->id) }}" method="POST" class="delete-sponsor-form d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="btn btn-sm btn-danger delete-sponsor-btn">
+                                                        <i class="fa fa-trash"></i> Delete
                                                     </button>
-                                                    <a href="{{ route('sponsor.edit', $sponsor->id) }}" class="btn btn-primary">
-                                                        <i class="fa fa-edit"></i> Edit
-                                                    </a>
-                                                    <form action="{{ route('sponsor.delete', $sponsor->id) }}" method="POST" class="delete-sponsor-form d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button" class="btn btn-sm btn-danger delete-sponsor-btn">
-                                                            <i class="fa fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
-                                                    
+                                                </form>                            
                                                     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                                                     <script>
                                                     document.addEventListener("DOMContentLoaded", function () {
@@ -285,8 +291,38 @@
                                                             });
                                                         });
                                                     });
-                                                    </script>
-                                                    
+                                                    document.getElementById("searchInputSponsors").addEventListener("input", function () {
+                                                    let searchValue = this.value.toLowerCase();
+                                                    let rows = document.querySelectorAll("tbody tr");
+
+                                                    // Reset semua warna judul ke default sebelum pencarian baru
+                                                    document.querySelectorAll(".sponsor-title").forEach(titleCell => {
+                                                        titleCell.style.color = ""; // Reset warna
+                                                    });
+
+                                                    let found = false; // Flag untuk cek apakah ada yang ditemukan
+                                                    rows.forEach(row => {
+                                                        let titleCell = row.querySelector(".sponsor-title");
+                                                        let title = titleCell.textContent.toLowerCase();
+
+                                                        if (title.includes(searchValue) && searchValue.trim() !== "") {
+                                                            row.style.display = "";
+                                                            titleCell.style.color = "orange"; // Highlight title yang ditemukan
+                                                            found = true;
+                                                        } else {
+                                                            row.style.display = searchValue.trim() !== "" ? "none" : ""; // Jika pencarian kosong, tampilkan semua
+                                                        }
+                                                    });
+
+                                                    // Jika ditemukan, scroll ke yang pertama kali ditemukan
+                                                    if (found) {
+                                                        let firstFound = document.querySelector(".sponsor-title[style='color: orange;']");
+                                                        if (firstFound) {
+                                                            firstFound.scrollIntoView({ behavior: "smooth", block: "center" });
+                                                        }
+                                                    }
+                                                });
+                                                    </script>                                                    
                                                 </td>
                                             </tr>
                                         @endforeach

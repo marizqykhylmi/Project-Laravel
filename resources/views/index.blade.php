@@ -80,11 +80,11 @@
                         <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
                                     src="../assets/images/logo/logo.png" alt=""></a>
                             <div class="toggle-sidebar">
-                                <svg class="sidebar-toggle">
-                                    <use
-                                        href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#toggle-icon">
-                                    </use>
-                                </svg>
+                              <svg class="sidebar-toggle" width="30" height="30" viewBox="0 0 100 80" fill="black">
+                                <rect width="100" height="20"></rect>
+                                <rect y="30" width="100" height="20"></rect>
+                                <rect y="60" width="100" height="20"></rect>
+                              </svg>
                             </div>
                         </div>
                         <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
@@ -162,6 +162,20 @@
                                                     href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-sponsor">
                                                 </use>
                                             </svg><span href="{{ route('sponsor') }}">Sponsor</span></a>
+                                            <li class="sidebar-list">
+                                              <a class="sidebar-link sidebar-title" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <svg class="stroke-icon">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-logout"></use>
+                                                </svg>
+                                                <svg class="fill-icon">
+                                                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-logout"></use>
+                                                </svg>
+                                                <span>Logout</span>
+                                              </a>
+                                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                              </form>
+                                            </li>
                                         <div class="mega-menu-container menu-content">
                                             <div class="container-fluid">
                                                 <div class="row">
@@ -235,18 +249,14 @@
                                             <h5>Mission</h5>
                                         </div>
                                         <div class="card-body">
-                                            @php $missions = $contents->where('type', 'misi'); @endphp
-                                            @if ($missions->isEmpty())
-                                                <p>No mission available.</p>
-                                            @else
-                                                <ul id="mission-list">
-                                                    @foreach ($missions as $misi)
-                                                        <li>{{ $misi->content }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                            <a href="{{ route('create-content', 'misi') }}"
-                                                class="btn btn-primary">Add</a>
+                                            @php $mission = $contents->where('type', 'misi')->first(); @endphp
+                                            <p id="mission-text">
+                                                {{ $mission->content ?? 'No mission available.' }}
+                                            </p>
+                                            <a href="{{ $mission ? route('edit-content', ['type' => 'misi', 'id' => $mission->id]) : route('create-content', 'misi') }}"
+                                                class="btn btn-primary">
+                                                {{ $mission ? 'Edit' : 'Add' }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +393,7 @@
                           <div class="card today-task">
                             <div class="card-header pb-0">
                               <div class="header-top">
-                                <h5>Today Task</h5>
+                                <h5>Today Post</h5>
                                 <div class="dropdown icon-dropdown">
                                   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
                                   <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Weekly</a><a class="dropdown-item" href="#">Monthly</a><a class="dropdown-item" href="#">Yearly</a></div>
@@ -394,9 +404,9 @@
                               <div class="d-flex header-tab">
                                 <ul class="nav nav-tabs border-tab mb-0" id="bottom-tab" role="tablist">
                                   <li class="nav-item"><a class="nav-link nav-border tab-primary active pt-0" id="bottom-home-tab" data-bs-toggle="tab" href="#bottom-home" role="tab" aria-controls="bottom-home" aria-selected="true">All<span class="ms-2 bg-primary">5</span></a></li>
-                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Important</a></li>
-                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Notes</a></li>
-                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-links-tab" data-bs-toggle="tab" href="#bottom-links" role="tab" aria-controls="bottom-links" aria-selected="false">Links</a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-inbox-tab" data-bs-toggle="tab" href="#bottom-inbox" role="tab" aria-controls="bottom-inbox" aria-selected="false">Gallery</a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-contact-tab" data-bs-toggle="tab" href="#bottom-contact" role="tab" aria-controls="bottom-contact" aria-selected="false">Product</a></li>
+                                  <li class="nav-item"><a class="nav-link nav-border tab-primary" id="bottom-links-tab" data-bs-toggle="tab" href="#bottom-links" role="tab" aria-controls="bottom-links" aria-selected="false">Sponsor</a></li>
                                 </ul>
                               </div>
                               <div class="tab-content content-tab" id="bottom-tabContent">

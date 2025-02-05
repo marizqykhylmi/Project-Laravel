@@ -73,8 +73,8 @@ Route::put('/edit-about-us/{type}/{id}', [ContentController::class, 'update'])->
 
 // Halaman index yang hanya bisa diakses setelah login
 // Route::get('/index', function () {
-//    $contents = Content::all(); // Pastikan model Content ada dan benar
-//    return view('index', compact('contents')); // Mengirim data ke view
+// //    $contents = Content::all(); // Pastikan model Content ada dan benar
+// //    return view('index', compact('contents')); // Mengirim data ke view
 // })->name('index')->middleware('auth'); // Menambahkan middleware 'auth'
 
 Route::get('user-profile', function () {

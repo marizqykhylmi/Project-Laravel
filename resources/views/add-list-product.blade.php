@@ -72,335 +72,6 @@
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-        <div class="page-header">
-            <div class="header-wrapper row m-0">
-                <div class="header-logo-wrapper col-auto p-0">
-                    <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light"
-                                src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark"
-                                src="../assets/images/logo/logo.png" alt=""></a></div>
-                    <div class="toggle-sidebar">
-                        <svg class="sidebar-toggle">
-                            <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation">
-                            </use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
-                    <div class="left-menu-header">
-                        <ul class="header-left">
-                            <li>
-                                <div class="form-group w-100">
-                                    <div class="Typeahead Typeahead--twitterUsers">
-                                        <div class="u-posRelative d-flex">
-                                            <i class="fas fa-search search-bg svg-color me-2"></i>
-                                            <!-- Menggunakan Font Awesome -->
-                                            <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100"
-                                                type="text" placeholder="Search anything..." name="q"
-                                                title="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
-                    <ul class="nav-menus">
-                        <li class="serchinput">
-                            <div class="serchbox">
-                                <svg>
-                                    <use
-                                        href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search">
-                                    </use>
-                                </svg>
-                            </div>
-                            <div class="form-group search-form">
-                                <input type="text" placeholder="Search here...">
-                            </div>
-                        </li>
-                        <li class="onhover-dropdown">
-                            <div class="notification-box">
-                                <i class="fa fa-bell animated-icon"></i>
-                                <span class="badge rounded-pill badge-primary">3</span>
-
-                                <style>
-                                    .animated-icon {
-                                        animation: bell-shake 1.5s infinite;
-                                    }
-
-                                    @keyframes bell-shake {
-
-                                        0%,
-                                        100% {
-                                            transform: rotate(0);
-                                        }
-
-                                        25% {
-                                            transform: rotate(-15deg);
-                                        }
-
-                                        50% {
-                                            transform: rotate(15deg);
-                                        }
-
-                                        75% {
-                                            transform: rotate(-15deg);
-                                        }
-                                    }
-
-                                    /* Tombol switch theme */
-                                    .theme-toggle-btn {
-                                        background-color: transparent;
-                                        border: none;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        padding: 10px;
-                                        cursor: pointer;
-                                        border-radius: 50%;
-                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-                                        transition: all 0.3s ease;
-                                    }
-
-                                    .theme-toggle-btn:hover {
-                                        background-color: rgba(0, 0, 0, 0.1);
-                                    }
-
-                                    .theme-icon {
-                                        width: 20px;
-                                        height: 20px;
-                                        fill: #333;
-                                        transition: all 0.3s ease;
-                                    }
-
-                                    /* Dark mode toggle */
-                                    body.dark-mode .theme-toggle-btn .theme-icon {
-                                        transform: rotate(180deg);
-                                        fill: #fff;
-                                    }
-                                </style>
-
-                                <div class="onhover-show-div notification-dropdown">
-                                    <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
-                                    <div class="d-flex align-items-center"><img
-                                            src="../assets/images/dashboard/user/5.png" alt="">
-                                        <div class="flex-grow-1 ms-2"><a href="{{ route('user-profile') }}">
-                                                <h5>
-                                                    Ralph Edwards <strong> wants to edit </strong> tetrisly design
-                                                    system</h5><span>2hrs Ago</span>
-                                            </a></div>
-                                        <div class="flex-shrink-0">
-                                            <div class="activity-dot-primary"></div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center"><img
-                                            src="../assets/images/dashboard/user/6.png" alt="">
-                                        <div class="flex-grow-1 ms-2"><a href="{{ route('user-profile') }}">
-                                                <h5>
-                                                    Jenny Wilson <strong> Completed </strong> Create new component</h5>
-                                                <span>2.15pm</span>
-                                            </a></div>
-                                        <div class="flex-shrink-0">
-                                            <div class="activity-dot-secondary"></div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center figma-line"><img
-                                            src="../assets/images/dashboard/user/7.png" alt="">
-                                        <div class="flex-grow-1 ms-2"><a href="{{ route('user-profile') }}">
-                                                <h5>Jenny Wilson mentioned you in rewrite button component</h5>
-                                                <span>3.10pm</span>
-                                            </a></div>
-                                    </div>
-                                </div>
-                        </li>
-                        <li class="onhover-dropdown">
-                            <div class="icon-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="black" stroke="black" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark">
-                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                                    <div class="onhover-show-div bookmark-flip">
-                                        <div class="flip-card">
-                                            <div class="flip-card-inner">
-                                                <div class="front">
-                                                    <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                                                    <ul class="bookmark-dropdown">
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col-4 text-center">
-                                                                    <div class="bookmark-content">
-                                                                        <div class="bookmark-icon"><i
-                                                                                data-feather="file-text"></i></div>
-                                                                        <span>Forms</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-4 text-center">
-                                                                    <div class="bookmark-content">
-                                                                        <div class="bookmark-icon"><i
-                                                                                data-feather="user"></i></div>
-                                                                        <span>Profile</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-4 text-center">
-                                                                    <div class="bookmark-content">
-                                                                        <div class="bookmark-icon"><i
-                                                                                data-feather="server"></i></div>
-                                                                        <span>Tables</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="text-center"><a class="flip-btn f-w-700"
-                                                                id="flip-btn" href="javascript:void(0)">Add New
-                                                                Bookmark</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="back">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="bookmark-dropdown flip-back-content">
-                                                                <input type="text" placeholder="search...">
-                                                            </div>
-                                                        </li>
-                                                        <li><a class="f-w-700 d-block flip-back" id="flip-back"
-                                                                href="javascript:void(0)">Back</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                        </li>
-                        <li>
-                            <div class="mode">
-                                <button id="theme-toggle" class="theme-toggle-btn">
-                                    <svg class="theme-icon" width="24" height="24">
-                                        <use
-                                            href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark">
-                                        </use>
-                                    </svg>
-                                </button>
-                        </li>
-                        <li class="onhover-dropdown">
-                            <div class="message">
-                                <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="#6c757d" width="24" height="24">
-                                    <path
-                                        d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16v10H6.83L4 16.83V4z" />
-                                </svg>
-
-                                <span class="badge rounded-pill badge-secondary">4</span>
-                            </div>
-                            <div class="onhover-show-div message-dropdown">
-                                <h6 class="f-18 mb-0 dropdown-title">Message</h6>
-                                <ul>
-                                    <li>
-                                        <div class="d-flex align-items-start">
-                                            <div class="message-img bg-light-primary"><img
-                                                    src="../assets/images/user/3.jpg" alt=""></div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="mb-1"><a href="email_inbox.html">Helen Walter</a></h5>
-                                                <p>Do you want to go see movie?</p>
-                                            </div>
-                                            <div class="notification-right"><i data-feather="x"></i></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex align-items-start">
-                                            <div class="message-img bg-light-primary"><img
-                                                    src="../assets/images/user/6.jpg" alt=""></div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
-                                                <p>Thank you for rating us.</p>
-                                            </div>
-                                            <div class="notification-right"><i data-feather="x"></i></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex align-items-start">
-                                            <div class="message-img bg-light-primary"><img
-                                                    src="../assets/images/user/10.jpg" alt=""></div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
-                                                <p>What`s the project report update?</p>
-                                            </div>
-                                            <div class="notification-right"><i data-feather="x"></i></div>
-                                        </div>
-                                    </li>
-                                    <li><a class="f-w-700" href="chat.html">Check all</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="cart-nav onhover-dropdown">
-                            <div class="cart-box">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="cart-dropdown onhover-show-div">
-                                <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                                <ul>
-                                    <li>
-                                        <div class="d-flex"><img class="img-fluid b-r-5 img-60"
-                                                src="../assets/images/ecommerce/06.jpg" alt="">
-                                            <div class="flex-grow-1"><span>Winter T-shirt</span>
-                                                <h6>1 X $ 299.00</h6>
-                                            </div>
-                                            <div class="close-circle"><a href="#"><i
-                                                        class="fa fa-times"></i></a></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex"><img class="img-fluid b-r-5 img-60"
-                                                src="../assets/images/ecommerce/02.jpg" alt="">
-                                            <div class="flex-grow-1"><span>Men Shirt</span>
-                                                <h6>1 X $ 299.00</h6>
-                                            </div>
-                                            <div class="close-circle"><a href="#"><i
-                                                        class="fa fa-times"></i></a></div>
-                                        </div>
-                                    </li>
-                                    <li class="total">
-                                        <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
-                                    </li>
-                                    <li><a class="view-cart" href="{{ route('cart') }}">View Cart</a><a
-                                            class="view-checkout f-right" href="{{ route('checkout') }}">Checkout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="profile-nav onhover-dropdown p-0">
-                            <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40"
-                                    src="../assets/images/dashboard/noprofile.png" alt="">
-                                <div class="flex-grow-1"><span>User</span>
-                                    <p class="mb-0">UI Designer </p>
-                                </div>
-                            </div>
-                            <ul class="profile-dropdown onhover-show-div">
-                                <li><a href="user-profile.html"><i data-feather="user"></i><span>Account </span></a>
-                                </li>
-                                <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a>
-                                </li>
-                                <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a>
-                                </li>
-                                <li><a href="edit-profile.html"><i
-                                            data-feather="settings"></i><span>Settings</span></a></li>
-                                <li><a href="{{ route('login') }}"><i data-feather="log-in">
-                                        </i><span>Logout</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">
-            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-            <div class="ProfileCard-details">
-            <div class="ProfileCard-realName"></div>
-            </div>
-            </div>
-          </script>
-                <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
-            </div>
-        </div>
-        <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
             <!-- Page Sidebar Start-->
@@ -530,119 +201,132 @@
                         </div>
                     </div>
                 </div>
-                <!-- Container-fluid starts-->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form action="{{ route('list-product.store') }}" method="POST"
-                                        enctype="multipart/form-data" class="needs-validation">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">Product Name</label>
-                                            <input type="text" class="form-control" id="name"
-                                                name="name" placeholder="Enter Product Name">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="sku" class="form-label">SKU</label>
-                                            <input type="text" class="form-control" id="sku" name="sku"
-                                                placeholder="Enter SKU">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="category" class="form-label">Category</label>
-                                            <select class="form-select" id="category" name="category">
-                                                <option value="" selected disabled>Choose Category</option>
-                                                <option value="Furniture">Furniture</option>
-                                                <option value="Smart">Smart Gadgets</option>
-                                                <option value="Electronics">Electronics</option>
-                                            </select>                                            
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="price" class="form-label">Price</label>
-                                            <input type="number" class="form-control" id="price" name="price"
-                                                placeholder="Enter Price">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="quantity" class="form-label">Quantity</label>
-                                            <input type="number" class="form-control" id="quantity"
-                                                name="quantity" placeholder="Enter Quantity">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="status" class="form-label">Status</label>
-                                            <select class="form-select" id="status" name="status">
-                                                <option value="" selected disabled>Choose Status</option>
-                                                <option value="Stock">In Stock</option>
-                                                <option value="Sold">Sold Out</option>
-                                                <option value="Order">Pre Order</option>
-                                                <option value="Limited">Limited Stock</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="rating" class="form-label">Rating</label>
-                                            <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" placeholder="Enter Rating (1-5)" required>
-                                        </div>
-                                        <style>
-                                        .rating {
-                                            font-size: 1.5rem;
-                                        }
-
-                                        .txt-warning {
-                                            color: yellow;
-                                        }
-
-                                        .f-light {
-                                            color: lightgray;
-                                        }
-
-                                        </style>                                         
-                                        <div class="mb-3">
-                                            <label for="image" class="form-label">Product Image</label>
-                                            <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage()">
-                                            <div id="imagePreview" class="mt-3 position-relative d-none" style="display: inline-block;">
-                                                <img id="previewImg" src="#" alt="Preview Image" class="img-fluid" style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
-                                                <div id="imageSize" class="position-absolute text-white bg-dark rounded-pill px-3 py-1" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;"></div>
-                                            </div>
-                                        </div>
-
-                                        <script>
-                                            function previewImage() {
-                                                const imageInput = document.getElementById('image');
-                                                const imagePreview = document.getElementById('imagePreview');
-                                                const previewImg = document.getElementById('previewImg');
-                                                const imageSize = document.getElementById('imageSize');
-                                                const file = imageInput.files[0];
-
-                                                if (file) {
-                                                    const reader = new FileReader();
-
-                                                    reader.onload = function(e) {
-                                                        previewImg.src = e.target.result;
-                                                        imagePreview.classList.remove('d-none');
-                                                        const fileSize = (file.size / (1024 * 1024)).toFixed(2); // file size in MB
-                                                        imageSize.textContent = `Size: ${fileSize} MB`;
-                                                    };
-
-                                                    reader.readAsDataURL(file);
-                                                }
-                                            }
-                                        </script>
-                                        <div class="text-end">
-                                            <button type="submit" class="btn btn-primary">
-                                                <i class="fa fa-plus"></i> Add Product
-                                            </button>
-                                            <a href="{{ route('list-products') }}" class="btn btn-secondary">
-                                                <i class="fa fa-arrow-left"></i> Back
-                                            </a>
-                                        </div>
-                                        
-                                    </form>
-                                </div>
+                <!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('list-product.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Product Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sku" class="form-label">Color</label>
+                            <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter Color">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" name="category">
+                                <option value="" selected disabled>Choose Category</option>
+                                <option value="Furniture">Furniture</option>
+                                <option value="Smart">Smart Gadgets</option>
+                                <option value="Electronics">Electronics</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="system" class="form-label">System</label>
+                            <input type="text" class="form-control" id="system" name="system" placeholder="Enter System">
+                        </div>
+                        <div class="mb-3">
+                            <label for="power_supply" class="form-label">Power Supply</label>
+                            <input type="text" class="form-control" id="power_supply" name="power_supply" placeholder="Enter Power Supply">
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" id="status" name="status">
+                                <option value="" selected disabled>Choose Status</option>
+                                <option value="Stock">In Stock</option>
+                                <option value="Sold">Sold Out</option>
+                                <option value="Order">Pre Order</option>
+                                <option value="Limited">Limited Stock</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="front_port" class="form-label">Front Port</label>
+                            <input type="text" class="form-control" id="front_port" name="front_port" placeholder="Enter Front Port">
+                        </div>
+                        <div class="mb-3">
+                            <label for="display_size" class="form-label">Display Size</label>
+                            <input type="text" class="form-control" id="display_size" name="display_size" placeholder="Enter Display Size">
+                        </div>
+                        <div class="mb-3">
+                            <label for="product_size" class="form-label">Product Size</label>
+                            <input type="text" class="form-control" id="product_size" name="product_size" placeholder="Enter Product Size">
+                        </div>
+                        <div class="mb-3">
+                            <label for="package_size" class="form-label">Package Size</label>
+                            <input type="text" class="form-control" id="package_size" name="package_size" placeholder="Enter Package Size">
+                        </div>
+                        <div class="mb-3">
+                            <label for="net_weight" class="form-label">Net Weight</label>
+                            <input type="number" step="0.01" class="form-control" id="net_weight" name="net_weight" placeholder="Enter Net Weight">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gross_weight" class="form-label">Gross Weight</label>
+                            <input type="number" step="0.01" class="form-control" id="gross_weight" name="gross_weight" placeholder="Enter Gross Weight">
+                        </div>
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity">
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating</label>
+                            <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" placeholder="Enter Rating (1-5)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Product Image</label>
+                            <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage()">
+                            <div id="imagePreview" class="mt-3 position-relative d-none" style="display: inline-block;">
+                                <img id="previewImg" src="#" alt="Preview Image" class="img-fluid" style="max-height: 300px; border: 1px solid #ddd; border-radius: 5px;">
+                                <div id="imageSize" class="position-absolute text-white bg-dark rounded-pill px-3 py-1" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;"></div>
                             </div>
                         </div>
-                    </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> Add Product
+                            </button>
+                            <a href="{{ route('list-products') }}" class="btn btn-secondary">
+                                <i class="fa fa-arrow-left"></i> Back
+                            </a>
+                        </div>
+                    </form>
                 </div>
-                <!-- Container-fluid Ends-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->
+
+<script>
+    function previewImage() {
+        const imageInput = document.getElementById('image');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewImg = document.getElementById('previewImg');
+        const imageSize = document.getElementById('imageSize');
+        const file = imageInput.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+                imagePreview.classList.remove('d-none');
+                const fileSize = (file.size / (1024 * 1024)).toFixed(2); // file size in MB
+                imageSize.textContent = `Size: ${fileSize} MB`;
+            };
+
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
             </div>
             <!-- footer start-->
             <footer class="footer">

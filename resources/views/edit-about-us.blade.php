@@ -23,9 +23,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <!-- ico-font-->
@@ -37,12 +35,13 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
     <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/select2.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/calendar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/datatables.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/fullcalender.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -51,7 +50,6 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
-
 </head>
 
 <body onload="startTime()">
@@ -88,65 +86,6 @@
 
                 <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
                     <ul class="nav-menus">
-
-                                <style>
-                                    .animated-icon {
-                                        animation: bell-shake 1.5s infinite;
-                                    }
-
-                                    @keyframes bell-shake {
-
-                                        0%,
-                                        100% {
-                                            transform: rotate(0);
-                                        }
-
-                                        25% {
-                                            transform: rotate(-15deg);
-                                        }
-
-                                        50% {
-                                            transform: rotate(15deg);
-                                        }
-
-                                        75% {
-                                            transform: rotate(-15deg);
-                                        }
-                                    }
-
-                                    /* Tombol switch theme */
-                                    .theme-toggle-btn {
-                                        background-color: transparent;
-                                        border: none;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        padding: 10px;
-                                        cursor: pointer;
-                                        border-radius: 50%;
-                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-                                        transition: all 0.3s ease;
-                                    }
-
-                                    .theme-toggle-btn:hover {
-                                        background-color: rgba(0, 0, 0, 0.1);
-                                    }
-
-                                    .theme-icon {
-                                        width: 20px;
-                                        height: 20px;
-                                        fill: #333;
-                                        transition: all 0.3s ease;
-                                    }
-
-                                    /* Dark mode toggle */
-                                    body.dark-mode .theme-toggle-btn .theme-icon {
-                                        transform: rotate(180deg);
-                                        fill: #fff;
-                                    }
-                                </style>
-
-
         <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
@@ -155,70 +94,72 @@
                 <!-- Page Sidebar Start-->
 
                 <!-- Page Sidebar Ends-->
-                <div class="page-body">
-                    <div class="container-fluid">
-                        <div class="page-title">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h4 class="mb-3">Edit {{ ucfirst($type) }}</h4>
-                                </div>
-                            </div>
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="mb-4 fw-bold text-primary">Edit {{ ucfirst($type) }}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg border-0 rounded-3">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h5 class="mb-0">Edit {{ ucfirst($type) }} Content</h5>
                         </div>
+                        <div class="card-body p-4">
+                            <form action="{{ route('update-content', ['type' => $type, 'id' => $content->id]) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="type" value="{{ $type }}">
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-8 offset-md-2">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5>Edit {{ ucfirst($type) }} Content</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <form action="{{ route('update-content', ['type' => $type, 'id' => $content->id]) }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                @method('PUT')
-                                                <input type="hidden" name="type" value="{{ $type }}">
-
-                                                @if ($type == 'team')
-                                                    <div class="mb-3">
-                                                        <label for="name" class="form-label">Name</label>
-                                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $content->name) }}" required>
-                                                        @error('name')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    </div>
-
-                                                    <div class="mb-3">
-                                                        <label for="image" class="form-label">Upload Image</label>
-                                                        @if ($content->image)
-                                                            <div class="mb-2">
-                                                                <img src="{{ asset('storage/' . $content->image) }}" alt="Current Image" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;">
-                                                            </div>
-                                                        @endif
-                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*">
-                                                        @error('image')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    </div>
-                                                @endif
-
-                                                <div class="mb-3">
-                                                    <label for="content" class="form-label">Content</label>
-                                                    <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="5" required>{{ old('content', $content->content) }}</textarea>
-                                                    @error('content')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                                <a href="{{ route('index') }}" class="btn btn-secondary">Cancel</a>
-                                            </form>
-                                        </div>
+                                @if ($type == 'team')
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label fw-semibold">Name</label>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $content->name) }}" required>
+                                        @error('name')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div> <!-- End container-fluid -->
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label fw-semibold">Upload Image</label>
+                                        @if ($content->image)
+                                            <div class="mb-2 text-center">
+                                                <img src="{{ asset('storage/' . $content->image) }}" alt="Current Image" class="img-thumbnail" style="width: 150px; height: 150px; object-fit: cover;">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*">
+                                        @error('image')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                @endif
+
+                                <div class="mb-3">
+                                    <label for="content" class="form-label fw-semibold">Content</label>
+                                    <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="5" required>{{ old('content', $content->content) }}</textarea>
+                                    @error('content')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                    <button type="submit" class="btn btn-primary shadow-sm px-4">Update</button>
+                                    <a href="{{ route('index') }}" class="btn btn-outline-secondary shadow-sm px-4">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                 </div> <!-- End page-body -->
 
         <!-- latest jquery-->

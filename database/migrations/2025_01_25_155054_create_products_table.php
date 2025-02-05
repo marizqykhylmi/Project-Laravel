@@ -10,20 +10,27 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('sku')->unique();
-            $table->string('category');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->string('status');
-            $table->integer('rating')->default(0);
-            $table->string('image')->nullable();
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('products', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('color')->nullable();
+        $table->string('category');
+        $table->string('system')->nullable();
+        $table->string('status');
+        $table->string('front_port')->nullable();
+        $table->string('display_size')->nullable();
+        $table->string('product_size')->nullable();
+        $table->string('package_size')->nullable();
+        $table->decimal('net_weight', 8, 2)->nullable();
+        $table->decimal('gross_weight', 8, 2)->nullable();
+        $table->integer('quantity');
+        $table->integer('rating')->default(0);
+        $table->string('image')->nullable();
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.

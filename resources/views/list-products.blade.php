@@ -168,7 +168,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">ECommerce</li>
-                                <li class="breadcrumb-item active">Product List</li>
+                                <a href="{{ route('list-product.create') }}" class="breadcrumb-item active">Add Product</a>
                             </ol>
                         </div>
                     </div>
@@ -176,104 +176,130 @@
             </div>
             <!-- Container-fluid starts -->
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="list-product-header">
-                                    <div>
-                                        <a class="btn btn-primary" href="{{ route('list-product.create') }}">
-                                            <i class="fa fa-plus"></i> Add Product
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="list-product">
-                                    <table class="table" id="project-status">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input checkbox-primary" type="checkbox">
-                                                    </div>
-                                                </th>
-                                                <th>Product Name</th>
-                                                <th>SKU</th>
-                                                <th>Category</th>
-                                                <th>Price</th>
-                                                <th>Qty</th>
-                                                <th>Status</th>
-                                                <th>Rating</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($products as $product)
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input checkbox-primary" type="checkbox">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-names">
-
-                                                            <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid" width="50">
-                                                            <p>{{ $product->name }}</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{ $product->sku }}</td>
-                                                    <td>{{ $product->category }}</td>
-                                                    <td>{{ number_format($product->price, 2) }}</td>
-                                                    <td>{{ $product->quantity }}</td>
-                                                    <td>
-                                                        <span class="badge badge-light-secondary">{{ $product->status }}</span>
-                                                    </td>
-                                                    <td>
-                                                        {{-- {{ $product->rating }} --}}
-                                                      <div class="rating">
-                                                          @for ($i = 1; $i <= 5; $i++)
-                                                              <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
-                                                          @endfor
-                                                          {{ $product->rating }}
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="card">
+                          <div class="card-body">
+                              <div class="list-product-header d-flex justify-content-between">
+                                  <h4>Product List</h4>
+                                  <a class="btn btn-primary" href="{{ route('list-product.create') }}">
+                                      <i class="fa fa-plus"></i> Add Product
+                                  </a>
+                              </div>
+                              <div class="list-product">
+                                  <table class="table table-bordered" id="product-list">
+                                      <thead>
+                                          <tr>
+                                              <th>No</th>
+                                              <th>Details</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          @foreach ($products as $index => $product)
+                                              <tr>
+                                                  <td>{{ $index + 1 }}</td>
+                                                  <td>
+                                                      <div class="product-details">
+                                                          <div class="d-flex align-items-center mb-2">
+                                                              <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-thumbnail" width="100">
+                                                              <h5 class="ms-3">{{ $product->name }}</h5>
+                                                          </div>
+                                                          <ul class="list-group">
+                                                              <li class="list-group-item"><strong>Color:</strong> {{ $product->color }}</li>
+                                                              <li class="list-group-item"><strong>Category:</strong> {{ optional($product->category)->name ?? 'Not available' }}</li>
+                                                              <li class="list-group-item"><strong>System:</strong> {{ $product->system }}</li>
+                                                              <li class="list-group-item"><strong>Power Supply:</strong> {{ $product->power_supply }}</li>
+                                                              <li class="list-group-item"><strong>Status:</strong> {{ $product->status }}</li>
+                                                              <li class="list-group-item"><strong>Front Port:</strong> {{ $product->front_port }}</li>
+                                                              <li class="list-group-item"><strong>Display Size:</strong> {{ $product->display_size }}</li>
+                                                              <li class="list-group-item"><strong>Product Size:</strong> {{ $product->product_size }}</li>
+                                                              <li class="list-group-item"><strong>Package Size:</strong> {{ $product->package_size }}</li>
+                                                              <li class="list-group-item"><strong>Net Weight:</strong> {{ $product->net_weight }}</li>
+                                                              <li class="list-group-item"><strong>Gross Weight:</strong> {{ $product->gross_weight }}</li>
+                                                              <li class="list-group-item"><strong>Quantity:</strong> {{ $product->quantity }}</li>
+                                                              <li class="list-group-item">
+                                                                  <strong>Rating:</strong>
+                                                                  <div class="rating">
+                                                                      @for ($i = 1; $i <= 5; $i++)
+                                                                          <i class="fa {{ $i <= $product->rating ? 'fa-star txt-warning' : 'fa-star f-light' }}"></i>
+                                                                      @endfor
+                                                                      {{ $product->rating }}
+                                                                  </div>
+                                                              </li>
+                                                          </ul>
+                                                          <div class="mt-3">
+                                                              <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info">
+                                                                  <i class="fa fa-edit"></i> Edit
+                                                              </a>
+                                                              <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;" id="delete-form-{{ $product->id }}">
+                                                                  @csrf
+                                                                  @method('DELETE')
+                                                                  <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete({{ $product->id }})">
+                                                                      <i class="fa fa-trash"></i> Delete
+                                                                  </button>
+                                                              </form>
+                                                          </div>
                                                       </div>
                                                   </td>
-                                                  <style>
-                                                    .rating {
-                                                      font-size: 1.5rem;
-                                                  }
-
-                                                  .txt-warning {
-                                                      color: yellow;
-                                                  }
-
-                                                  .f-light {
-                                                      color: lightgray;
-                                                  }
-
-                                                  </style>
-                                                    <td>
-                                                        <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
-                                                        <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                    <div>
-                                        {{-- {{ $products->links() }} Pagination --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Container-fluid Ends -->
+                                              </tr>
+                                          @endforeach
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          @section('styles')
+              <style>
+                  .rating {
+                      font-size: 1.2rem;
+                  }
+                  .txt-warning {
+                      color: yellow;
+                  }
+                  .f-light {
+                      color: lightgray;
+                  }
+                  .product-details ul {
+                      list-style-type: none;
+                      padding: 0;
+                  }
+                  .product-details ul li {
+                      padding: 5px;
+                      border-bottom: 1px solid #ddd;
+                  }
+                  .product-details ul li:last-child {
+                      border-bottom: none;
+                  }
+              </style>
+          @endsection
+          
+          @section('scripts')
+              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+              <script>
+                  function confirmDelete(productId) {
+                      Swal.fire({
+                          title: 'Are you sure?',
+                          text: 'You won\'t be able to revert this!',
+                          icon: 'warning',
+                          showCancelButton: true,
+                          confirmButtonColor: '#3085d6',
+                          cancelButtonColor: '#d33',
+                          confirmButtonText: 'Yes, delete it!'
+                      }).then((result) => {
+                          if (result.isConfirmed) {
+                              document.getElementById('delete-form-' + productId).submit();
+                          }
+                      });
+                  }
+              </script>
+          @endsection
+          
         </div>
+        
         <!-- footer start-->
         <footer class="footer">
           <div class="container-fluid">

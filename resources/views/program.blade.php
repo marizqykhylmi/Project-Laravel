@@ -229,6 +229,12 @@
                                 <h4>Program Blog Posts</h4>
                             </div>
                             <div class="card-body">
+                                <form action="{{ request()->url() }}" method="GET" class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" id="searchInputPrograms" class="form-control" placeholder="Search by title">
+                                        <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
                                 @if ($programs->isEmpty())
                                     <p class="text-center">No posts available at the moment.</p>
                                 @else
@@ -249,7 +255,7 @@
                                                         <td>
                                                             <img src="{{ asset('storage/images/' . $program->image) }}" alt="{{ $program->title }}" style="object-fit: cover; width: 100px; height: 100px;">
                                                         </td>
-                                                        <td>{{ $program->title }}</td>
+                                                        <td class="program-title">{{ $program->title }}</td>
                                                         <td>{!! \Illuminate\Support\Str::limit($program->description, 100, '...') !!}</td>
                                                         <td>{{ \Carbon\Carbon::parse($program->publish_date)->format('d F Y') }}</td>
                                                         <td>
@@ -263,32 +269,65 @@
                                                                     <i class="fa fa-trash"></i> Delete
                                                                 </button>
                                                             </form>
-                                                            
-                                                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                                                            <script>
-                                                            document.addEventListener("DOMContentLoaded", function () {
-                                                                document.querySelectorAll(".delete-btn").forEach(button => {
-                                                                    button.addEventListener("click", function () {
-                                                                        let form = this.closest(".delete-form");
-                                                            
-                                                                        Swal.fire({
-                                                                            title: "Are you sure?",
-                                                                            text: "You won't be able to revert this!",
-                                                                            icon: "warning",
-                                                                            showCancelButton: true,
-                                                                            confirmButtonColor: "#d33",
-                                                                            cancelButtonColor: "#3085d6",
-                                                                            confirmButtonText: "Yes, delete it!"
-                                                                        }).then((result) => {
-                                                                            if (result.isConfirmed) {
-                                                                                form.submit();
-                                                                            }
-                                                                        });
+                                                        </td>     
+                                                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                        <script>
+                                                        document.addEventListener("DOMContentLoaded", function () {
+                                                            // Handle the delete button confirmation
+                                                            document.querySelectorAll(".delete-btn").forEach(button => {
+                                                                button.addEventListener("click", function () {
+                                                                    let form = this.closest(".delete-form");
+                                                        
+                                                                    Swal.fire({
+                                                                        title: "Are you sure?",
+                                                                        text: "You won't be able to revert this!",
+                                                                        icon: "warning",
+                                                                        showCancelButton: true,
+                                                                        confirmButtonColor: "#d33",
+                                                                        cancelButtonColor: "#3085d6",
+                                                                        confirmButtonText: "Yes, delete it!"
+                                                                    }).then((result) => {
+                                                                        if (result.isConfirmed) {
+                                                                            form.submit();
+                                                                        }
                                                                     });
                                                                 });
                                                             });
-                                                            </script>
-                                                            
+                                                        
+                                                            // Pencarian dan Highlight untuk Program
+                                                            document.getElementById("searchInputPrograms").addEventListener("input", function () {
+                                                                let searchValue = this.value.toLowerCase();
+                                                                let rows = document.querySelectorAll("tbody tr");
+                                                        
+                                                                // Reset semua warna judul ke default sebelum pencarian baru
+                                                                document.querySelectorAll(".program-title").forEach(titleCell => {
+                                                                    titleCell.style.color = ""; // Reset warna
+                                                                });
+                                                        
+                                                                let found = false; // Flag untuk cek apakah ada yang ditemukan
+                                                                rows.forEach(row => {
+                                                                    let titleCell = row.querySelector(".program-title");
+                                                                    let title = titleCell.textContent.toLowerCase();
+                                                        
+                                                                    if (title.includes(searchValue) && searchValue.trim() !== "") {
+                                                                        row.style.display = "";
+                                                                        titleCell.style.color = "orange"; // Highlight title yang ditemukan
+                                                                        found = true;
+                                                                    } else {
+                                                                        row.style.display = searchValue.trim() !== "" ? "none" : ""; // Jika pencarian kosong, tampilkan semua
+                                                                    }
+                                                                });
+                                                        
+                                                                // Jika ditemukan, scroll ke yang pertama kali ditemukan
+                                                                if (found) {
+                                                                    let firstFound = document.querySelector(".program-title[style='color: orange;']");
+                                                                    if (firstFound) {
+                                                                        firstFound.scrollIntoView({ behavior: "smooth", block: "center" });
+                                                                    }
+                                                                }
+                                                            });
+                                                        });
+                                                        </script>       
                                                         </td>                                                        
                                                     </tr>
                                                 @endforeach

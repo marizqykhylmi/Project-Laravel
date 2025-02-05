@@ -226,7 +226,7 @@
                             <div class="card-body">
                                 <form action="{{ request()->url() }}" method="GET" class="mb-3">
                                     <div class="input-group">
-                                        <input type="text" name="search" class="form-control" placeholder="Search by title" value="{{ request()->query('search') }}">
+                                        <input type="text" id="searchInput" class="form-control" placeholder="Search by title">
                                         <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search"></i></button>
                                     </div>
                                 </form>
@@ -243,15 +243,14 @@
                                                 <th scope="col" class="text-center">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="galleryBody">
                                             @foreach ($galleries as $gallery)
                                                 <tr>
                                                     <td class="text-center">
-                                                        <img src="{{ asset('storage/images/' . $gallery->image) }}" 
-                                                    alt="{{ $gallery->title }}" width="100">
+                                                        <img src="{{ asset('storage/images/' . $gallery->image) }}" alt="{{ $gallery->title }}" width="100">
                                                     </td>
-                                                    <td>{{ $gallery->title }}</td>
-                                                    <td>{!! $gallery->description !!}</td> <!-- FIX: Menampilkan deskripsi dengan format HTML -->
+                                                    <td class="gallery-title">{{ $gallery->title }}</td>
+                                                    <td>{!! $gallery->description !!}</td>
                                                     <td class="text-center">{{ \Carbon\Carbon::parse($gallery->publish_date)->format('d F Y') }}</td>
                                                     <td class="text-center">
                                                         <div class="d-flex gap-2 justify-content-center">
@@ -265,32 +264,6 @@
                                                                     <i class="fa fa-trash"></i> Delete
                                                                 </button>
                                                             </form>
-                                                            
-                                                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                                                            <script>
-                                                            document.addEventListener("DOMContentLoaded", function () {
-                                                                document.querySelectorAll(".delete-gallery-btn").forEach(button => {
-                                                                    button.addEventListener("click", function () {
-                                                                        let form = this.closest(".delete-gallery-form");
-                                                            
-                                                                        Swal.fire({
-                                                                            title: "Are you sure?",
-                                                                            text: "You won't be able to revert this!",
-                                                                            icon: "warning",
-                                                                            showCancelButton: true,
-                                                                            confirmButtonColor: "#d33",
-                                                                            cancelButtonColor: "#3085d6",
-                                                                            confirmButtonText: "Yes, delete it!"
-                                                                        }).then((result) => {
-                                                                            if (result.isConfirmed) {
-                                                                                form.submit();
-                                                                            }
-                                                                        });
-                                                                    });
-                                                                });
-                                                            });
-                                                            </script>
-                                                            
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -302,6 +275,68 @@
                         </div>
                     </div>
                 </div>
+                
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+    // Handle the delete button confirmation
+    document.querySelectorAll(".delete-gallery-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            let form = this.closest(".delete-gallery-form");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+
+    // Pencarian dan Highlight
+    document.getElementById("searchInput").addEventListener("input", function () {
+        let searchValue = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#galleryBody tr");
+
+        // Reset semua warna judul ke default sebelum pencarian baru
+        document.querySelectorAll(".gallery-title").forEach(titleCell => {
+            titleCell.style.color = ""; // Reset warna
+        });
+
+        let found = false; // Flag untuk cek apakah ada yang ditemukan
+        rows.forEach(row => {
+            let titleCell = row.querySelector(".gallery-title");
+            let title = titleCell.textContent.toLowerCase();
+
+            if (title.includes(searchValue) && searchValue.trim() !== "") {
+                row.style.display = "";
+                titleCell.style.color = "orange"; // Highlight title yang ditemukan
+                found = true;
+            } else {
+                row.style.display = searchValue.trim() !== "" ? "none" : ""; // Jika pencarian kosong, tampilkan semua
+            }
+        });
+
+        // Jika ditemukan, scroll ke yang pertama kali ditemukan
+        if (found) {
+            let firstFound = document.querySelector(".gallery-title[style='color: orange;']");
+            if (firstFound) {
+                firstFound.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+    });
+});
+
+
+                </script>
+                
                 
 
                 <!-- Footer -->
