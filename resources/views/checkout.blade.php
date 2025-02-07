@@ -364,8 +364,7 @@
                           <div class="col mega-box">
                             <div class="link-section">
                             </div>
-                          </div>
-                             
+                          </div>                            
                         </div>
                       </div>
                     </div>
@@ -375,7 +374,7 @@
               <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
             </nav>
           </div>
-        </div>
+        </div>  
         <!-- Page Sidebar Ends-->
         <div class="page-body checkout">
           <div class="container-fluid">

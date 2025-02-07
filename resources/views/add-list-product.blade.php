@@ -201,6 +201,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Container-fluid starts -->
 <div class="container-fluid">
     <div class="row">
@@ -211,28 +212,27 @@
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Product Name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Product Name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="sku" class="form-label">Color</label>
-                            <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter Color">
+                            <label for="color" class="form-label">Color</label>
+                            <input type="text" class="form-control" id="color" name="color" placeholder="Enter Color">
                         </div>
                         <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
-                            <select class="form-select" id="category" name="category">
-                                <option value="" selected disabled>Choose Category</option>
+                            <select class="form-select" id="category" name="category[]" multiple>
                                 <option value="Furniture">Furniture</option>
                                 <option value="Smart">Smart Gadgets</option>
                                 <option value="Electronics">Electronics</option>
                             </select>
-                        </div>
+                        </div>                        
                         <div class="mb-3">
                             <label for="system" class="form-label">System</label>
                             <input type="text" class="form-control" id="system" name="system" placeholder="Enter System">
                         </div>
                         <div class="mb-3">
-                            <label for="power_supply" class="form-label">Power Supply</label>
-                            <input type="text" class="form-control" id="power_supply" name="power_supply" placeholder="Enter Power Supply">
+                            <label for="power_suply" class="form-label">Power Supply</label>
+                            <input type="text" class="form-control" id="power_suply" name="power_suply" placeholder="Enter Power Suply">
                         </div>
                         <div class="mb-3">
                             <label for="status" class="form-label">Status</label>
@@ -270,7 +270,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity">
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" required>
                         </div>
                         <div class="mb-3">
                             <label for="rating" class="form-label">Rating</label>
@@ -278,7 +278,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price">
+                            <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Enter Price" required>
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Product Image</label>
@@ -305,27 +305,35 @@
 <!-- Container-fluid Ends -->
 
 <script>
-    function previewImage() {
-        const imageInput = document.getElementById('image');
-        const imagePreview = document.getElementById('imagePreview');
-        const previewImg = document.getElementById('previewImg');
-        const imageSize = document.getElementById('imageSize');
-        const file = imageInput.files[0];
+    // DOM Elements
+    const imageInput = document.getElementById('image');
+    const imagePreview = document.getElementById('previewImg');
+    const imageSize = document.getElementById('imageSize');
+
+    // Event listener for image input
+    imageInput.addEventListener('change', function(event) {
+        const file = event.target.files[0]; // Get the first file
 
         if (file) {
             const reader = new FileReader();
 
+            // After the file is read
             reader.onload = function(e) {
-                previewImg.src = e.target.result;
-                imagePreview.classList.remove('d-none');
-                const fileSize = (file.size / (1024 * 1024)).toFixed(2); // file size in MB
-                imageSize.textContent = `Size: ${fileSize} MB`;
+                // Display the image preview
+                imagePreview.src = e.target.result;
+                imagePreview.parentElement.classList.remove('d-none');
+
+                // Show file size in MB
+                const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
+                imageSize.textContent = `${fileSizeInMB} MB`;
             };
 
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(file); // Read the file as a data URL
         }
-    }
+    });
 </script>
+
+
 
             </div>
             <!-- footer start-->

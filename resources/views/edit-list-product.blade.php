@@ -61,231 +61,6 @@
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-      <!-- Page Header Start-->
-      <div class="page-header">
-        <div class="header-wrapper row m-0">
-          <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route ('index') }}"><img class="img-fluid for-light" src="../assets/images/logo/logo-1.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt=""></a></div>
-            <div class="toggle-sidebar">
-              <svg class="sidebar-toggle"> 
-                <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#stroke-animation"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="left-header col-xxl-5 col-xl-6 col-md-4 col-auto box-col-6 horizontal-wrapper p-0">
-            <div class="left-menu-header">
-              <ul class="header-left"> 
-                <li>
-                  <div class="form-group w-100"> 
-                    <div class="Typeahead Typeahead--twitterUsers">
-                        <div class="u-posRelative d-flex">
-                            <i class="fas fa-search search-bg svg-color me-2"></i> <!-- Menggunakan Font Awesome -->
-                            <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search anything..." name="q" title="">
-                          </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
-            <ul class="nav-menus">
-              <li class="serchinput">
-                <div class="serchbox">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-search"></use>
-                  </svg>
-                </div>
-                <div class="form-group search-form">
-                  <input type="text" placeholder="Search here...">
-                </div>
-              </li>
-              <li class="onhover-dropdown">
-                <div class="notification-box">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Bell"></use>
-                  </svg><span class="badge rounded-pill badge-primary">3</span>
-                </div>
-                <div class="onhover-show-div notification-dropdown">
-                    <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
-                    <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/5.png" alt="">
-                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                          <h5>
-                             Ralph Edwards <strong> wants to edit </strong> tetrisly design system</h5><span>2hrs Ago</span></a></div>
-                      <div class="flex-shrink-0"> 
-                        <div class="activity-dot-primary"></div>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center"><img src="../assets/images/dashboard/user/6.png" alt="">
-                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                          <h5>
-                             Jenny Wilson <strong> Completed </strong> Create new component</h5><span>2.15pm</span></a></div>
-                      <div class="flex-shrink-0"> 
-                        <div class="activity-dot-secondary"></div>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center figma-line"><img src="../assets/images/dashboard/user/7.png" alt="">
-                      <div class="flex-grow-1 ms-2"><a href="{{route ('user-profile')}}">
-                          <h5>Jenny Wilson mentioned you in rewrite button component</h5><span>3.10pm</span></a></div>
-                    </div>
-                  </div>
-              </li>
-              <li class="onhover-dropdown">
-                <svg>
-                  <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-star"></use>
-                </svg>
-                <div class="onhover-show-div bookmark-flip">
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="front">
-                        <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                        <ul class="bookmark-dropdown">
-                          <li>
-                            <div class="row">
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="file-text"></i></div><span>Forms</span>
-                                </div>
-                              </div>
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="user"></i></div><span>Profile</span>
-                                </div>
-                              </div>
-                              <div class="col-4 text-center">
-                                <div class="bookmark-content">
-                                  <div class="bookmark-icon"><i data-feather="server"></i></div><span>Tables</span>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="text-center"><a class="flip-btn f-w-700" id="flip-btn" href="javascript:void(0)">Add New Bookmark</a></li>
-                        </ul>
-                      </div>
-                      <div class="back">
-                        <ul>
-                          <li>
-                            <div class="bookmark-dropdown flip-back-content">
-                              <input type="text" placeholder="search...">
-                            </div>
-                          </li>
-                          <li><a class="f-w-700 d-block flip-back" id="flip-back" href="javascript:void(0)">Back</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="mode">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-dark"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class="onhover-dropdown">
-                <div class="message">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-message"></use>
-                  </svg><span class="badge rounded-pill badge-secondary">4</span>
-                </div>
-                <div class="onhover-show-div message-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Message</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/3.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Helen Walter</a></h5>
-                          <p>Do you want to go see movie?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/6.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
-                          <p>Thank you for rating us.</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/images/user/10.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
-                          <p>What`s the project report update?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li><a class="f-w-700" href="chat.html">Check all</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="cart-nav onhover-dropdown">
-                <div class="cart-box">
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/crocs/assets/svg/icon-sprite.svg#fill-Buy"></use>
-                  </svg>
-                </div>
-                <div class="cart-dropdown onhover-show-div">
-                  <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-60" src="../assets/images/ecommerce/06.jpg" alt="">
-                        <div class="flex-grow-1"><span>Winter T-shirt</span>
-                          <h6>1 X $ 299.00</h6>
-                        </div>
-                        <div class="close-circle"><a href="#"><i class="fa fa-times"></i></a></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-60" src="../assets/images/ecommerce/02.jpg" alt="">
-                        <div class="flex-grow-1"><span>Men Shirt</span>
-                          <h6>1 X $ 299.00</h6>
-                        </div>
-                        <div class="close-circle"><a href="#"><i class="fa fa-times"></i></a></div>
-                      </div>
-                    </li>
-                    <li class="total">
-                      <h5 class="mb-0">Subtotal :<span class="f-right">$299.00</span></h5>
-                    </li>
-                    <li><a class="view-cart" href="{{ route ('cart') }}">View Cart</a><a class="view-checkout f-right" href="{{ route ('checkout') }}">Checkout</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="profile-nav onhover-dropdown p-0">
-                <div class="d-flex align-items-center profile-media"><img class="b-r-10 img-40" src="../assets/images/dashboard/noprofile.png" alt="">
-                  <div class="flex-grow-1"><span>User</span>
-                    <p class="mb-0">UI Designer </p>
-                  </div>
-                </div>
-                <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="{{ route ('user-profile') }}"><i data-feather="user"></i><span>Account </span></a></li>
-                  <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                  <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                  <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">                        
-            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-            <div class="ProfileCard-details">
-            <div class="ProfileCard-realName"></div>
-            </div>
-            </div>
-          </script>
-          <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
-        </div>
-      </div>
-      <!-- Page Header Ends                              -->
       <!-- Page Body Start-->
       <div class="page-body-wrapper">
          <!-- Page Sidebar Start-->
@@ -398,92 +173,112 @@
                     </div>
                 </div>
             </div>
-            <!-- Container-fluid starts-->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="{{ route('list-product.update', $product->id) }}" method="POST" 
-                                    enctype="multipart/form-data" class="needs-validation">
-                                    @csrf
-                                    @method('PUT')
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Product Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" 
-                                            value="{{ old('name', $product->name) }}" placeholder="Enter Product Name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="sku" class="form-label">SKU</label>
-                                        <input type="text" class="form-control" id="sku" name="sku" 
-                                            value="{{ old('sku', $product->sku) }}" placeholder="Enter SKU">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="category" class="form-label">Category</label>
-                                        <select class="form-select" id="category" name="category">
-                                            <option value="" disabled>Choose Category</option>
-                                            <option value="Furniture" {{ $product->category == 'Furniture' ? 'selected' : '' }}>
-                                                Furniture
-                                            </option>
-                                            <option value="Smart" {{ $product->category == 'Smart' ? 'selected' : '' }}>
-                                                Smart Gadgets
-                                            </option>
-                                            <option value="Electronics" {{ $product->category == 'Electronics' ? 'selected' : '' }}>
-                                                Electronics
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="price" class="form-label">Price</label>
-                                        <input type="number" class="form-control" id="price" name="price" 
-                                            value="{{ old('price', $product->price) }}" placeholder="Enter Price">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="quantity" class="form-label">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity" 
-                                            value="{{ old('quantity', $product->quantity) }}" placeholder="Enter Quantity">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="status" class="form-label">Status</label>
-                                        <select class="form-select" id="status" name="status">
-                                            <option value="" disabled>Choose Status</option>
-                                            <option value="Stock" {{ $product->status == 'Stock' ? 'selected' : '' }}>In Stock</option>
-                                            <option value="Sold" {{ $product->status == 'Sold' ? 'selected' : '' }}>Sold Out</option>
-                                            <option value="Order" {{ $product->status == 'Order' ? 'selected' : '' }}>Pre Order</option>
-                                            <option value="Limited" {{ $product->status == 'Limited' ? 'selected' : '' }}>Limited Stock</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="rating" class="form-label">Rating</label>
-                                        <input type="number" class="form-control" id="rating" name="rating" 
-                                            value="{{ old('rating', $product->rating) }}" min="1" max="5"
-                                            placeholder="Enter Rating (1-5)">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="image" class="form-label">Product Image</label>
-                                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                                        @if ($product->image)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" 
-                                                    style="max-height: 150px;">
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fa fa-save"></i> Save Changes
-                                        </button>
-                                        <a href="{{ route('list-products') }}" class="btn btn-secondary">
-                                            <i class="fa fa-arrow-left"></i> Back
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Container-fluid Ends-->
+            <!-- Container-fluid starts -->
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-body">
+                  <h4>Edit Product</h4>
+                  <form action="{{ route('list-product.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="needs-validation">
+                      @csrf
+                      @method('PUT')
+                      <div class="mb-3">
+                          <label for="name" class="form-label">Product Name</label>
+                          <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}" placeholder="Enter Product Name">
+                      </div>
+                      <div class="mb-3">
+                          <label for="color" class="form-label">Color</label>
+                          <input type="text" class="form-control" id="color" name="color" value="{{ old('color', $product->color) }}" placeholder="Enter Color">
+                      </div>
+                      <div class="mb-3">
+                          <label for="category" class="form-label">Category</label>
+                          <select class="form-select" id="category" name="category">
+                              <option value="" selected disabled>Choose Category</option>
+                              <option value="Furniture" {{ old('category', $product->category) == 'Furniture' ? 'selected' : '' }}>Furniture</option>
+                              <option value="Smart" {{ old('category', $product->category) == 'Smart' ? 'selected' : '' }}>Smart Gadgets</option>
+                              <option value="Electronics" {{ old('category', $product->category) == 'Electronics' ? 'selected' : '' }}>Electronics</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label for="system" class="form-label">System</label>
+                          <input type="text" class="form-control" id="system" name="system" value="{{ old('system', $product->system) }}" placeholder="Enter System">
+                      </div>
+                      <div class="mb-3">
+                          <label for="power_suply" class="form-label">Power Supply</label>
+                          <input type="text" class="form-control" id="power_suply" name="power_suply" value="{{ old('power_suply', $product->power_suply) }}" placeholder="Enter Power Suply">
+                      </div>
+                      <div class="mb-3">
+                          <label for="status" class="form-label">Status</label>
+                          <select class="form-select" id="status" name="status">
+                              <option value="" selected disabled>Choose Status</option>
+                              <option value="Stock" {{ old('status', $product->status) == 'Stock' ? 'selected' : '' }}>In Stock</option>
+                              <option value="Sold" {{ old('status', $product->status) == 'Sold' ? 'selected' : '' }}>Sold Out</option>
+                              <option value="Order" {{ old('status', $product->status) == 'Order' ? 'selected' : '' }}>Pre Order</option>
+                              <option value="Limited" {{ old('status', $product->status) == 'Limited' ? 'selected' : '' }}>Limited Stock</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label for="front_port" class="form-label">Front Port</label>
+                          <input type="text" class="form-control" id="front_port" name="front_port" value="{{ old('front_port', $product->front_port) }}" placeholder="Enter Front Port">
+                      </div>
+                      <div class="mb-3">
+                          <label for="display_size" class="form-label">Display Size</label>
+                          <input type="text" class="form-control" id="display_size" name="display_size" value="{{ old('display_size', $product->display_size) }}" placeholder="Enter Display Size">
+                      </div>
+                      <div class="mb-3">
+                          <label for="product_size" class="form-label">Product Size</label>
+                          <input type="text" class="form-control" id="product_size" name="product_size" value="{{ old('product_size', $product->product_size) }}" placeholder="Enter Product Size">
+                      </div>
+                      <div class="mb-3">
+                          <label for="package_size" class="form-label">Package Size</label>
+                          <input type="text" class="form-control" id="package_size" name="package_size" value="{{ old('package_size', $product->package_size) }}" placeholder="Enter Package Size">
+                      </div>
+                      <div class="mb-3">
+                          <label for="net_weight" class="form-label">Net Weight</label>
+                          <input type="text" class="form-control" id="net_weight" name="net_weight" value="{{ old('net_weight', $product->net_weight) }}" placeholder="Enter Net Weight">
+                      </div>
+                      <div class="mb-3">
+                          <label for="gross_weight" class="form-label">Gross Weight</label>
+                          <input type="text" class="form-control" id="gross_weight" name="gross_weight" value="{{ old('gross_weight', $product->gross_weight) }}" placeholder="Enter Gross Weight">
+                      </div>
+                      <div class="mb-3">
+                          <label for="quantity" class="form-label">Quantity</label>
+                          <input type="number" class="form-control" id="quantity" name="quantity" value="{{ old('quantity', $product->quantity) }}" placeholder="Enter Quantity">
+                      </div>
+                      <div class="mb-3">
+                          <label for="price" class="form-label">Price</label>
+                          <input type="number" step="0.01" class="form-control" id="price" name="price" value="{{ old('price', $product->price) }}" placeholder="Enter Price">
+                      </div>
+                      <div class="mb-3">
+                          <label for="rating" class="form-label">Rating</label>
+                          <input type="number" class="form-control" id="rating" name="rating" value="{{ old('rating', $product->rating) }}" min="1" max="5" placeholder="Enter Rating (1-5)">
+                      </div>
+                      <div class="mb-3">
+                          <label for="image" class="form-label">Product Image</label>
+                          <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                          @if ($product->image)
+                              <div class="mt-2">
+                                  <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" style="max-height: 150px;">
+                              </div>
+                          @endif
+                      </div>
+                      <div class="text-end">
+                          <button type="submit" class="btn btn-primary">
+                              <i class="fa fa-save"></i> Save Changes
+                          </button>
+                          <a href="{{ route('list-products') }}" class="btn btn-secondary">
+                              <i class="fa fa-arrow-left"></i> Back
+                          </a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Container-fluid Ends -->
+
         </div>
                 
         <!-- footer start-->

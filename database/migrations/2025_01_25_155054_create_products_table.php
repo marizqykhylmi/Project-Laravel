@@ -17,6 +17,7 @@ return new class extends Migration
         $table->string('color')->nullable();
         $table->string('category');
         $table->string('system')->nullable();
+        $table->string('power_suply')->nullable(); // Menambahkan kolom power_suply
         $table->string('status');
         $table->string('front_port')->nullable();
         $table->string('display_size')->nullable();
@@ -26,10 +27,12 @@ return new class extends Migration
         $table->decimal('gross_weight', 8, 2)->nullable();
         $table->integer('quantity');
         $table->integer('rating')->default(0);
+        $table->decimal('price', 10, 2)->nullable(); // Menambahkan kolom price
         $table->string('image')->nullable();
         $table->timestamps();
     });
 }
+
 
 
     /**
