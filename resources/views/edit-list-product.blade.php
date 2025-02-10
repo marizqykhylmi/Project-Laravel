@@ -180,9 +180,9 @@
           <div class="card">
               <div class="card-body">
                   <h4>Edit Product</h4>
-                  <form action="{{ route('list-product.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="needs-validation">
-                      @csrf
-                      @method('PUT')
+                  <form action="{{ route('list-product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                       <div class="mb-3">
                           <label for="name" class="form-label">Product Name</label>
                           <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}" placeholder="Enter Product Name">
@@ -192,13 +192,23 @@
                           <input type="text" class="form-control" id="color" name="color" value="{{ old('color', $product->color) }}" placeholder="Enter Color">
                       </div>
                       <div class="mb-3">
+                        <label for="product_size" class="form-label">Product Size</label>
+                        <input type="text" class="form-control" id="product_size" name="product_size" value="{{ old('product_size', $product->product_size) }}" placeholder="Enter Product Size">
+                    </div>
+                      <div class="mb-3">
                           <label for="category" class="form-label">Category</label>
-                          <select class="form-select" id="category" name="category">
-                              <option value="" selected disabled>Choose Category</option>
-                              <option value="Furniture" {{ old('category', $product->category) == 'Furniture' ? 'selected' : '' }}>Furniture</option>
-                              <option value="Smart" {{ old('category', $product->category) == 'Smart' ? 'selected' : '' }}>Smart Gadgets</option>
-                              <option value="Electronics" {{ old('category', $product->category) == 'Electronics' ? 'selected' : '' }}>Electronics</option>
-                          </select>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="category[]" value="Furniture" id="furniture" {{ is_array(old('category', json_decode($product->category))) && in_array('Furniture', old('category', json_decode($product->category))) ? 'checked' : '' }}>
+                              <label class="form-check-label" for="furniture">Furniture</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="category[]" value="Smart Gadgets" id="smart" {{ is_array(old('category', json_decode($product->category))) && in_array('Smart Gadgets', old('category', json_decode($product->category))) ? 'checked' : '' }}>
+                              <label class="form-check-label" for="smart">Smart Gadgets</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="category[]" value="Electronics" id="electronics" {{ is_array(old('category', json_decode($product->category))) && in_array('Electronics', old('category', json_decode($product->category))) ? 'checked' : '' }}>
+                              <label class="form-check-label" for="electronics">Electronics</label>
+                          </div>
                       </div>
                       <div class="mb-3">
                           <label for="system" class="form-label">System</label>
@@ -225,10 +235,6 @@
                       <div class="mb-3">
                           <label for="display_size" class="form-label">Display Size</label>
                           <input type="text" class="form-control" id="display_size" name="display_size" value="{{ old('display_size', $product->display_size) }}" placeholder="Enter Display Size">
-                      </div>
-                      <div class="mb-3">
-                          <label for="product_size" class="form-label">Product Size</label>
-                          <input type="text" class="form-control" id="product_size" name="product_size" value="{{ old('product_size', $product->product_size) }}" placeholder="Enter Product Size">
                       </div>
                       <div class="mb-3">
                           <label for="package_size" class="form-label">Package Size</label>

@@ -216,23 +216,41 @@
                         </div>
                         <div class="mb-3">
                             <label for="color" class="form-label">Color</label>
-                            <input type="text" class="form-control" id="color" name="color" placeholder="Enter Color">
+                            <input type="text" class="form-control" id="color" name="color" placeholder="Contoh: Red, Blue, Green">
+                            <small class="text-muted">Pisahkan warna dengan koma (",") jika lebih dari satu.</small>
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="category" class="form-label">Category</label>
-                            <select class="form-select" id="category" name="category[]" multiple>
-                                <option value="Furniture">Furniture</option>
-                                <option value="Smart">Smart Gadgets</option>
-                                <option value="Electronics">Electronics</option>
-                            </select>
-                        </div>                        
+                            <label for="product_size" class="form-label">Product Size</label>
+                            <input type="text" class="form-control" id="product_size" name="product_size" placeholder="Contoh: 32 inch, 65 inch">
+                            <small class="text-muted">Pisahkan ukuran dengan koma (",") jika lebih dari satu.</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="category[]" value="Furniture" id="furniture">
+                                <label class="form-check-label" for="furniture">Furniture</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="category[]" value="Smart Gadgets" id="smart">
+                                <label class="form-check-label" for="smart">Smart Gadgets</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="category[]" value="Electronics" id="electronics">
+                                <label class="form-check-label" for="electronics">Electronics</label>
+                            </div>
+                        </div>                                             
                         <div class="mb-3">
                             <label for="system" class="form-label">System</label>
-                            <input type="text" class="form-control" id="system" name="system" placeholder="Enter System">
+                            <input type="text" class="form-control" id="system" name="system" placeholder="Contoh: Windows, MacOS, Linux">
+                            <small class="text-muted">Pisahkan sistem dengan koma (",") jika lebih dari satu.</small>
                         </div>
+                        
                         <div class="mb-3">
                             <label for="power_suply" class="form-label">Power Supply</label>
-                            <input type="text" class="form-control" id="power_suply" name="power_suply" placeholder="Enter Power Suply">
+                            <input type="text" class="form-control" id="power_suply" name="power_suply" placeholder="Contoh: 500W, 750W">
+                            <small class="text-muted">Pisahkan power supply dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="status" class="form-label">Status</label>
@@ -246,27 +264,28 @@
                         </div>
                         <div class="mb-3">
                             <label for="front_port" class="form-label">Front Port</label>
-                            <input type="text" class="form-control" id="front_port" name="front_port" placeholder="Enter Front Port">
+                            <input type="text" class="form-control" id="front_port" name="front_port" placeholder="Contoh: USB, HDMI, Audio Jack">
+                            <small class="text-muted">Pisahkan port dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="display_size" class="form-label">Display Size</label>
-                            <input type="text" class="form-control" id="display_size" name="display_size" placeholder="Enter Display Size">
-                        </div>
-                        <div class="mb-3">
-                            <label for="product_size" class="form-label">Product Size</label>
-                            <input type="text" class="form-control" id="product_size" name="product_size" placeholder="Enter Product Size">
+                            <input type="text" class="form-control" id="display_size" name="display_size" placeholder="Contoh: 32 inch, 65 inch">
+                            <small class="text-muted">Pisahkan ukuran dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="package_size" class="form-label">Package Size</label>
-                            <input type="text" class="form-control" id="package_size" name="package_size" placeholder="Enter Package Size">
+                            <input type="text" class="form-control" id="package_size" name="package_size" placeholder="Contoh: 30x40x10 cm">
+                            <small class="text-muted">Pisahkan ukuran dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="net_weight" class="form-label">Net Weight</label>
-                            <input type="number" step="0.01" class="form-control" id="net_weight" name="net_weight" placeholder="Enter Net Weight">
+                            <input type="text" class="form-control" id="net_weight" name="net_weight" placeholder="Contoh: 500 gram, 1 kg">
+                            <small class="text-muted">Pisahkan berat dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="gross_weight" class="form-label">Gross Weight</label>
-                            <input type="number" step="0.01" class="form-control" id="gross_weight" name="gross_weight" placeholder="Enter Gross Weight">
+                            <input type="text" class="form-control" id="gross_weight" name="gross_weight" placeholder="Contoh: 1 kg, 2 kg">
+                            <small class="text-muted">Pisahkan berat dengan koma (",") jika lebih dari satu.</small>
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>

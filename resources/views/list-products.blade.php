@@ -211,17 +211,90 @@
                                       <td style="padding-left: 20px; width: 60%;">
                                           <ul class="list-group">
                                               <li class="list-group-item"><strong>Name:</strong> {{ $product->name }}</li>
-                                              <li class="list-group-item"><strong>Color:</strong> {{ $product->color }}</li>
-                                              <li class="list-group-item"><strong>Category:</strong> {{ $product->category }}</li>
-                                              <li class="list-group-item"><strong>System:</strong> {{ $product->system }}</li>
-                                              <li class="list-group-item"><strong>Power Supply:</strong> {{ $product->power_suply }}</li>
+                                              <table class="table table-bordered">
+                                                <tr>
+                                                    <td><strong>Color</strong></td>
+                                                    @foreach(explode(',', $product->color) as $index => $color)
+                                                        <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                            {{ trim($color) }}
+                                                        </td>
+                                                    @endforeach
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Product Size</strong></td>
+                                                    @foreach(explode(',', $product->product_size) as $index => $size)
+                                                        <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                            {{ trim($size) }}
+                                                        </td>
+                                                    @endforeach
+                                                </tr>
+                                              <tr>
+                                                  <td><strong>Category</strong></td>
+                                                  @foreach(json_decode($product->category, true) as $index => $category)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ trim($category) }}
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
+                                              <tr>
+                                                  <td><strong>System</strong></td>
+                                                  @foreach(explode(',', $product->system) as $index => $system)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ trim($system) }}
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
+                                              <tr>
+                                                  <td><strong>Power Supply</strong></td>
+                                                  @foreach(explode(',', $product->power_suply) as $index => $power)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ trim($power) }}
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
                                               <li class="list-group-item"><strong>Status:</strong> {{ $product->status }}</li>
-                                              <li class="list-group-item"><strong>Front Port:</strong> {{ $product->front_port }}</li>
-                                              <li class="list-group-item"><strong>Display Size:</strong> {{ $product->display_size }}</li>
-                                              <li class="list-group-item"><strong>Product Size:</strong> {{ $product->product_size }}</li>
-                                              <li class="list-group-item"><strong>Package Size:</strong> {{ $product->package_size }}</li>
-                                              <li class="list-group-item"><strong>Net Weight:</strong> {{ $product->net_weight }}</li>
-                                              <li class="list-group-item"><strong>Gross Weight:</strong> {{ $product->gross_weight }}</li>
+                                              
+                                                <tr>
+                                                    <td><strong>Front Port</strong></td>
+                                                    @foreach(explode(',', $product->front_port) as $index => $port)
+                                                        <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                            {{ trim($port) }}
+                                                        </td>
+                                                    @endforeach
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Display Size</strong></td>
+                                                    @foreach(explode(',', $product->display_size) as $index => $size)
+                                                        <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                            {{ trim($size) }}
+                                                        </td>
+                                                    @endforeach
+                                                </tr>
+                                              <tr>
+                                                  <td><strong>Package Size</strong></td>
+                                                  @foreach(explode(',', $product->package_size) as $index => $size)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ trim($size) }}
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
+                                              <tr>
+                                                  <td><strong>Net Weight</strong></td>
+                                                  @foreach(explode(',', $product->net_weight) as $index => $net)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ number_format(intval(trim($net)), 0, ',', '.') }} gram
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
+                                              <tr>
+                                                  <td><strong>Gross Weight</strong></td>
+                                                  @foreach(explode(',', $product->gross_weight) as $index => $gross)
+                                                      <td @if(($index + 1) % 2 == 0) style="background-color: rgb(222, 222, 222);" @endif>
+                                                          {{ number_format(intval(trim($gross)), 0, ',', '.') }} gram
+                                                      </td>
+                                                  @endforeach
+                                              </tr>
+                                          </table>                                          
                                               <li class="list-group-item"><strong>Quantity:</strong> {{ $product->quantity }}</li>
                                               <li class="list-group-item"><strong>Price:</strong> Rp. {{ number_format($product->price, 0, ',', '.') }}</li>
                                               <li class="list-group-item"><strong>Rating:</strong> @for ($i = 1; $i <= 5; $i++) <span class="rating {{ $product->rating >= $i ? 'text-warning' : '' }}"><i class="fa fa-star"></i></span> @endfor</li>
@@ -230,13 +303,13 @@
                                               <a href="{{ route('list-product.edit', $product->id) }}" class="btn btn-sm btn-info">
                                                   <i class="fa fa-edit"></i> Edit
                                               </a>
-                                              <form action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">
-                                                  @csrf
-                                                  @method('DELETE')
-                                                  <button type="submit" class="btn btn-sm btn-danger">
-                                                      <i class="fa fa-trash"></i> Delete
-                                                  </button>
-                                              </form>
+                                              <form id="delete-form-{{ $product->id }}" action="{{ route('list-product.delete', $product->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="btn btn-sm btn-danger" onclick="event.preventDefault(); confirmDelete({{ $product->id }})">
+                                                    <i class="fa fa-trash"></i> Delete
+                                                </button>
+                                            </form>                                            
                                           </div>
                                       </td>
                                   </tr>
@@ -318,7 +391,7 @@
 {{-- @endsection --}}
 
         </div>
-        
+        </div>
         <!-- footer start-->
         <footer class="footer">
           <div class="container-fluid">

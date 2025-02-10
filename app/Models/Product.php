@@ -24,4 +24,9 @@ class Product extends Model
         'price',
         'image'
     ];
+
+    protected $casts = [
+        'category' => 'array',
+    ];
+    
 }
